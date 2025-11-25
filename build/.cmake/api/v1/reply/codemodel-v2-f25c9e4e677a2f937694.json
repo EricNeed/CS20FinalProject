@@ -84,7 +84,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "sdl3_test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-sdl3_test-Debug-c74c7a4511d8dece373a.json",
+					"jsonFile" : "target-sdl3_test-Debug-4b3efbe255de6e350c6c.json",
 					"name" : "sdl3_test",
 					"projectIndex" : 0
 				}
@@ -94,8 +94,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/SDL3_project/build",
-		"source" : "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/SDL3_project"
+		"build" : "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build",
+		"source" : "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject"
 	},
 	"version" : 
 	{

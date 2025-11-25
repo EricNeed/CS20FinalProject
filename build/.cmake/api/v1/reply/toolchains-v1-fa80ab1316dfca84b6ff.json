@@ -48,7 +48,7 @@
 						"kernel32"
 					]
 				},
-				"path" : "m:/code/compiler/bin/gcc.exe",
+				"path" : "M:/code/compiler/bin/gcc.exe",
 				"version" : "10.3.0"
 			},
 			"language" : "C",
@@ -108,7 +108,7 @@
 						"kernel32"
 					]
 				},
-				"path" : "m:/code/compiler/bin/g++.exe",
+				"path" : "M:/code/compiler/bin/g++.exe",
 				"version" : "10.3.0"
 			},
 			"language" : "CXX",

@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/SDL3_project/build"
+			"value" : "c:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -150,12 +150,48 @@
 			"properties" : 
 			[
 				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
 					"name" : "HELPSTRING",
 					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "m:/code/compiler/bin/g++.exe"
+			"value" : "M:/code/compiler/bin/g++.exe"
+		},
+		{
+			"name" : "CMAKE_CXX_COMPILER_AR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "M:/code/compiler/bin/gcc-ar.exe"
+		},
+		{
+			"name" : "CMAKE_CXX_COMPILER_RANLIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "M:/code/compiler/bin/gcc-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -267,7 +303,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "m:/code/compiler/bin/gcc.exe"
+			"value" : "M:/code/compiler/bin/gcc.exe"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_AR",
@@ -551,7 +587,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/SDL3_project/build/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -623,7 +659,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/SDL3_project"
+			"value" : "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -635,7 +671,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files/camke_test"
+			"value" : "C:/Program Files (x86)/camke_test"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -964,6 +1000,34 @@
 			],
 			"type" : "FILEPATH",
 			"value" : "M:/code/compiler/bin/ranlib.exe"
+		},
+		{
+			"name" : "CMAKE_RC_COMPILER",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "RC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "M:/code/compiler/bin/windres.exe"
+		},
+		{
+			"name" : "CMAKE_RC_COMPILER_WORKS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
 		},
 		{
 			"name" : "CMAKE_RC_FLAGS",
@@ -1323,7 +1387,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/SDL3_project/build"
+			"value" : "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build"
 		},
 		{
 			"name" : "camke_test_IS_TOP_LEVEL",
@@ -1347,7 +1411,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/SDL3_project"
+			"value" : "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject"
 		}
 	],
 	"kind" : "cache",

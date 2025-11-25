@@ -1,4 +1,4 @@
-
+//idk if im gonna use a sepreate sprite manager, pending
 #include<string>
 
 class TextureManager{

@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "MinGW Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/SDL3_project/CMakeLists.txt"
+  "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/CMakeLists.txt"
   "CMakeFiles/4.2.0-rc2/CMakeCCompiler.cmake"
   "CMakeFiles/4.2.0-rc2/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.2.0-rc2/CMakeRCCompiler.cmake"
