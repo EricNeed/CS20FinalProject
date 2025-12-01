@@ -1,15 +1,17 @@
 #include <SDL3/SDL.h>
+#include<src/include/player.h>
 
 class ClientInput{
     private:
         const bool *keyboard_states = SDL_GetKeyboardState(NULL);
+        Player &player;
     public:
-        ClientInput(auto player_sprite){
-            
+        ClientInput(Player &player_sprite): player(player_sprite){
         }
 
         void processUserInput(){
             if(keyboard_states[SDL_SCANCODE_W]){
+                
             }
             if(keyboard_states[SDL_SCANCODE_A]){
             }

@@ -128,6 +128,30 @@ sdl3_test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sdl3_test.dir\build.make CMakeFiles/sdl3_test.dir/build
 .PHONY : sdl3_test/fast
 
+src/client_scripts/player_scripts/player_input.obj: src/client_scripts/player_scripts/player_input.cpp.obj
+.PHONY : src/client_scripts/player_scripts/player_input.obj
+
+# target to build an object file
+src/client_scripts/player_scripts/player_input.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sdl3_test.dir\build.make CMakeFiles/sdl3_test.dir/src/client_scripts/player_scripts/player_input.cpp.obj
+.PHONY : src/client_scripts/player_scripts/player_input.cpp.obj
+
+src/client_scripts/player_scripts/player_input.i: src/client_scripts/player_scripts/player_input.cpp.i
+.PHONY : src/client_scripts/player_scripts/player_input.i
+
+# target to preprocess a source file
+src/client_scripts/player_scripts/player_input.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sdl3_test.dir\build.make CMakeFiles/sdl3_test.dir/src/client_scripts/player_scripts/player_input.cpp.i
+.PHONY : src/client_scripts/player_scripts/player_input.cpp.i
+
+src/client_scripts/player_scripts/player_input.s: src/client_scripts/player_scripts/player_input.cpp.s
+.PHONY : src/client_scripts/player_scripts/player_input.s
+
+# target to generate assembly for a file
+src/client_scripts/player_scripts/player_input.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sdl3_test.dir\build.make CMakeFiles/sdl3_test.dir/src/client_scripts/player_scripts/player_input.cpp.s
+.PHONY : src/client_scripts/player_scripts/player_input.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -152,6 +176,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sdl3_test.dir\build.make CMakeFiles/sdl3_test.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/script_storge/entitie_scripts/player.obj: src/script_storge/entitie_scripts/player.cpp.obj
+.PHONY : src/script_storge/entitie_scripts/player.obj
+
+# target to build an object file
+src/script_storge/entitie_scripts/player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sdl3_test.dir\build.make CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/player.cpp.obj
+.PHONY : src/script_storge/entitie_scripts/player.cpp.obj
+
+src/script_storge/entitie_scripts/player.i: src/script_storge/entitie_scripts/player.cpp.i
+.PHONY : src/script_storge/entitie_scripts/player.i
+
+# target to preprocess a source file
+src/script_storge/entitie_scripts/player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sdl3_test.dir\build.make CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/player.cpp.i
+.PHONY : src/script_storge/entitie_scripts/player.cpp.i
+
+src/script_storge/entitie_scripts/player.s: src/script_storge/entitie_scripts/player.cpp.s
+.PHONY : src/script_storge/entitie_scripts/player.s
+
+# target to generate assembly for a file
+src/script_storge/entitie_scripts/player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sdl3_test.dir\build.make CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/player.cpp.s
+.PHONY : src/script_storge/entitie_scripts/player.cpp.s
+
+src/script_storge/entitie_scripts/sprite.obj: src/script_storge/entitie_scripts/sprite.cpp.obj
+.PHONY : src/script_storge/entitie_scripts/sprite.obj
+
+# target to build an object file
+src/script_storge/entitie_scripts/sprite.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sdl3_test.dir\build.make CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/sprite.cpp.obj
+.PHONY : src/script_storge/entitie_scripts/sprite.cpp.obj
+
+src/script_storge/entitie_scripts/sprite.i: src/script_storge/entitie_scripts/sprite.cpp.i
+.PHONY : src/script_storge/entitie_scripts/sprite.i
+
+# target to preprocess a source file
+src/script_storge/entitie_scripts/sprite.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sdl3_test.dir\build.make CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/sprite.cpp.i
+.PHONY : src/script_storge/entitie_scripts/sprite.cpp.i
+
+src/script_storge/entitie_scripts/sprite.s: src/script_storge/entitie_scripts/sprite.cpp.s
+.PHONY : src/script_storge/entitie_scripts/sprite.s
+
+# target to generate assembly for a file
+src/script_storge/entitie_scripts/sprite.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sdl3_test.dir\build.make CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/sprite.cpp.s
+.PHONY : src/script_storge/entitie_scripts/sprite.cpp.s
+
 src/server_scripts/client_handler.obj: src/server_scripts/client_handler.cpp.obj
 .PHONY : src/server_scripts/client_handler.obj
 
@@ -175,30 +247,6 @@ src/server_scripts/client_handler.s: src/server_scripts/client_handler.cpp.s
 src/server_scripts/client_handler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sdl3_test.dir\build.make CMakeFiles/sdl3_test.dir/src/server_scripts/client_handler.cpp.s
 .PHONY : src/server_scripts/client_handler.cpp.s
-
-src/server_scripts/entitie_scripts/sprite.obj: src/server_scripts/entitie_scripts/sprite.cpp.obj
-.PHONY : src/server_scripts/entitie_scripts/sprite.obj
-
-# target to build an object file
-src/server_scripts/entitie_scripts/sprite.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sdl3_test.dir\build.make CMakeFiles/sdl3_test.dir/src/server_scripts/entitie_scripts/sprite.cpp.obj
-.PHONY : src/server_scripts/entitie_scripts/sprite.cpp.obj
-
-src/server_scripts/entitie_scripts/sprite.i: src/server_scripts/entitie_scripts/sprite.cpp.i
-.PHONY : src/server_scripts/entitie_scripts/sprite.i
-
-# target to preprocess a source file
-src/server_scripts/entitie_scripts/sprite.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sdl3_test.dir\build.make CMakeFiles/sdl3_test.dir/src/server_scripts/entitie_scripts/sprite.cpp.i
-.PHONY : src/server_scripts/entitie_scripts/sprite.cpp.i
-
-src/server_scripts/entitie_scripts/sprite.s: src/server_scripts/entitie_scripts/sprite.cpp.s
-.PHONY : src/server_scripts/entitie_scripts/sprite.s
-
-# target to generate assembly for a file
-src/server_scripts/entitie_scripts/sprite.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sdl3_test.dir\build.make CMakeFiles/sdl3_test.dir/src/server_scripts/entitie_scripts/sprite.cpp.s
-.PHONY : src/server_scripts/entitie_scripts/sprite.cpp.s
 
 src/server_scripts/tick_server_main.obj: src/server_scripts/tick_server_main.cpp.obj
 .PHONY : src/server_scripts/tick_server_main.obj
@@ -233,15 +281,21 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... sdl3_test
+	@echo ... src/client_scripts/player_scripts/player_input.obj
+	@echo ... src/client_scripts/player_scripts/player_input.i
+	@echo ... src/client_scripts/player_scripts/player_input.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/script_storge/entitie_scripts/player.obj
+	@echo ... src/script_storge/entitie_scripts/player.i
+	@echo ... src/script_storge/entitie_scripts/player.s
+	@echo ... src/script_storge/entitie_scripts/sprite.obj
+	@echo ... src/script_storge/entitie_scripts/sprite.i
+	@echo ... src/script_storge/entitie_scripts/sprite.s
 	@echo ... src/server_scripts/client_handler.obj
 	@echo ... src/server_scripts/client_handler.i
 	@echo ... src/server_scripts/client_handler.s
-	@echo ... src/server_scripts/entitie_scripts/sprite.obj
-	@echo ... src/server_scripts/entitie_scripts/sprite.i
-	@echo ... src/server_scripts/entitie_scripts/sprite.s
 	@echo ... src/server_scripts/tick_server_main.obj
 	@echo ... src/server_scripts/tick_server_main.i
 	@echo ... src/server_scripts/tick_server_main.s

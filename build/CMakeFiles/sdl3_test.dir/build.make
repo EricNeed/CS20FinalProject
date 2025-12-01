@@ -76,82 +76,116 @@ CMakeFiles/sdl3_test.dir/src/main.cpp.obj: CMakeFiles/sdl3_test.dir/includes_CXX
 CMakeFiles/sdl3_test.dir/src/main.cpp.obj: C:/Users/6600271/OneDrive\ -\ Saskatoon\ Public\ Schools/Documents/C++\ Project/CS20FinalProject/src/main.cpp
 CMakeFiles/sdl3_test.dir/src/main.cpp.obj: CMakeFiles/sdl3_test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sdl3_test.dir/src/main.cpp.obj"
-	M:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sdl3_test.dir/src/main.cpp.obj -MF CMakeFiles\sdl3_test.dir\src\main.cpp.obj.d -o CMakeFiles\sdl3_test.dir\src\main.cpp.obj -c "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\main.cpp"
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sdl3_test.dir/src/main.cpp.obj -MF CMakeFiles\sdl3_test.dir\src\main.cpp.obj.d -o CMakeFiles\sdl3_test.dir\src\main.cpp.obj -c "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\main.cpp"
 
 CMakeFiles/sdl3_test.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sdl3_test.dir/src/main.cpp.i"
-	M:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\main.cpp" > CMakeFiles\sdl3_test.dir\src\main.cpp.i
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\main.cpp" > CMakeFiles\sdl3_test.dir\src\main.cpp.i
 
 CMakeFiles/sdl3_test.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sdl3_test.dir/src/main.cpp.s"
-	M:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\main.cpp" -o CMakeFiles\sdl3_test.dir\src\main.cpp.s
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\main.cpp" -o CMakeFiles\sdl3_test.dir\src\main.cpp.s
 
 CMakeFiles/sdl3_test.dir/src/server_scripts/client_handler.cpp.obj: CMakeFiles/sdl3_test.dir/flags.make
 CMakeFiles/sdl3_test.dir/src/server_scripts/client_handler.cpp.obj: CMakeFiles/sdl3_test.dir/includes_CXX.rsp
 CMakeFiles/sdl3_test.dir/src/server_scripts/client_handler.cpp.obj: C:/Users/6600271/OneDrive\ -\ Saskatoon\ Public\ Schools/Documents/C++\ Project/CS20FinalProject/src/server_scripts/client_handler.cpp
 CMakeFiles/sdl3_test.dir/src/server_scripts/client_handler.cpp.obj: CMakeFiles/sdl3_test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sdl3_test.dir/src/server_scripts/client_handler.cpp.obj"
-	M:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sdl3_test.dir/src/server_scripts/client_handler.cpp.obj -MF CMakeFiles\sdl3_test.dir\src\server_scripts\client_handler.cpp.obj.d -o CMakeFiles\sdl3_test.dir\src\server_scripts\client_handler.cpp.obj -c "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\server_scripts\client_handler.cpp"
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sdl3_test.dir/src/server_scripts/client_handler.cpp.obj -MF CMakeFiles\sdl3_test.dir\src\server_scripts\client_handler.cpp.obj.d -o CMakeFiles\sdl3_test.dir\src\server_scripts\client_handler.cpp.obj -c "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\server_scripts\client_handler.cpp"
 
 CMakeFiles/sdl3_test.dir/src/server_scripts/client_handler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sdl3_test.dir/src/server_scripts/client_handler.cpp.i"
-	M:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\server_scripts\client_handler.cpp" > CMakeFiles\sdl3_test.dir\src\server_scripts\client_handler.cpp.i
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\server_scripts\client_handler.cpp" > CMakeFiles\sdl3_test.dir\src\server_scripts\client_handler.cpp.i
 
 CMakeFiles/sdl3_test.dir/src/server_scripts/client_handler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sdl3_test.dir/src/server_scripts/client_handler.cpp.s"
-	M:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\server_scripts\client_handler.cpp" -o CMakeFiles\sdl3_test.dir\src\server_scripts\client_handler.cpp.s
-
-CMakeFiles/sdl3_test.dir/src/server_scripts/entitie_scripts/sprite.cpp.obj: CMakeFiles/sdl3_test.dir/flags.make
-CMakeFiles/sdl3_test.dir/src/server_scripts/entitie_scripts/sprite.cpp.obj: CMakeFiles/sdl3_test.dir/includes_CXX.rsp
-CMakeFiles/sdl3_test.dir/src/server_scripts/entitie_scripts/sprite.cpp.obj: C:/Users/6600271/OneDrive\ -\ Saskatoon\ Public\ Schools/Documents/C++\ Project/CS20FinalProject/src/server_scripts/entitie_scripts/sprite.cpp
-CMakeFiles/sdl3_test.dir/src/server_scripts/entitie_scripts/sprite.cpp.obj: CMakeFiles/sdl3_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sdl3_test.dir/src/server_scripts/entitie_scripts/sprite.cpp.obj"
-	M:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sdl3_test.dir/src/server_scripts/entitie_scripts/sprite.cpp.obj -MF CMakeFiles\sdl3_test.dir\src\server_scripts\entitie_scripts\sprite.cpp.obj.d -o CMakeFiles\sdl3_test.dir\src\server_scripts\entitie_scripts\sprite.cpp.obj -c "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\server_scripts\entitie_scripts\sprite.cpp"
-
-CMakeFiles/sdl3_test.dir/src/server_scripts/entitie_scripts/sprite.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sdl3_test.dir/src/server_scripts/entitie_scripts/sprite.cpp.i"
-	M:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\server_scripts\entitie_scripts\sprite.cpp" > CMakeFiles\sdl3_test.dir\src\server_scripts\entitie_scripts\sprite.cpp.i
-
-CMakeFiles/sdl3_test.dir/src/server_scripts/entitie_scripts/sprite.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sdl3_test.dir/src/server_scripts/entitie_scripts/sprite.cpp.s"
-	M:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\server_scripts\entitie_scripts\sprite.cpp" -o CMakeFiles\sdl3_test.dir\src\server_scripts\entitie_scripts\sprite.cpp.s
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\server_scripts\client_handler.cpp" -o CMakeFiles\sdl3_test.dir\src\server_scripts\client_handler.cpp.s
 
 CMakeFiles/sdl3_test.dir/src/server_scripts/tick_server_main.cpp.obj: CMakeFiles/sdl3_test.dir/flags.make
 CMakeFiles/sdl3_test.dir/src/server_scripts/tick_server_main.cpp.obj: CMakeFiles/sdl3_test.dir/includes_CXX.rsp
 CMakeFiles/sdl3_test.dir/src/server_scripts/tick_server_main.cpp.obj: C:/Users/6600271/OneDrive\ -\ Saskatoon\ Public\ Schools/Documents/C++\ Project/CS20FinalProject/src/server_scripts/tick_server_main.cpp
 CMakeFiles/sdl3_test.dir/src/server_scripts/tick_server_main.cpp.obj: CMakeFiles/sdl3_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/sdl3_test.dir/src/server_scripts/tick_server_main.cpp.obj"
-	M:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sdl3_test.dir/src/server_scripts/tick_server_main.cpp.obj -MF CMakeFiles\sdl3_test.dir\src\server_scripts\tick_server_main.cpp.obj.d -o CMakeFiles\sdl3_test.dir\src\server_scripts\tick_server_main.cpp.obj -c "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\server_scripts\tick_server_main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sdl3_test.dir/src/server_scripts/tick_server_main.cpp.obj"
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sdl3_test.dir/src/server_scripts/tick_server_main.cpp.obj -MF CMakeFiles\sdl3_test.dir\src\server_scripts\tick_server_main.cpp.obj.d -o CMakeFiles\sdl3_test.dir\src\server_scripts\tick_server_main.cpp.obj -c "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\server_scripts\tick_server_main.cpp"
 
 CMakeFiles/sdl3_test.dir/src/server_scripts/tick_server_main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sdl3_test.dir/src/server_scripts/tick_server_main.cpp.i"
-	M:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\server_scripts\tick_server_main.cpp" > CMakeFiles\sdl3_test.dir\src\server_scripts\tick_server_main.cpp.i
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\server_scripts\tick_server_main.cpp" > CMakeFiles\sdl3_test.dir\src\server_scripts\tick_server_main.cpp.i
 
 CMakeFiles/sdl3_test.dir/src/server_scripts/tick_server_main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sdl3_test.dir/src/server_scripts/tick_server_main.cpp.s"
-	M:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\server_scripts\tick_server_main.cpp" -o CMakeFiles\sdl3_test.dir\src\server_scripts\tick_server_main.cpp.s
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\server_scripts\tick_server_main.cpp" -o CMakeFiles\sdl3_test.dir\src\server_scripts\tick_server_main.cpp.s
+
+CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/sprite.cpp.obj: CMakeFiles/sdl3_test.dir/flags.make
+CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/sprite.cpp.obj: CMakeFiles/sdl3_test.dir/includes_CXX.rsp
+CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/sprite.cpp.obj: C:/Users/6600271/OneDrive\ -\ Saskatoon\ Public\ Schools/Documents/C++\ Project/CS20FinalProject/src/script_storge/entitie_scripts/sprite.cpp
+CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/sprite.cpp.obj: CMakeFiles/sdl3_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/sprite.cpp.obj"
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/sprite.cpp.obj -MF CMakeFiles\sdl3_test.dir\src\script_storge\entitie_scripts\sprite.cpp.obj.d -o CMakeFiles\sdl3_test.dir\src\script_storge\entitie_scripts\sprite.cpp.obj -c "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\script_storge\entitie_scripts\sprite.cpp"
+
+CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/sprite.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/sprite.cpp.i"
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\script_storge\entitie_scripts\sprite.cpp" > CMakeFiles\sdl3_test.dir\src\script_storge\entitie_scripts\sprite.cpp.i
+
+CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/sprite.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/sprite.cpp.s"
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\script_storge\entitie_scripts\sprite.cpp" -o CMakeFiles\sdl3_test.dir\src\script_storge\entitie_scripts\sprite.cpp.s
+
+CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/player.cpp.obj: CMakeFiles/sdl3_test.dir/flags.make
+CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/player.cpp.obj: CMakeFiles/sdl3_test.dir/includes_CXX.rsp
+CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/player.cpp.obj: C:/Users/6600271/OneDrive\ -\ Saskatoon\ Public\ Schools/Documents/C++\ Project/CS20FinalProject/src/script_storge/entitie_scripts/player.cpp
+CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/player.cpp.obj: CMakeFiles/sdl3_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/player.cpp.obj"
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/player.cpp.obj -MF CMakeFiles\sdl3_test.dir\src\script_storge\entitie_scripts\player.cpp.obj.d -o CMakeFiles\sdl3_test.dir\src\script_storge\entitie_scripts\player.cpp.obj -c "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\script_storge\entitie_scripts\player.cpp"
+
+CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/player.cpp.i"
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\script_storge\entitie_scripts\player.cpp" > CMakeFiles\sdl3_test.dir\src\script_storge\entitie_scripts\player.cpp.i
+
+CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/player.cpp.s"
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\script_storge\entitie_scripts\player.cpp" -o CMakeFiles\sdl3_test.dir\src\script_storge\entitie_scripts\player.cpp.s
+
+CMakeFiles/sdl3_test.dir/src/client_scripts/player_scripts/player_input.cpp.obj: CMakeFiles/sdl3_test.dir/flags.make
+CMakeFiles/sdl3_test.dir/src/client_scripts/player_scripts/player_input.cpp.obj: CMakeFiles/sdl3_test.dir/includes_CXX.rsp
+CMakeFiles/sdl3_test.dir/src/client_scripts/player_scripts/player_input.cpp.obj: C:/Users/6600271/OneDrive\ -\ Saskatoon\ Public\ Schools/Documents/C++\ Project/CS20FinalProject/src/client_scripts/player_scripts/player_input.cpp
+CMakeFiles/sdl3_test.dir/src/client_scripts/player_scripts/player_input.cpp.obj: CMakeFiles/sdl3_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/sdl3_test.dir/src/client_scripts/player_scripts/player_input.cpp.obj"
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sdl3_test.dir/src/client_scripts/player_scripts/player_input.cpp.obj -MF CMakeFiles\sdl3_test.dir\src\client_scripts\player_scripts\player_input.cpp.obj.d -o CMakeFiles\sdl3_test.dir\src\client_scripts\player_scripts\player_input.cpp.obj -c "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\client_scripts\player_scripts\player_input.cpp"
+
+CMakeFiles/sdl3_test.dir/src/client_scripts/player_scripts/player_input.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sdl3_test.dir/src/client_scripts/player_scripts/player_input.cpp.i"
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\client_scripts\player_scripts\player_input.cpp" > CMakeFiles\sdl3_test.dir\src\client_scripts\player_scripts\player_input.cpp.i
+
+CMakeFiles/sdl3_test.dir/src/client_scripts/player_scripts/player_input.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sdl3_test.dir/src/client_scripts/player_scripts/player_input.cpp.s"
+	m:\code\compiler\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\src\client_scripts\player_scripts\player_input.cpp" -o CMakeFiles\sdl3_test.dir\src\client_scripts\player_scripts\player_input.cpp.s
 
 # Object files for target sdl3_test
 sdl3_test_OBJECTS = \
 "CMakeFiles/sdl3_test.dir/src/main.cpp.obj" \
 "CMakeFiles/sdl3_test.dir/src/server_scripts/client_handler.cpp.obj" \
-"CMakeFiles/sdl3_test.dir/src/server_scripts/entitie_scripts/sprite.cpp.obj" \
-"CMakeFiles/sdl3_test.dir/src/server_scripts/tick_server_main.cpp.obj"
+"CMakeFiles/sdl3_test.dir/src/server_scripts/tick_server_main.cpp.obj" \
+"CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/sprite.cpp.obj" \
+"CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/player.cpp.obj" \
+"CMakeFiles/sdl3_test.dir/src/client_scripts/player_scripts/player_input.cpp.obj"
 
 # External object files for target sdl3_test
 sdl3_test_EXTERNAL_OBJECTS =
 
 sdl3_test.exe: CMakeFiles/sdl3_test.dir/src/main.cpp.obj
 sdl3_test.exe: CMakeFiles/sdl3_test.dir/src/server_scripts/client_handler.cpp.obj
-sdl3_test.exe: CMakeFiles/sdl3_test.dir/src/server_scripts/entitie_scripts/sprite.cpp.obj
 sdl3_test.exe: CMakeFiles/sdl3_test.dir/src/server_scripts/tick_server_main.cpp.obj
+sdl3_test.exe: CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/sprite.cpp.obj
+sdl3_test.exe: CMakeFiles/sdl3_test.dir/src/script_storge/entitie_scripts/player.cpp.obj
+sdl3_test.exe: CMakeFiles/sdl3_test.dir/src/client_scripts/player_scripts/player_input.cpp.obj
 sdl3_test.exe: CMakeFiles/sdl3_test.dir/build.make
 sdl3_test.exe: M:/code/libraries/SDL3_image-3.2.4/x86_64-w64-mingw32/lib/libSDL3_image.dll.a
 sdl3_test.exe: M:/code/libraries/SDL3-3.2.26/x86_64-w64-mingw32/lib/libSDL3.dll.a
 sdl3_test.exe: CMakeFiles/sdl3_test.dir/linkLibs.rsp
 sdl3_test.exe: CMakeFiles/sdl3_test.dir/objects1.rsp
 sdl3_test.exe: CMakeFiles/sdl3_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable sdl3_test.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\6600271\OneDrive - Saskatoon Public Schools\Documents\C++ Project\CS20FinalProject\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable sdl3_test.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\sdl3_test.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

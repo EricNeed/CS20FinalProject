@@ -3,13 +3,14 @@
 #include<SDL3/SDL.h>
 
 class Sprite {
-    private:
+    protected:
         static std::vector<Sprite*> sprite_list;
         long spriteID;
         SDL_Point sprite_coord;
+        std::vector<std::string> textures;
     public:
         Sprite(int spriteX, int spriteY){
-            spriteID = sprite_list.size();
+            spriteID = sprite_list.size();// the size is the last index + 1, so i can directly use it
             sprite_list[spriteID] = this;
             sprite_coord.x = spriteX;
             sprite_coord.y = spriteY;
@@ -21,8 +22,6 @@ class Sprite {
             sprite_coord.x = spriteX;
             sprite_coord.y = spriteY;
         }
-        
-        int skibidi;
 
         long getID(){return spriteID;}
 };

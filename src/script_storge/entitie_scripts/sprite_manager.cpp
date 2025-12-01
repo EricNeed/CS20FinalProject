@@ -15,5 +15,4 @@ public:
         static TextureManager instance;
         return instance;
     }
-
 };

@@ -5507,3 +5507,2139 @@ events:
       Running the CXX compiler's linker: "M:/code/compiler/x86_64-w64-mingw32/bin/ld.exe" "-v"
       GNU ld (GNU Binutils) 2.36.1
 ...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Windows - 10.0.26100 - AMD64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/"
+    found: "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: m:/code/compiler/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/4.2.0-rc2/CompilerIdC/a.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ar"
+    candidate_directories:
+      - "m:/code/compiler/bin/"
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+    searched_directories:
+      - "m:/code/compiler/bin/ar.com"
+    found: "M:/code/compiler/bin/ar.exe"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_RANLIB"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ranlib"
+    candidate_directories:
+      - "m:/code/compiler/bin/"
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+    searched_directories:
+      - "m:/code/compiler/bin/ranlib.com"
+    found: "M:/code/compiler/bin/ranlib.exe"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "strip"
+    candidate_directories:
+      - "m:/code/compiler/bin/"
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+    searched_directories:
+      - "m:/code/compiler/bin/strip.com"
+    found: "M:/code/compiler/bin/strip.exe"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ld"
+    candidate_directories:
+      - "m:/code/compiler/bin/"
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+    searched_directories:
+      - "m:/code/compiler/bin/ld.com"
+    found: "M:/code/compiler/bin/ld.exe"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "nm"
+    candidate_directories:
+      - "m:/code/compiler/bin/"
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+    searched_directories:
+      - "m:/code/compiler/bin/nm.com"
+    found: "M:/code/compiler/bin/nm.exe"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objdump"
+    candidate_directories:
+      - "m:/code/compiler/bin/"
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+    searched_directories:
+      - "m:/code/compiler/bin/objdump.com"
+    found: "M:/code/compiler/bin/objdump.exe"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objcopy"
+    candidate_directories:
+      - "m:/code/compiler/bin/"
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+    searched_directories:
+      - "m:/code/compiler/bin/objcopy.com"
+    found: "M:/code/compiler/bin/objcopy.exe"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "readelf"
+    candidate_directories:
+      - "m:/code/compiler/bin/"
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+    searched_directories:
+      - "m:/code/compiler/bin/readelf.com"
+    found: "M:/code/compiler/bin/readelf.exe"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "dlltool"
+    candidate_directories:
+      - "m:/code/compiler/bin/"
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+    searched_directories:
+      - "m:/code/compiler/bin/dlltool.com"
+    found: "M:/code/compiler/bin/dlltool.exe"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "addr2line"
+    candidate_directories:
+      - "m:/code/compiler/bin/"
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+    searched_directories:
+      - "m:/code/compiler/bin/addr2line.com"
+    found: "M:/code/compiler/bin/addr2line.exe"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tapi"
+    candidate_directories:
+      - "m:/code/compiler/bin/"
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+    searched_directories:
+      - "m:/code/compiler/bin/tapi.com"
+      - "m:/code/compiler/bin/tapi.exe"
+      - "m:/code/compiler/bin/tapi"
+      - "M:/code/compiler/bin/tapi.com"
+      - "M:/code/compiler/bin/tapi.exe"
+      - "M:/code/compiler/bin/tapi"
+      - "C:/Windows/System32/tapi.com"
+      - "C:/Windows/System32/tapi.exe"
+      - "C:/Windows/System32/tapi"
+      - "C:/Windows/tapi.com"
+      - "C:/Windows/tapi.exe"
+      - "C:/Windows/tapi"
+      - "C:/Windows/System32/wbem/tapi.com"
+      - "C:/Windows/System32/wbem/tapi.exe"
+      - "C:/Windows/System32/wbem/tapi"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/tapi.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/tapi.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/tapi"
+      - "C:/Windows/System32/OpenSSH/tapi.com"
+      - "C:/Windows/System32/OpenSSH/tapi.exe"
+      - "C:/Windows/System32/OpenSSH/tapi"
+      - "C:/Program Files/dotnet/tapi.com"
+      - "C:/Program Files/dotnet/tapi.exe"
+      - "C:/Program Files/dotnet/tapi"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/tapi.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/tapi.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/tapi"
+      - "C:/Program Files/Common Files/Autodesk Shared/tapi.com"
+      - "C:/Program Files/Common Files/Autodesk Shared/tapi.exe"
+      - "C:/Program Files/Common Files/Autodesk Shared/tapi"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/tapi.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/tapi.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/tapi"
+      - "C:/Program Files/Microsoft VS Code/bin/tapi.com"
+      - "C:/Program Files/Microsoft VS Code/bin/tapi.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/tapi"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/tapi.com"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/tapi.exe"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ar-10.3"
+      - "gcc-ar-10"
+      - "gcc-ar10"
+      - "gcc-ar"
+    candidate_directories:
+      - "m:/code/compiler/bin/"
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+    searched_directories:
+      - "m:/code/compiler/bin/gcc-ar-10.3.com"
+      - "m:/code/compiler/bin/gcc-ar-10.3.exe"
+      - "m:/code/compiler/bin/gcc-ar-10.3"
+      - "M:/code/compiler/bin/gcc-ar-10.3.com"
+      - "M:/code/compiler/bin/gcc-ar-10.3.exe"
+      - "M:/code/compiler/bin/gcc-ar-10.3"
+      - "C:/Windows/System32/gcc-ar-10.3.com"
+      - "C:/Windows/System32/gcc-ar-10.3.exe"
+      - "C:/Windows/System32/gcc-ar-10.3"
+      - "C:/Windows/gcc-ar-10.3.com"
+      - "C:/Windows/gcc-ar-10.3.exe"
+      - "C:/Windows/gcc-ar-10.3"
+      - "C:/Windows/System32/wbem/gcc-ar-10.3.com"
+      - "C:/Windows/System32/wbem/gcc-ar-10.3.exe"
+      - "C:/Windows/System32/wbem/gcc-ar-10.3"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-10.3.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-10.3.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-10.3"
+      - "C:/Windows/System32/OpenSSH/gcc-ar-10.3.com"
+      - "C:/Windows/System32/OpenSSH/gcc-ar-10.3.exe"
+      - "C:/Windows/System32/OpenSSH/gcc-ar-10.3"
+      - "C:/Program Files/dotnet/gcc-ar-10.3.com"
+      - "C:/Program Files/dotnet/gcc-ar-10.3.exe"
+      - "C:/Program Files/dotnet/gcc-ar-10.3"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-10.3.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-10.3.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-10.3"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar-10.3.com"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar-10.3.exe"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar-10.3"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar-10.3.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar-10.3.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar-10.3"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar-10.3.com"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar-10.3.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar-10.3"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar-10.3.com"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar-10.3.exe"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar-10.3"
+      - "m:/code/compiler/bin/gcc-ar-10.com"
+      - "m:/code/compiler/bin/gcc-ar-10.exe"
+      - "m:/code/compiler/bin/gcc-ar-10"
+      - "M:/code/compiler/bin/gcc-ar-10.com"
+      - "M:/code/compiler/bin/gcc-ar-10.exe"
+      - "M:/code/compiler/bin/gcc-ar-10"
+      - "C:/Windows/System32/gcc-ar-10.com"
+      - "C:/Windows/System32/gcc-ar-10.exe"
+      - "C:/Windows/System32/gcc-ar-10"
+      - "C:/Windows/gcc-ar-10.com"
+      - "C:/Windows/gcc-ar-10.exe"
+      - "C:/Windows/gcc-ar-10"
+      - "C:/Windows/System32/wbem/gcc-ar-10.com"
+      - "C:/Windows/System32/wbem/gcc-ar-10.exe"
+      - "C:/Windows/System32/wbem/gcc-ar-10"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-10.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-10.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-10"
+      - "C:/Windows/System32/OpenSSH/gcc-ar-10.com"
+      - "C:/Windows/System32/OpenSSH/gcc-ar-10.exe"
+      - "C:/Windows/System32/OpenSSH/gcc-ar-10"
+      - "C:/Program Files/dotnet/gcc-ar-10.com"
+      - "C:/Program Files/dotnet/gcc-ar-10.exe"
+      - "C:/Program Files/dotnet/gcc-ar-10"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-10.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-10.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-10"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar-10.com"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar-10.exe"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar-10"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar-10.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar-10.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar-10"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar-10.com"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar-10.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar-10"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar-10.com"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar-10.exe"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar-10"
+      - "m:/code/compiler/bin/gcc-ar10.com"
+      - "m:/code/compiler/bin/gcc-ar10.exe"
+      - "m:/code/compiler/bin/gcc-ar10"
+      - "M:/code/compiler/bin/gcc-ar10.com"
+      - "M:/code/compiler/bin/gcc-ar10.exe"
+      - "M:/code/compiler/bin/gcc-ar10"
+      - "C:/Windows/System32/gcc-ar10.com"
+      - "C:/Windows/System32/gcc-ar10.exe"
+      - "C:/Windows/System32/gcc-ar10"
+      - "C:/Windows/gcc-ar10.com"
+      - "C:/Windows/gcc-ar10.exe"
+      - "C:/Windows/gcc-ar10"
+      - "C:/Windows/System32/wbem/gcc-ar10.com"
+      - "C:/Windows/System32/wbem/gcc-ar10.exe"
+      - "C:/Windows/System32/wbem/gcc-ar10"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar10.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar10.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar10"
+      - "C:/Windows/System32/OpenSSH/gcc-ar10.com"
+      - "C:/Windows/System32/OpenSSH/gcc-ar10.exe"
+      - "C:/Windows/System32/OpenSSH/gcc-ar10"
+      - "C:/Program Files/dotnet/gcc-ar10.com"
+      - "C:/Program Files/dotnet/gcc-ar10.exe"
+      - "C:/Program Files/dotnet/gcc-ar10"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar10.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar10.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar10"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar10.com"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar10.exe"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar10"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar10.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar10.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar10"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar10.com"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar10.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar10"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar10.com"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar10.exe"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar10"
+      - "m:/code/compiler/bin/gcc-ar.com"
+    found: "M:/code/compiler/bin/gcc-ar.exe"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ranlib-10.3"
+      - "gcc-ranlib-10"
+      - "gcc-ranlib10"
+      - "gcc-ranlib"
+    candidate_directories:
+      - "m:/code/compiler/bin/"
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+    searched_directories:
+      - "m:/code/compiler/bin/gcc-ranlib-10.3.com"
+      - "m:/code/compiler/bin/gcc-ranlib-10.3.exe"
+      - "m:/code/compiler/bin/gcc-ranlib-10.3"
+      - "M:/code/compiler/bin/gcc-ranlib-10.3.com"
+      - "M:/code/compiler/bin/gcc-ranlib-10.3.exe"
+      - "M:/code/compiler/bin/gcc-ranlib-10.3"
+      - "C:/Windows/System32/gcc-ranlib-10.3.com"
+      - "C:/Windows/System32/gcc-ranlib-10.3.exe"
+      - "C:/Windows/System32/gcc-ranlib-10.3"
+      - "C:/Windows/gcc-ranlib-10.3.com"
+      - "C:/Windows/gcc-ranlib-10.3.exe"
+      - "C:/Windows/gcc-ranlib-10.3"
+      - "C:/Windows/System32/wbem/gcc-ranlib-10.3.com"
+      - "C:/Windows/System32/wbem/gcc-ranlib-10.3.exe"
+      - "C:/Windows/System32/wbem/gcc-ranlib-10.3"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-10.3.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-10.3.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-10.3"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib-10.3.com"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib-10.3.exe"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib-10.3"
+      - "C:/Program Files/dotnet/gcc-ranlib-10.3.com"
+      - "C:/Program Files/dotnet/gcc-ranlib-10.3.exe"
+      - "C:/Program Files/dotnet/gcc-ranlib-10.3"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-10.3.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-10.3.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-10.3"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib-10.3.com"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib-10.3.exe"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib-10.3"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib-10.3.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib-10.3.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib-10.3"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib-10.3.com"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib-10.3.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib-10.3"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-10.3.com"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-10.3.exe"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-10.3"
+      - "m:/code/compiler/bin/gcc-ranlib-10.com"
+      - "m:/code/compiler/bin/gcc-ranlib-10.exe"
+      - "m:/code/compiler/bin/gcc-ranlib-10"
+      - "M:/code/compiler/bin/gcc-ranlib-10.com"
+      - "M:/code/compiler/bin/gcc-ranlib-10.exe"
+      - "M:/code/compiler/bin/gcc-ranlib-10"
+      - "C:/Windows/System32/gcc-ranlib-10.com"
+      - "C:/Windows/System32/gcc-ranlib-10.exe"
+      - "C:/Windows/System32/gcc-ranlib-10"
+      - "C:/Windows/gcc-ranlib-10.com"
+      - "C:/Windows/gcc-ranlib-10.exe"
+      - "C:/Windows/gcc-ranlib-10"
+      - "C:/Windows/System32/wbem/gcc-ranlib-10.com"
+      - "C:/Windows/System32/wbem/gcc-ranlib-10.exe"
+      - "C:/Windows/System32/wbem/gcc-ranlib-10"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-10.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-10.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-10"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib-10.com"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib-10.exe"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib-10"
+      - "C:/Program Files/dotnet/gcc-ranlib-10.com"
+      - "C:/Program Files/dotnet/gcc-ranlib-10.exe"
+      - "C:/Program Files/dotnet/gcc-ranlib-10"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-10.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-10.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-10"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib-10.com"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib-10.exe"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib-10"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib-10.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib-10.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib-10"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib-10.com"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib-10.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib-10"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-10.com"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-10.exe"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-10"
+      - "m:/code/compiler/bin/gcc-ranlib10.com"
+      - "m:/code/compiler/bin/gcc-ranlib10.exe"
+      - "m:/code/compiler/bin/gcc-ranlib10"
+      - "M:/code/compiler/bin/gcc-ranlib10.com"
+      - "M:/code/compiler/bin/gcc-ranlib10.exe"
+      - "M:/code/compiler/bin/gcc-ranlib10"
+      - "C:/Windows/System32/gcc-ranlib10.com"
+      - "C:/Windows/System32/gcc-ranlib10.exe"
+      - "C:/Windows/System32/gcc-ranlib10"
+      - "C:/Windows/gcc-ranlib10.com"
+      - "C:/Windows/gcc-ranlib10.exe"
+      - "C:/Windows/gcc-ranlib10"
+      - "C:/Windows/System32/wbem/gcc-ranlib10.com"
+      - "C:/Windows/System32/wbem/gcc-ranlib10.exe"
+      - "C:/Windows/System32/wbem/gcc-ranlib10"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib10.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib10.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib10"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib10.com"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib10.exe"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib10"
+      - "C:/Program Files/dotnet/gcc-ranlib10.com"
+      - "C:/Program Files/dotnet/gcc-ranlib10.exe"
+      - "C:/Program Files/dotnet/gcc-ranlib10"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib10.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib10.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib10"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib10.com"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib10.exe"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib10"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib10.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib10.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib10"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib10.com"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib10.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib10"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib10.com"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib10.exe"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib10"
+      - "m:/code/compiler/bin/gcc-ranlib.com"
+    found: "M:/code/compiler/bin/gcc-ranlib.exe"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/"
+    found: "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: m:/code/compiler/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/4.2.0-rc2/CompilerIdCXX/a.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ar-10.3"
+      - "gcc-ar-10"
+      - "gcc-ar10"
+      - "gcc-ar"
+    candidate_directories:
+      - "m:/code/compiler/bin/"
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+    searched_directories:
+      - "m:/code/compiler/bin/gcc-ar-10.3.com"
+      - "m:/code/compiler/bin/gcc-ar-10.3.exe"
+      - "m:/code/compiler/bin/gcc-ar-10.3"
+      - "M:/code/compiler/bin/gcc-ar-10.3.com"
+      - "M:/code/compiler/bin/gcc-ar-10.3.exe"
+      - "M:/code/compiler/bin/gcc-ar-10.3"
+      - "C:/Windows/System32/gcc-ar-10.3.com"
+      - "C:/Windows/System32/gcc-ar-10.3.exe"
+      - "C:/Windows/System32/gcc-ar-10.3"
+      - "C:/Windows/gcc-ar-10.3.com"
+      - "C:/Windows/gcc-ar-10.3.exe"
+      - "C:/Windows/gcc-ar-10.3"
+      - "C:/Windows/System32/wbem/gcc-ar-10.3.com"
+      - "C:/Windows/System32/wbem/gcc-ar-10.3.exe"
+      - "C:/Windows/System32/wbem/gcc-ar-10.3"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-10.3.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-10.3.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-10.3"
+      - "C:/Windows/System32/OpenSSH/gcc-ar-10.3.com"
+      - "C:/Windows/System32/OpenSSH/gcc-ar-10.3.exe"
+      - "C:/Windows/System32/OpenSSH/gcc-ar-10.3"
+      - "C:/Program Files/dotnet/gcc-ar-10.3.com"
+      - "C:/Program Files/dotnet/gcc-ar-10.3.exe"
+      - "C:/Program Files/dotnet/gcc-ar-10.3"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-10.3.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-10.3.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-10.3"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar-10.3.com"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar-10.3.exe"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar-10.3"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar-10.3.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar-10.3.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar-10.3"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar-10.3.com"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar-10.3.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar-10.3"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar-10.3.com"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar-10.3.exe"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar-10.3"
+      - "m:/code/compiler/bin/gcc-ar-10.com"
+      - "m:/code/compiler/bin/gcc-ar-10.exe"
+      - "m:/code/compiler/bin/gcc-ar-10"
+      - "M:/code/compiler/bin/gcc-ar-10.com"
+      - "M:/code/compiler/bin/gcc-ar-10.exe"
+      - "M:/code/compiler/bin/gcc-ar-10"
+      - "C:/Windows/System32/gcc-ar-10.com"
+      - "C:/Windows/System32/gcc-ar-10.exe"
+      - "C:/Windows/System32/gcc-ar-10"
+      - "C:/Windows/gcc-ar-10.com"
+      - "C:/Windows/gcc-ar-10.exe"
+      - "C:/Windows/gcc-ar-10"
+      - "C:/Windows/System32/wbem/gcc-ar-10.com"
+      - "C:/Windows/System32/wbem/gcc-ar-10.exe"
+      - "C:/Windows/System32/wbem/gcc-ar-10"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-10.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-10.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-10"
+      - "C:/Windows/System32/OpenSSH/gcc-ar-10.com"
+      - "C:/Windows/System32/OpenSSH/gcc-ar-10.exe"
+      - "C:/Windows/System32/OpenSSH/gcc-ar-10"
+      - "C:/Program Files/dotnet/gcc-ar-10.com"
+      - "C:/Program Files/dotnet/gcc-ar-10.exe"
+      - "C:/Program Files/dotnet/gcc-ar-10"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-10.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-10.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar-10"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar-10.com"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar-10.exe"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar-10"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar-10.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar-10.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar-10"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar-10.com"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar-10.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar-10"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar-10.com"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar-10.exe"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar-10"
+      - "m:/code/compiler/bin/gcc-ar10.com"
+      - "m:/code/compiler/bin/gcc-ar10.exe"
+      - "m:/code/compiler/bin/gcc-ar10"
+      - "M:/code/compiler/bin/gcc-ar10.com"
+      - "M:/code/compiler/bin/gcc-ar10.exe"
+      - "M:/code/compiler/bin/gcc-ar10"
+      - "C:/Windows/System32/gcc-ar10.com"
+      - "C:/Windows/System32/gcc-ar10.exe"
+      - "C:/Windows/System32/gcc-ar10"
+      - "C:/Windows/gcc-ar10.com"
+      - "C:/Windows/gcc-ar10.exe"
+      - "C:/Windows/gcc-ar10"
+      - "C:/Windows/System32/wbem/gcc-ar10.com"
+      - "C:/Windows/System32/wbem/gcc-ar10.exe"
+      - "C:/Windows/System32/wbem/gcc-ar10"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar10.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar10.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ar10"
+      - "C:/Windows/System32/OpenSSH/gcc-ar10.com"
+      - "C:/Windows/System32/OpenSSH/gcc-ar10.exe"
+      - "C:/Windows/System32/OpenSSH/gcc-ar10"
+      - "C:/Program Files/dotnet/gcc-ar10.com"
+      - "C:/Program Files/dotnet/gcc-ar10.exe"
+      - "C:/Program Files/dotnet/gcc-ar10"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar10.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar10.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ar10"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar10.com"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar10.exe"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ar10"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar10.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar10.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ar10"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar10.com"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar10.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ar10"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar10.com"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar10.exe"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ar10"
+      - "m:/code/compiler/bin/gcc-ar.com"
+    found: "M:/code/compiler/bin/gcc-ar.exe"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ranlib-10.3"
+      - "gcc-ranlib-10"
+      - "gcc-ranlib10"
+      - "gcc-ranlib"
+    candidate_directories:
+      - "m:/code/compiler/bin/"
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+    searched_directories:
+      - "m:/code/compiler/bin/gcc-ranlib-10.3.com"
+      - "m:/code/compiler/bin/gcc-ranlib-10.3.exe"
+      - "m:/code/compiler/bin/gcc-ranlib-10.3"
+      - "M:/code/compiler/bin/gcc-ranlib-10.3.com"
+      - "M:/code/compiler/bin/gcc-ranlib-10.3.exe"
+      - "M:/code/compiler/bin/gcc-ranlib-10.3"
+      - "C:/Windows/System32/gcc-ranlib-10.3.com"
+      - "C:/Windows/System32/gcc-ranlib-10.3.exe"
+      - "C:/Windows/System32/gcc-ranlib-10.3"
+      - "C:/Windows/gcc-ranlib-10.3.com"
+      - "C:/Windows/gcc-ranlib-10.3.exe"
+      - "C:/Windows/gcc-ranlib-10.3"
+      - "C:/Windows/System32/wbem/gcc-ranlib-10.3.com"
+      - "C:/Windows/System32/wbem/gcc-ranlib-10.3.exe"
+      - "C:/Windows/System32/wbem/gcc-ranlib-10.3"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-10.3.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-10.3.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-10.3"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib-10.3.com"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib-10.3.exe"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib-10.3"
+      - "C:/Program Files/dotnet/gcc-ranlib-10.3.com"
+      - "C:/Program Files/dotnet/gcc-ranlib-10.3.exe"
+      - "C:/Program Files/dotnet/gcc-ranlib-10.3"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-10.3.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-10.3.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-10.3"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib-10.3.com"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib-10.3.exe"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib-10.3"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib-10.3.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib-10.3.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib-10.3"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib-10.3.com"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib-10.3.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib-10.3"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-10.3.com"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-10.3.exe"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-10.3"
+      - "m:/code/compiler/bin/gcc-ranlib-10.com"
+      - "m:/code/compiler/bin/gcc-ranlib-10.exe"
+      - "m:/code/compiler/bin/gcc-ranlib-10"
+      - "M:/code/compiler/bin/gcc-ranlib-10.com"
+      - "M:/code/compiler/bin/gcc-ranlib-10.exe"
+      - "M:/code/compiler/bin/gcc-ranlib-10"
+      - "C:/Windows/System32/gcc-ranlib-10.com"
+      - "C:/Windows/System32/gcc-ranlib-10.exe"
+      - "C:/Windows/System32/gcc-ranlib-10"
+      - "C:/Windows/gcc-ranlib-10.com"
+      - "C:/Windows/gcc-ranlib-10.exe"
+      - "C:/Windows/gcc-ranlib-10"
+      - "C:/Windows/System32/wbem/gcc-ranlib-10.com"
+      - "C:/Windows/System32/wbem/gcc-ranlib-10.exe"
+      - "C:/Windows/System32/wbem/gcc-ranlib-10"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-10.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-10.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-10"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib-10.com"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib-10.exe"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib-10"
+      - "C:/Program Files/dotnet/gcc-ranlib-10.com"
+      - "C:/Program Files/dotnet/gcc-ranlib-10.exe"
+      - "C:/Program Files/dotnet/gcc-ranlib-10"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-10.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-10.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib-10"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib-10.com"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib-10.exe"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib-10"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib-10.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib-10.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib-10"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib-10.com"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib-10.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib-10"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-10.com"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-10.exe"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-10"
+      - "m:/code/compiler/bin/gcc-ranlib10.com"
+      - "m:/code/compiler/bin/gcc-ranlib10.exe"
+      - "m:/code/compiler/bin/gcc-ranlib10"
+      - "M:/code/compiler/bin/gcc-ranlib10.com"
+      - "M:/code/compiler/bin/gcc-ranlib10.exe"
+      - "M:/code/compiler/bin/gcc-ranlib10"
+      - "C:/Windows/System32/gcc-ranlib10.com"
+      - "C:/Windows/System32/gcc-ranlib10.exe"
+      - "C:/Windows/System32/gcc-ranlib10"
+      - "C:/Windows/gcc-ranlib10.com"
+      - "C:/Windows/gcc-ranlib10.exe"
+      - "C:/Windows/gcc-ranlib10"
+      - "C:/Windows/System32/wbem/gcc-ranlib10.com"
+      - "C:/Windows/System32/wbem/gcc-ranlib10.exe"
+      - "C:/Windows/System32/wbem/gcc-ranlib10"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib10.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib10.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib10"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib10.com"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib10.exe"
+      - "C:/Windows/System32/OpenSSH/gcc-ranlib10"
+      - "C:/Program Files/dotnet/gcc-ranlib10.com"
+      - "C:/Program Files/dotnet/gcc-ranlib10.exe"
+      - "C:/Program Files/dotnet/gcc-ranlib10"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib10.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib10.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gcc-ranlib10"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib10.com"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib10.exe"
+      - "C:/Program Files/Common Files/Autodesk Shared/gcc-ranlib10"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib10.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib10.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/gcc-ranlib10"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib10.com"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib10.exe"
+      - "C:/Program Files/Microsoft VS Code/bin/gcc-ranlib10"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib10.com"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib10.exe"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/gcc-ranlib10"
+      - "m:/code/compiler/bin/gcc-ranlib.com"
+    found: "M:/code/compiler/bin/gcc-ranlib.exe"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineRCCompiler.cmake:40 (find_program)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/Platform/Windows-GNU.cmake:167 (enable_language)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/Platform/Windows-GNU-C.cmake:2 (__windows_compiler_gnu)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeCInformation.cmake:48 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_RC_COMPILER"
+    description: "RC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "windres"
+      - "windres"
+    candidate_directories:
+      - "M:/code/compiler/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Common Files/Autodesk Shared/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/Microsoft VS Code/bin/"
+      - "C:/Users/6600271/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/bin/"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/sbin/"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/"
+      - "C:/Program Files (x86)/camke_test/bin/"
+      - "C:/Program Files (x86)/camke_test/sbin/"
+      - "C:/Program Files (x86)/camke_test/"
+    searched_directories:
+      - "M:/code/compiler/bin/windres.com"
+    found: "M:/code/compiler/bin/windres.exe"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/camke_test"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64"
+        - "C:/Program Files (x86)/camke_test"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/CMakeScratch/TryCompile-05zrbr"
+      binary: "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/CMakeScratch/TryCompile-05zrbr"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/CMakeScratch/TryCompile-05zrbr'
+        
+        Run Build Command(s): M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/bin/cmake.exe -E env VERBOSE=1 m:/code/compiler/bin/mingw32-make.exe -f Makefile cmTC_9c874/fast
+        m:/code/compiler/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_9c874.dir\\build.make CMakeFiles/cmTC_9c874.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/CMakeScratch/TryCompile-05zrbr'
+        Building C object CMakeFiles/cmTC_9c874.dir/CMakeCCompilerABI.c.obj
+        m:\\code\\compiler\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_9c874.dir\\CMakeCCompilerABI.c.obj -c M:\\code\\compiler\\cmake\\cmake-4.2.0-rc2-windows-x86_64\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=m:\\code\\compiler\\bin\\gcc.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-git-10.3.0/configure --build=x86_64-w64-mingw32 --enable-targets=all --enable-languages=ada,c,c++,fortran,jit,lto,objc,obj-c++ --enable-libgomp --enable-lto --enable-graphite --enable-cxx-flags=-DWINPTHREAD_STATIC --disable-build-with-cxx --disable-build-poststage1-with-cxx --enable-libstdcxx-debug --enable-threads=posix --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --enable-libstdcxx-threads --enable-libstdcxx-time=yes --enable-mingw-wildcard --with-gnu-ld --disable-werror --enable-nls --disable-win32-registry --enable-large-address-aware --disable-rpath --disable-symvers --prefix=/mingw64tdm --with-local-prefix=/mingw64tdm --with-pkgversion=tdm64-1 --with-bugurl=https://github.com/jmeubank/tdm-gcc/issues
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 10.3.0 (tdm64-1) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_9c874.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64'
+         m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/cc1.exe -quiet -v -iprefix m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/ -D_REENTRANT M:\\code\\compiler\\cmake\\cmake-4.2.0-rc2-windows-x86_64\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles\\cmTC_9c874.dir\\CMakeCCompilerABI.c.obj -version -o C:\\Users\\6600271\\AppData\\Local\\Temp\\ccngx2oi.s
+        GNU C17 (tdm64-1) version 10.3.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 10.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.23-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/include"
+        ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include"
+        ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed"
+        ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include
+         m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include
+         m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed
+         m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        GNU C17 (tdm64-1) version 10.3.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 10.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.23-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 68074fcaab9f6b1377b55f7cea05149b
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_9c874.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64'
+         m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_9c874.dir\\CMakeCCompilerABI.c.obj C:\\Users\\6600271\\AppData\\Local\\Temp\\ccngx2oi.s
+        GNU assembler version 2.36.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.36.1
+        COMPILER_PATH=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/;m:/code/compiler/bin/../libexec/gcc/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/;m:/code/compiler/bin/../lib/gcc/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_9c874.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64'
+        Linking C executable cmTC_9c874.exe
+        M:\\code\\compiler\\cmake\\cmake-4.2.0-rc2-windows-x86_64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_9c874.dir\\link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=m:\\code\\compiler\\bin\\gcc.exe
+        COLLECT_LTO_WRAPPER=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-git-10.3.0/configure --build=x86_64-w64-mingw32 --enable-targets=all --enable-languages=ada,c,c++,fortran,jit,lto,objc,obj-c++ --enable-libgomp --enable-lto --enable-graphite --enable-cxx-flags=-DWINPTHREAD_STATIC --disable-build-with-cxx --disable-build-poststage1-with-cxx --enable-libstdcxx-debug --enable-threads=posix --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --enable-libstdcxx-threads --enable-libstdcxx-time=yes --enable-mingw-wildcard --with-gnu-ld --disable-werror --enable-nls --disable-win32-registry --enable-large-address-aware --disable-rpath --disable-symvers --prefix=/mingw64tdm --with-local-prefix=/mingw64tdm --with-pkgversion=tdm64-1 --with-bugurl=https://github.com/jmeubank/tdm-gcc/issues
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 10.3.0 (tdm64-1) 
+        COMPILER_PATH=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/;m:/code/compiler/bin/../libexec/gcc/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/;m:/code/compiler/bin/../lib/gcc/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9c874.exe' '-mtune=generic' '-march=x86-64'
+         m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/collect2.exe -plugin m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/liblto_plugin-0.dll -plugin-opt=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\6600271\\AppData\\Local\\Temp\\ccACeIAG.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep --exclude-libs=libpthread.a --undefined=__xl_f -Bdynamic -o cmTC_9c874.exe m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0 -Lm:/code/compiler/bin/../lib/gcc -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../.. -v --whole-archive CMakeFiles\\cmTC_9c874.dir/objects.a --no-whole-archive --out-implib libcmTC_9c874.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o
+        collect2 version 10.3.0
+        m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/liblto_plugin-0.dll -plugin-opt=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\6600271\\AppData\\Local\\Temp\\ccACeIAG.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep --exclude-libs=libpthread.a --undefined=__xl_f -Bdynamic -o cmTC_9c874.exe m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0 -Lm:/code/compiler/bin/../lib/gcc -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../.. -v --whole-archive CMakeFiles\\cmTC_9c874.dir/objects.a --no-whole-archive --out-implib libcmTC_9c874.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o
+        GNU ld (GNU Binutils) 2.36.1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9c874.exe' '-mtune=generic' '-march=x86-64'
+        M:\\code\\compiler\\cmake\\cmake-4.2.0-rc2-windows-x86_64\\bin\\cmake.exe -E rm -f CMakeFiles\\cmTC_9c874.dir/objects.a
+        M:\\code\\compiler\\bin\\ar.exe qc CMakeFiles\\cmTC_9c874.dir/objects.a @CMakeFiles\\cmTC_9c874.dir\\objects1.rsp
+        m:\\code\\compiler\\bin\\gcc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_9c874.dir/objects.a -Wl,--no-whole-archive -o cmTC_9c874.exe -Wl,--out-implib,libcmTC_9c874.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/CMakeScratch/TryCompile-05zrbr'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include]
+          add: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include]
+          add: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed]
+          add: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include]
+        end of search list found
+        collapse include dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include] ==> [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/include]
+        collapse include dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include] ==> [M:/code/compiler/include]
+        collapse include dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed] ==> [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed]
+        collapse include dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include] ==> [M:/code/compiler/x86_64-w64-mingw32/include]
+        implicit include dirs: [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/include;M:/code/compiler/include;M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed;M:/code/compiler/x86_64-w64-mingw32/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: 'C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/CMakeScratch/TryCompile-05zrbr']
+        ignore line: []
+        ignore line: [Run Build Command(s): M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/bin/cmake.exe -E env VERBOSE=1 m:/code/compiler/bin/mingw32-make.exe -f Makefile cmTC_9c874/fast]
+        ignore line: [m:/code/compiler/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_9c874.dir\\build.make CMakeFiles/cmTC_9c874.dir/build]
+        ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/CMakeScratch/TryCompile-05zrbr']
+        ignore line: [Building C object CMakeFiles/cmTC_9c874.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [m:\\code\\compiler\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_9c874.dir\\CMakeCCompilerABI.c.obj -c M:\\code\\compiler\\cmake\\cmake-4.2.0-rc2-windows-x86_64\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=m:\\code\\compiler\\bin\\gcc.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../../../src/gcc-git-10.3.0/configure --build=x86_64-w64-mingw32 --enable-targets=all --enable-languages=ada,c,c++,fortran,jit,lto,objc,obj-c++ --enable-libgomp --enable-lto --enable-graphite --enable-cxx-flags=-DWINPTHREAD_STATIC --disable-build-with-cxx --disable-build-poststage1-with-cxx --enable-libstdcxx-debug --enable-threads=posix --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --enable-libstdcxx-threads --enable-libstdcxx-time=yes --enable-mingw-wildcard --with-gnu-ld --disable-werror --enable-nls --disable-win32-registry --enable-large-address-aware --disable-rpath --disable-symvers --prefix=/mingw64tdm --with-local-prefix=/mingw64tdm --with-pkgversion=tdm64-1 --with-bugurl=https://github.com/jmeubank/tdm-gcc/issues]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 10.3.0 (tdm64-1) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_9c874.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/cc1.exe -quiet -v -iprefix m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/ -D_REENTRANT M:\\code\\compiler\\cmake\\cmake-4.2.0-rc2-windows-x86_64\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles\\cmTC_9c874.dir\\CMakeCCompilerABI.c.obj -version -o C:\\Users\\6600271\\AppData\\Local\\Temp\\ccngx2oi.s]
+        ignore line: [GNU C17 (tdm64-1) version 10.3.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 10.3.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.23-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/include"]
+        ignore line: [ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include"]
+        ignore line: [ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include]
+        ignore line: [ m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include]
+        ignore line: [ m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed]
+        ignore line: [ m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (tdm64-1) version 10.3.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 10.3.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.23-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 68074fcaab9f6b1377b55f7cea05149b]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_9c874.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_9c874.dir\\CMakeCCompilerABI.c.obj C:\\Users\\6600271\\AppData\\Local\\Temp\\ccngx2oi.s]
+        ignore line: [GNU assembler version 2.36.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.36.1]
+        ignore line: [COMPILER_PATH=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/]
+        ignore line: [m:/code/compiler/bin/../libexec/gcc/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_9c874.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [Linking C executable cmTC_9c874.exe]
+        ignore line: [M:\\code\\compiler\\cmake\\cmake-4.2.0-rc2-windows-x86_64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_9c874.dir\\link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=m:\\code\\compiler\\bin\\gcc.exe]
+        ignore line: [COLLECT_LTO_WRAPPER=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../../../src/gcc-git-10.3.0/configure --build=x86_64-w64-mingw32 --enable-targets=all --enable-languages=ada,c,c++,fortran,jit,lto,objc,obj-c++ --enable-libgomp --enable-lto --enable-graphite --enable-cxx-flags=-DWINPTHREAD_STATIC --disable-build-with-cxx --disable-build-poststage1-with-cxx --enable-libstdcxx-debug --enable-threads=posix --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --enable-libstdcxx-threads --enable-libstdcxx-time=yes --enable-mingw-wildcard --with-gnu-ld --disable-werror --enable-nls --disable-win32-registry --enable-large-address-aware --disable-rpath --disable-symvers --prefix=/mingw64tdm --with-local-prefix=/mingw64tdm --with-pkgversion=tdm64-1 --with-bugurl=https://github.com/jmeubank/tdm-gcc/issues]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 10.3.0 (tdm64-1) ]
+        ignore line: [COMPILER_PATH=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/]
+        ignore line: [m:/code/compiler/bin/../libexec/gcc/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9c874.exe' '-mtune=generic' '-march=x86-64']
+        link line: [ m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/collect2.exe -plugin m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/liblto_plugin-0.dll -plugin-opt=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\6600271\\AppData\\Local\\Temp\\ccACeIAG.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep --exclude-libs=libpthread.a --undefined=__xl_f -Bdynamic -o cmTC_9c874.exe m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0 -Lm:/code/compiler/bin/../lib/gcc -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../.. -v --whole-archive CMakeFiles\\cmTC_9c874.dir/objects.a --no-whole-archive --out-implib libcmTC_9c874.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o]
+          arg [m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/collect2.exe] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/liblto_plugin-0.dll] ==> ignore
+          arg [-plugin-opt=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\6600271\\AppData\\Local\\Temp\\ccACeIAG.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [--exclude-libs=libpthread.a] ==> ignore
+          arg [--undefined=__xl_f] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_9c874.exe] ==> ignore
+          arg [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
+          arg [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o] ==> obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o]
+          arg [-Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0] ==> dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0]
+          arg [-Lm:/code/compiler/bin/../lib/gcc] ==> dir [m:/code/compiler/bin/../lib/gcc]
+          arg [-Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib]
+          arg [-Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib] ==> dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib]
+          arg [-Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib] ==> dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib]
+          arg [-Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../..] ==> dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../..]
+          arg [-v] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles\\cmTC_9c874.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_9c874.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o] ==> obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o]
+          arg [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o] ==> obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o]
+        ignore line: [collect2 version 10.3.0]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/liblto_plugin-0.dll -plugin-opt=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\6600271\\AppData\\Local\\Temp\\ccACeIAG.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep --exclude-libs=libpthread.a --undefined=__xl_f -Bdynamic -o cmTC_9c874.exe m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0 -Lm:/code/compiler/bin/../lib/gcc -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../.. -v --whole-archive CMakeFiles\\cmTC_9c874.dir/objects.a --no-whole-archive --out-implib libcmTC_9c874.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o]
+        linker tool for 'C': m:/code/compiler/x86_64-w64-mingw32/bin/ld.exe
+        remove lib [msvcrt]
+        remove lib [msvcrt]
+        collapse obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> [M:/code/compiler/x86_64-w64-mingw32/lib/crt2.o]
+        collapse obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o] ==> [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o]
+        collapse obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o] ==> [M:/code/compiler/x86_64-w64-mingw32/lib/default-manifest.o]
+        collapse obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o] ==> [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o]
+        collapse library dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0] ==> [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0]
+        collapse library dir [m:/code/compiler/bin/../lib/gcc] ==> [M:/code/compiler/lib/gcc]
+        collapse library dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [M:/code/compiler/x86_64-w64-mingw32/lib]
+        collapse library dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib] ==> [M:/code/compiler/lib]
+        collapse library dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib] ==> [M:/code/compiler/x86_64-w64-mingw32/lib]
+        collapse library dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../..] ==> [M:/code/compiler/lib]
+        implicit libs: [mingw32;gcc;pthread;gcc;kernel32;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;pthread;gcc;kernel32;moldname;mingwex;kernel32]
+        implicit objs: [M:/code/compiler/x86_64-w64-mingw32/lib/crt2.o;M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o;M:/code/compiler/x86_64-w64-mingw32/lib/default-manifest.o;M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o]
+        implicit dirs: [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0;M:/code/compiler/lib/gcc;M:/code/compiler/x86_64-w64-mingw32/lib;M:/code/compiler/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the C compiler's linker: "m:/code/compiler/x86_64-w64-mingw32/bin/ld.exe" "-v"
+      GNU ld (GNU Binutils) 2.36.1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/CMakeScratch/TryCompile-7qzqw9"
+      binary: "C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/CMakeScratch/TryCompile-7qzqw9"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/CMakeScratch/TryCompile-7qzqw9'
+        
+        Run Build Command(s): M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/bin/cmake.exe -E env VERBOSE=1 m:/code/compiler/bin/mingw32-make.exe -f Makefile cmTC_6d8e8/fast
+        m:/code/compiler/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_6d8e8.dir\\build.make CMakeFiles/cmTC_6d8e8.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/CMakeScratch/TryCompile-7qzqw9'
+        Building CXX object CMakeFiles/cmTC_6d8e8.dir/CMakeCXXCompilerABI.cpp.obj
+        m:\\code\\compiler\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_6d8e8.dir\\CMakeCXXCompilerABI.cpp.obj -c M:\\code\\compiler\\cmake\\cmake-4.2.0-rc2-windows-x86_64\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=m:\\code\\compiler\\bin\\g++.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-git-10.3.0/configure --build=x86_64-w64-mingw32 --enable-targets=all --enable-languages=ada,c,c++,fortran,jit,lto,objc,obj-c++ --enable-libgomp --enable-lto --enable-graphite --enable-cxx-flags=-DWINPTHREAD_STATIC --disable-build-with-cxx --disable-build-poststage1-with-cxx --enable-libstdcxx-debug --enable-threads=posix --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --enable-libstdcxx-threads --enable-libstdcxx-time=yes --enable-mingw-wildcard --with-gnu-ld --disable-werror --enable-nls --disable-win32-registry --enable-large-address-aware --disable-rpath --disable-symvers --prefix=/mingw64tdm --with-local-prefix=/mingw64tdm --with-pkgversion=tdm64-1 --with-bugurl=https://github.com/jmeubank/tdm-gcc/issues
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 10.3.0 (tdm64-1) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_6d8e8.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64'
+         m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/cc1plus.exe -quiet -v -iprefix m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/ -D_REENTRANT M:\\code\\compiler\\cmake\\cmake-4.2.0-rc2-windows-x86_64\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles\\cmTC_6d8e8.dir\\CMakeCXXCompilerABI.cpp.obj -version -o C:\\Users\\6600271\\AppData\\Local\\Temp\\ccAVcipG.s
+        GNU C++14 (tdm64-1) version 10.3.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 10.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.23-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++"
+        ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/x86_64-w64-mingw32"
+        ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/backward"
+        ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/include"
+        ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include"
+        ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed"
+        ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++
+         m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/x86_64-w64-mingw32
+         m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/backward
+         m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include
+         m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include
+         m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed
+         m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        GNU C++14 (tdm64-1) version 10.3.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 10.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.23-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 5e49fa89ed7bfe906173ae8e94e08de6
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_6d8e8.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64'
+         m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_6d8e8.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\6600271\\AppData\\Local\\Temp\\ccAVcipG.s
+        GNU assembler version 2.36.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.36.1
+        COMPILER_PATH=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/;m:/code/compiler/bin/../libexec/gcc/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/;m:/code/compiler/bin/../lib/gcc/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_6d8e8.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64'
+        Linking CXX executable cmTC_6d8e8.exe
+        M:\\code\\compiler\\cmake\\cmake-4.2.0-rc2-windows-x86_64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_6d8e8.dir\\link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=m:\\code\\compiler\\bin\\g++.exe
+        COLLECT_LTO_WRAPPER=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-git-10.3.0/configure --build=x86_64-w64-mingw32 --enable-targets=all --enable-languages=ada,c,c++,fortran,jit,lto,objc,obj-c++ --enable-libgomp --enable-lto --enable-graphite --enable-cxx-flags=-DWINPTHREAD_STATIC --disable-build-with-cxx --disable-build-poststage1-with-cxx --enable-libstdcxx-debug --enable-threads=posix --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --enable-libstdcxx-threads --enable-libstdcxx-time=yes --enable-mingw-wildcard --with-gnu-ld --disable-werror --enable-nls --disable-win32-registry --enable-large-address-aware --disable-rpath --disable-symvers --prefix=/mingw64tdm --with-local-prefix=/mingw64tdm --with-pkgversion=tdm64-1 --with-bugurl=https://github.com/jmeubank/tdm-gcc/issues
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 10.3.0 (tdm64-1) 
+        COMPILER_PATH=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/;m:/code/compiler/bin/../libexec/gcc/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/;m:/code/compiler/bin/../lib/gcc/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/;m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6d8e8.exe' '-mtune=generic' '-march=x86-64'
+         m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/collect2.exe -plugin m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/liblto_plugin-0.dll -plugin-opt=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\6600271\\AppData\\Local\\Temp\\ccWC1KqZ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep --exclude-libs=libpthread.a --undefined=__xl_f -Bdynamic -o cmTC_6d8e8.exe m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0 -Lm:/code/compiler/bin/../lib/gcc -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../.. -v --whole-archive CMakeFiles\\cmTC_6d8e8.dir/objects.a --no-whole-archive --out-implib libcmTC_6d8e8.dll.a --major-image-version 0 --minor-image-version 0 -Bstatic -lstdc++ -Bdynamic -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o
+        collect2 version 10.3.0
+        m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/liblto_plugin-0.dll -plugin-opt=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\6600271\\AppData\\Local\\Temp\\ccWC1KqZ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep --exclude-libs=libpthread.a --undefined=__xl_f -Bdynamic -o cmTC_6d8e8.exe m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0 -Lm:/code/compiler/bin/../lib/gcc -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../.. -v --whole-archive CMakeFiles\\cmTC_6d8e8.dir/objects.a --no-whole-archive --out-implib libcmTC_6d8e8.dll.a --major-image-version 0 --minor-image-version 0 -Bstatic -lstdc++ -Bdynamic -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o
+        GNU ld (GNU Binutils) 2.36.1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6d8e8.exe' '-mtune=generic' '-march=x86-64'
+        M:\\code\\compiler\\cmake\\cmake-4.2.0-rc2-windows-x86_64\\bin\\cmake.exe -E rm -f CMakeFiles\\cmTC_6d8e8.dir/objects.a
+        M:\\code\\compiler\\bin\\ar.exe qc CMakeFiles\\cmTC_6d8e8.dir/objects.a @CMakeFiles\\cmTC_6d8e8.dir\\objects1.rsp
+        m:\\code\\compiler\\bin\\g++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_6d8e8.dir/objects.a -Wl,--no-whole-archive -o cmTC_6d8e8.exe -Wl,--out-implib,libcmTC_6d8e8.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/CMakeScratch/TryCompile-7qzqw9'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++]
+          add: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/x86_64-w64-mingw32]
+          add: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/backward]
+          add: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include]
+          add: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include]
+          add: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed]
+          add: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include]
+        end of search list found
+        collapse include dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++] ==> [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++]
+        collapse include dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/x86_64-w64-mingw32] ==> [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/x86_64-w64-mingw32]
+        collapse include dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/backward] ==> [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/backward]
+        collapse include dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include] ==> [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/include]
+        collapse include dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include] ==> [M:/code/compiler/include]
+        collapse include dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed] ==> [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed]
+        collapse include dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include] ==> [M:/code/compiler/x86_64-w64-mingw32/include]
+        implicit include dirs: [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++;M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/x86_64-w64-mingw32;M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/backward;M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/include;M:/code/compiler/include;M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed;M:/code/compiler/x86_64-w64-mingw32/include]
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeParseImplicitLinkInfo.cmake:332 (find_library)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:251 (cmake_parse_implicit_link_info2)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "library"
+    variable: "CMAKE_CXX_IMPLICIT_LINK_LIBRARY_stdc++"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "libstdc++.a"
+    candidate_directories:
+      - "m:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/"
+      - "m:/code/compiler/lib/gcc/"
+      - "m:/code/compiler/x86_64-w64-mingw32/lib/"
+      - "m:/code/compiler/lib/"
+    found: "M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/libstdc++.a"
+    search_context:
+      ENV{PATH}:
+        - "m:\\code\\compiler\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Common Files\\Autodesk Shared\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft VS Code\\bin"
+        - "C:\\Users\\6600271\\AppData\\Local\\Microsoft\\WindowsApps"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/camke_test"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64"
+        - "C:/Program Files (x86)/camke_test"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "C:/Program Files (x86)/camke_test/bin"
+        - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/bin"
+        - "/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: 'C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/CMakeScratch/TryCompile-7qzqw9']
+        ignore line: []
+        ignore line: [Run Build Command(s): M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/bin/cmake.exe -E env VERBOSE=1 m:/code/compiler/bin/mingw32-make.exe -f Makefile cmTC_6d8e8/fast]
+        ignore line: [m:/code/compiler/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_6d8e8.dir\\build.make CMakeFiles/cmTC_6d8e8.dir/build]
+        ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/CS20FinalProject/build/CMakeFiles/CMakeScratch/TryCompile-7qzqw9']
+        ignore line: [Building CXX object CMakeFiles/cmTC_6d8e8.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [m:\\code\\compiler\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_6d8e8.dir\\CMakeCXXCompilerABI.cpp.obj -c M:\\code\\compiler\\cmake\\cmake-4.2.0-rc2-windows-x86_64\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=m:\\code\\compiler\\bin\\g++.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../../../src/gcc-git-10.3.0/configure --build=x86_64-w64-mingw32 --enable-targets=all --enable-languages=ada,c,c++,fortran,jit,lto,objc,obj-c++ --enable-libgomp --enable-lto --enable-graphite --enable-cxx-flags=-DWINPTHREAD_STATIC --disable-build-with-cxx --disable-build-poststage1-with-cxx --enable-libstdcxx-debug --enable-threads=posix --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --enable-libstdcxx-threads --enable-libstdcxx-time=yes --enable-mingw-wildcard --with-gnu-ld --disable-werror --enable-nls --disable-win32-registry --enable-large-address-aware --disable-rpath --disable-symvers --prefix=/mingw64tdm --with-local-prefix=/mingw64tdm --with-pkgversion=tdm64-1 --with-bugurl=https://github.com/jmeubank/tdm-gcc/issues]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 10.3.0 (tdm64-1) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_6d8e8.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/cc1plus.exe -quiet -v -iprefix m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/ -D_REENTRANT M:\\code\\compiler\\cmake\\cmake-4.2.0-rc2-windows-x86_64\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles\\cmTC_6d8e8.dir\\CMakeCXXCompilerABI.cpp.obj -version -o C:\\Users\\6600271\\AppData\\Local\\Temp\\ccAVcipG.s]
+        ignore line: [GNU C++14 (tdm64-1) version 10.3.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 10.3.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.23-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++"]
+        ignore line: [ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/x86_64-w64-mingw32"]
+        ignore line: [ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/backward"]
+        ignore line: [ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/include"]
+        ignore line: [ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include"]
+        ignore line: [ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "m:/code/compiler/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++]
+        ignore line: [ m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/x86_64-w64-mingw32]
+        ignore line: [ m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/backward]
+        ignore line: [ m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include]
+        ignore line: [ m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../include]
+        ignore line: [ m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed]
+        ignore line: [ m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++14 (tdm64-1) version 10.3.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 10.3.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.23-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 5e49fa89ed7bfe906173ae8e94e08de6]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_6d8e8.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_6d8e8.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\6600271\\AppData\\Local\\Temp\\ccAVcipG.s]
+        ignore line: [GNU assembler version 2.36.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.36.1]
+        ignore line: [COMPILER_PATH=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/]
+        ignore line: [m:/code/compiler/bin/../libexec/gcc/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_6d8e8.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [Linking CXX executable cmTC_6d8e8.exe]
+        ignore line: [M:\\code\\compiler\\cmake\\cmake-4.2.0-rc2-windows-x86_64\\bin\\cmake.exe -E cmake_link_script CMakeFiles\\cmTC_6d8e8.dir\\link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=m:\\code\\compiler\\bin\\g++.exe]
+        ignore line: [COLLECT_LTO_WRAPPER=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../../../src/gcc-git-10.3.0/configure --build=x86_64-w64-mingw32 --enable-targets=all --enable-languages=ada,c,c++,fortran,jit,lto,objc,obj-c++ --enable-libgomp --enable-lto --enable-graphite --enable-cxx-flags=-DWINPTHREAD_STATIC --disable-build-with-cxx --disable-build-poststage1-with-cxx --enable-libstdcxx-debug --enable-threads=posix --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --enable-libstdcxx-threads --enable-libstdcxx-time=yes --enable-mingw-wildcard --with-gnu-ld --disable-werror --enable-nls --disable-win32-registry --enable-large-address-aware --disable-rpath --disable-symvers --prefix=/mingw64tdm --with-local-prefix=/mingw64tdm --with-pkgversion=tdm64-1 --with-bugurl=https://github.com/jmeubank/tdm-gcc/issues]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 10.3.0 (tdm64-1) ]
+        ignore line: [COMPILER_PATH=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/]
+        ignore line: [m:/code/compiler/bin/../libexec/gcc/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6d8e8.exe' '-mtune=generic' '-march=x86-64']
+        link line: [ m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/collect2.exe -plugin m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/liblto_plugin-0.dll -plugin-opt=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\6600271\\AppData\\Local\\Temp\\ccWC1KqZ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep --exclude-libs=libpthread.a --undefined=__xl_f -Bdynamic -o cmTC_6d8e8.exe m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0 -Lm:/code/compiler/bin/../lib/gcc -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../.. -v --whole-archive CMakeFiles\\cmTC_6d8e8.dir/objects.a --no-whole-archive --out-implib libcmTC_6d8e8.dll.a --major-image-version 0 --minor-image-version 0 -Bstatic -lstdc++ -Bdynamic -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o]
+          arg [m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/collect2.exe] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/liblto_plugin-0.dll] ==> ignore
+          arg [-plugin-opt=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\6600271\\AppData\\Local\\Temp\\ccWC1KqZ.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [--exclude-libs=libpthread.a] ==> ignore
+          arg [--undefined=__xl_f] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_6d8e8.exe] ==> ignore
+          arg [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
+          arg [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o] ==> obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o]
+          arg [-Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0] ==> dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0]
+          arg [-Lm:/code/compiler/bin/../lib/gcc] ==> dir [m:/code/compiler/bin/../lib/gcc]
+          arg [-Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib]
+          arg [-Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib] ==> dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib]
+          arg [-Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib] ==> dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib]
+          arg [-Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../..] ==> dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../..]
+          arg [-v] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles\\cmTC_6d8e8.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_6d8e8.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-Bstatic] ==> search static
+          arg [-lstdc++] ==> lib [SEARCH_STATIC:stdc++]
+          arg [-Bdynamic] ==> search dynamic
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o] ==> obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o]
+          arg [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o] ==> obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o]
+        ignore line: [collect2 version 10.3.0]
+        ignore line: [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/liblto_plugin-0.dll -plugin-opt=m:/code/compiler/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\6600271\\AppData\\Local\\Temp\\ccWC1KqZ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep --exclude-libs=libpthread.a --undefined=__xl_f -Bdynamic -o cmTC_6d8e8.exe m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0 -Lm:/code/compiler/bin/../lib/gcc -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib -Lm:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../.. -v --whole-archive CMakeFiles\\cmTC_6d8e8.dir/objects.a --no-whole-archive --out-implib libcmTC_6d8e8.dll.a --major-image-version 0 --minor-image-version 0 -Bstatic -lstdc++ -Bdynamic -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lpthread -lgcc -lkernel32 -lmoldname -lmingwex -lmsvcrt -lkernel32 m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o]
+        linker tool for 'CXX': m:/code/compiler/x86_64-w64-mingw32/bin/ld.exe
+        search lib [SEARCH_STATIC:stdc++] ==> [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/libstdc++.a]
+        remove lib [msvcrt]
+        remove lib [msvcrt]
+        collapse obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> [M:/code/compiler/x86_64-w64-mingw32/lib/crt2.o]
+        collapse obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o] ==> [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o]
+        collapse obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o] ==> [M:/code/compiler/x86_64-w64-mingw32/lib/default-manifest.o]
+        collapse obj [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o] ==> [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o]
+        collapse library dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0] ==> [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0]
+        collapse library dir [m:/code/compiler/bin/../lib/gcc] ==> [M:/code/compiler/lib/gcc]
+        collapse library dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [M:/code/compiler/x86_64-w64-mingw32/lib]
+        collapse library dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../lib] ==> [M:/code/compiler/lib]
+        collapse library dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/lib] ==> [M:/code/compiler/x86_64-w64-mingw32/lib]
+        collapse library dir [m:/code/compiler/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../..] ==> [M:/code/compiler/lib]
+        implicit libs: [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/libstdc++.a;mingw32;gcc;pthread;gcc;kernel32;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;pthread;gcc;kernel32;moldname;mingwex;kernel32]
+        implicit objs: [M:/code/compiler/x86_64-w64-mingw32/lib/crt2.o;M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/crtbegin.o;M:/code/compiler/x86_64-w64-mingw32/lib/default-manifest.o;M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0/crtend.o]
+        implicit dirs: [M:/code/compiler/lib/gcc/x86_64-w64-mingw32/10.3.0;M:/code/compiler/lib/gcc;M:/code/compiler/x86_64-w64-mingw32/lib;M:/code/compiler/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "M:/code/compiler/cmake/cmake-4.2.0-rc2-windows-x86_64/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "m:/code/compiler/x86_64-w64-mingw32/bin/ld.exe" "-v"
+      GNU ld (GNU Binutils) 2.36.1
+...

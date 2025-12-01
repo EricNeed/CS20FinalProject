@@ -3,10 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "M:/code/libraries/SDL3_image-3.2.4/x86_64-w64-mingw32/bin/SDL3_image.dll"
-		},
-		{
-			"path" : "M:/code/libraries/SDL3_image-3.2.4/x86_64-w64-mingw32/lib/libSDL3_image.dll.a"
+			"path" : "M:/code/libraries/SDL3-3.2.26/x86_64-w64-mingw32/lib/libSDL3_test.a"
 		}
 	],
 	"backtrace" : 5,
@@ -21,8 +18,8 @@
 		],
 		"files" : 
 		[
-			"M:/code/libraries/SDL3_image-3.2.4/x86_64-w64-mingw32/lib/cmake/SDL3_image/SDL3_image-shared-targets.cmake",
-			"M:/code/libraries/SDL3_image-3.2.4/x86_64-w64-mingw32/lib/cmake/SDL3_image/SDL3_imageConfig.cmake",
+			"M:/code/libraries/SDL3-3.2.26/x86_64-w64-mingw32/lib/cmake/SDL3/SDL3testTargets.cmake",
+			"M:/code/libraries/SDL3-3.2.26/x86_64-w64-mingw32/lib/cmake/SDL3/SDL3Config.cmake",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -43,7 +40,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 48,
+				"line" : 92,
 				"parent" : 2
 			},
 			{
@@ -69,7 +66,7 @@
 		"major" : 2,
 		"minor" : 9
 	},
-	"id" : "SDL3_image::SDL3_image-shared::@6890427a1f51a3e7e1df",
+	"id" : "SDL3::SDL3_test::@6890427a1f51a3e7e1df",
 	"imported" : true,
 	"interfaceCompileDependencies" : 
 	[
@@ -86,13 +83,13 @@
 		}
 	],
 	"local" : true,
-	"name" : "SDL3_image::SDL3_image-shared",
-	"nameOnDisk" : "SDL3_image.dll",
+	"name" : "SDL3::SDL3_test",
+	"nameOnDisk" : "libSDL3_test.a",
 	"paths" : 
 	{
 		"build" : ".",
 		"source" : "."
 	},
 	"sources" : [],
-	"type" : "SHARED_LIBRARY"
+	"type" : "STATIC_LIBRARY"
 }

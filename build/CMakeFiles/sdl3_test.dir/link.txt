@@ -1,3 +1,3 @@
 M:\code\compiler\cmake\cmake-4.2.0-rc2-windows-x86_64\bin\cmake.exe -E rm -f CMakeFiles\sdl3_test.dir/objects.a
 M:\code\compiler\bin\ar.exe qc CMakeFiles\sdl3_test.dir/objects.a @CMakeFiles\sdl3_test.dir\objects1.rsp
-M:\code\compiler\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\sdl3_test.dir/objects.a -Wl,--no-whole-archive -o sdl3_test.exe -Wl,--out-implib,libsdl3_test.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\sdl3_test.dir\linkLibs.rsp
+m:\code\compiler\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\sdl3_test.dir/objects.a -Wl,--no-whole-archive -o sdl3_test.exe -Wl,--out-implib,libsdl3_test.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\sdl3_test.dir\linkLibs.rsp

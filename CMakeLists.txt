@@ -1,11 +1,15 @@
-cmake_minimum_required(VERSION 3.10.0)
+cmake_minimum_required(VERSION 3.28)
 project(camke_test VERSION 0.1.0 LANGUAGES C CXX)
 
 add_executable(sdl3_test
  src/main.cpp
  src/server_scripts/client_handler.cpp
- src/server_scripts/entitie_scripts/sprite.cpp
  src/server_scripts/tick_server_main.cpp
+ src/script_storge/entitie_scripts/sprite.cpp
+ src/script_storge/entitie_scripts/player.cpp
+ 
+ FILE_SET CXX_MODULES FILES
+  
 )
 
 set(SDL3_DIR "M:/code/libraries/SDL3-3.2.26/x86_64-w64-mingw32/lib/cmake/SDL3")
