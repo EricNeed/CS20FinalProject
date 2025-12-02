@@ -1,10 +1,10 @@
 # Folders
 .vscode/
-
-
-#.build/Makefile
-#.build/*.json
-#.build/*.cmake
-.build/.cmake
-.build/CMakeFiles
+build/Makefile
+build/*.json
+build/*.cmake
+build/.cmake/
+build/CMakeFiles/
+build/CMakeCache.txt
+LocalPaths.cmake
 
