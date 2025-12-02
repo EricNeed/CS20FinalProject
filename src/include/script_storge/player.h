@@ -1,5 +1,5 @@
 #pragma once
-#include<src/include/sprite.h>
+#include<src/include/script_storge/sprite.h>
 
 class Player : public Sprite{
 

@@ -10,8 +10,12 @@ add_executable(sdl3_test
  src/main.cpp
  src/server_scripts/client_handler.cpp
  src/server_scripts/tick_server_main.cpp
+
  src/script_storge/entitie_scripts/sprite.cpp
  src/script_storge/entitie_scripts/player.cpp
+ 
+ src/client_scripts/player_scripts/player_input.cpp
+ src/client_scripts/tick_client.cpp
 )
 
 find_package(SDL3 REQUIRED PATHS ${SDL3_DIR})

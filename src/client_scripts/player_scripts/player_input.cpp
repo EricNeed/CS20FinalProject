@@ -1,5 +1,6 @@
+#pragma once
 #include <SDL3/SDL.h>
-#include<src/include/player.h>
+#include<src/include/script_storge/player.h>
 
 class ClientInput{
     private:
