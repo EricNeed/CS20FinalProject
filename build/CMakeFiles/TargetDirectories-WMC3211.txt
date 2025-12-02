@@ -1,3 +1,0 @@
-C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/SDL3_project/build/CMakeFiles/sdl3_test.dir
-C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/SDL3_project/build/CMakeFiles/edit_cache.dir
-C:/Users/6600271/OneDrive - Saskatoon Public Schools/Documents/C++ Project/SDL3_project/build/CMakeFiles/rebuild_cache.dir
