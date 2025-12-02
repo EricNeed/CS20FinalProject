@@ -5,6 +5,6 @@
 #.build/Makefile
 #.build/*.json
 #.build/*.cmake
-.build/.cmake/
-.build/CMakeFiles/
+.build/.cmake
+.build/CMakeFiles
 
