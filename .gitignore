@@ -2,7 +2,7 @@
 .vscode/
 
 
-.build/Makefile
+#.build/Makefile
 .build/*.json
 .build/*.cmake
 .build/.cmake/
