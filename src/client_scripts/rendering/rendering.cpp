@@ -1,14 +1,14 @@
-#include "SDL3/SDL.h"
+#include<src/include/client/rendering.h>
 
-class SDL_Rendering{
+
+
+class ClientRendering{
     private:
-    SDL_Renderer *sdl_renderer;
-    public:
-        SDL_Rendering(SDL_Window* window){
-            sdl_renderer = SDL_CreateRenderer(window, NULL);
-        }
+        SDL_Window *sdl_window = SDL_CreateWindow("title", 600, 400, 0);
+        SDL_Renderer *sdl_renderer = SDL_CreateRenderer(sdl_window, NULL);
 
-        void tick_render(){
-            
-        }       
+    public:
+        ClientRendering(){}
+
+        void tick_render(){}       
 };

@@ -1,5 +1,6 @@
 #include <SDL3/SDL.h>
-#include<src/include/player.h>
+#include<src/include/script_storge/player.h>
+#include<src/include/server/client_handler.h>
 
 class ClientInput{
     private:
@@ -7,6 +8,7 @@ class ClientInput{
         Player &player;
     public:
         ClientInput(Player &player_sprite);
+        // ClientInput();
 
         void processUserInput();
 };
