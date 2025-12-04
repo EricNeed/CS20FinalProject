@@ -1,6 +1,7 @@
 #include<src/include/client/player_input.h>
 
 ClientInput::ClientInput(Player &player_sprite): player(player_sprite){
+    keyboard_states = SDL_GetKeyboardState(NULL);
 }
 
 void ClientInput::processUserInput(){

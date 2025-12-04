@@ -7,7 +7,7 @@ endif()
 
 file(GLOB_RECURSE SERVER_SOURCES "src/*.cpp")
 
-add_executable(sdl3_test src/main.cpp)
+add_executable(sdl3_test src/main.cpp ${SERVER_SOURCES})
 
 find_package(SDL3 REQUIRED PATHS ${SDL3_DIR})
 find_package(SDL3_image REQUIRED PATHS ${SDL3_image_DIR})

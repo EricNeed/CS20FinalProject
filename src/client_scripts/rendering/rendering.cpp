@@ -1,6 +1,8 @@
 #include<src/include/client/rendering.h>
 
-
+ClientRendering::ClientRendering(){
+    
+}
 
 class ClientRendering{
     private:
