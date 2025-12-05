@@ -1,6 +1,5 @@
 #include<src/include/server/client_handler.h>
 
-
 ClientHandler& ClientHandler::getInstance(){
     static ClientHandler instance;
     return instance;
@@ -15,7 +14,7 @@ void ClientHandler::newPlayerCoord(std::string player_name, SDL_Point new_coord)
 }
 
 void ClientHandler::newConnectedClient(){
-    
+    sprite_manager.createSprite<Player>();
 }
  
 

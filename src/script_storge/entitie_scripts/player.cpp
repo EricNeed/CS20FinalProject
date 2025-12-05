@@ -1,4 +1,4 @@
-#include<src/include/script_storge/sprite.h>
+#include<script_storge/player.h>
 
 class Player : public Sprite{
     

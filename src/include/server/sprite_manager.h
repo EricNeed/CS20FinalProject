@@ -3,19 +3,19 @@
 #include<script_storge/sprite.h>
 #include<memory>
 
-class TextureManager{
+class SpriteManager{
 private:
     //preperation
-    TextureManager(){}
-    TextureManager(const TextureManager&) = delete;
-    TextureManager& operator=(const TextureManager&) = delete;
+    SpriteManager(){}
+    SpriteManager(const SpriteManager&) = delete;
+    SpriteManager& operator=(const SpriteManager&) = delete;
 
-    static std::vector<Sprite&> sprite_list;
+    static std::vector<std::shared_ptr<Sprite>> sprite_list;
 public:
     //get only instance
-    static TextureManager& getOnlyInstance();
+    static SpriteManager& getOnlyInstance();
 
     template<typename DerivedSprite>
-    std::pair<long, std::shared_ptr<DerivedSprite>> createSprite(Sprite& new_sprite);
+    std::pair<long, std::shared_ptr<DerivedSprite>> createSprite();
     void removeSpriteFromList(long spriteID);
 };
