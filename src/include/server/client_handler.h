@@ -5,14 +5,14 @@
 
 class ClientHandler{
     private:
-        ClientHandler();
-        ClientHandler(const ClientHandler&);
-        ClientHandler& operator=(const ClientHandler&);
+        ClientHandler(){}
+        ClientHandler(const ClientHandler&) = delete;
+        ClientHandler& operator=(const ClientHandler&) = delete;
 
         std::unordered_map<std::string, SDL_Point> player_coordinate;
     public:
         static ClientHandler& getInstance();
-
-        std::unordered_map<std::string, SDL_Point>& getPlayerCoords();
-        
+        void processClientRequest();
+        void newPlayerCoord(std::string player_name, SDL_Point new_coord);
+        void newConnectedClient();
 };

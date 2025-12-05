@@ -6,6 +6,6 @@ class ClientRendering{
     SDL_Renderer *sdl_renderer;
     
     public:
-        ClientRendering(SDL_Window* window);
+        ClientRendering();
         void tick_render();     
 };

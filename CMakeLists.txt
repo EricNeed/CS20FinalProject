@@ -12,7 +12,10 @@ add_executable(sdl3_test src/main.cpp ${SERVER_SOURCES})
 find_package(SDL3 REQUIRED PATHS ${SDL3_DIR})
 find_package(SDL3_image REQUIRED PATHS ${SDL3_image_DIR})
 
-target_include_directories(sdl3_test PUBLIC ${CMAKE_SOURCE_DIR})
+target_include_directories(sdl3_test PUBLIC
+ ${CMAKE_SOURCE_DIR}
+ ${CMAKE_SOURCE_DIR}/src/include
+)
 
 target_link_libraries(sdl3_test PRIVATE SDL3::SDL3 SDL3_image::SDL3_image)
 
@@ -26,6 +29,9 @@ target_link_libraries(sdl3_test PRIVATE SDL3::SDL3 SDL3_image::SDL3_image)
 #        "README.md":true
 #    }
 #}
+#"workbench.editor.closeEmptyGroups": false,
+#"workbench.editor.enablePreview": false,
+#"workbench.editor.enablePreviewFromQuickOpen": false
 
 # src/server_scripts/client_handler.cpp
 # src/server_scripts/tick_server_main.cpp
