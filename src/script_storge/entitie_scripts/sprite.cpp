@@ -1,8 +1,7 @@
 #include<src/include/script_storge/sprite.h>
 
-Sprite::Sprite(int spriteX, int spriteY){
-    sprite_coord.x = spriteX;
-    sprite_coord.y = spriteY;
+Sprite::Sprite(long ID){
+    spriteID = ID;
 }
 
 Sprite::~Sprite(){
@@ -14,7 +13,7 @@ void Sprite::moveSprite(int spriteX, int spriteY){
 }
 
 long Sprite::getID(){return spriteID;}
-
+SpriteType Sprite::getType(){return sprite_type;}
 
 
 

@@ -1,7 +1,6 @@
 #include<string>
 #include<vector>
 #include<script_storge/sprite.h>
-#include<memory>
 
 class SpriteManager{
 private:
@@ -10,12 +9,15 @@ private:
     SpriteManager(const SpriteManager&) = delete;
     SpriteManager& operator=(const SpriteManager&) = delete;
 
-    static std::vector<std::shared_ptr<Sprite>> sprite_list;
 public:
+    static std::vector<Sprite*> sprite_list;
+    static std::vector<SpriteType> id_to_type_list;
+
     //get only instance
     static SpriteManager& getOnlyInstance();
 
     template<typename DerivedSprite>
-    std::pair<long, std::shared_ptr<DerivedSprite>> createSprite();
+    std::pair<long, Sprite*> createSprite();
+
     void removeSpriteFromList(long spriteID);
 };
