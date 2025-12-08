@@ -14,7 +14,8 @@ void ClientHandler::newPlayerCoord(std::string player_name, SDL_Point new_coord)
 }
 
 void ClientHandler::newConnectedClient(){
-    sprite_manager.createSprite<Player>();
+    auto [spriteID, pPlayer] = sprite_manager.createSprite<Player>();
+    pPlayer->moveSprite(0, 0);
 }
  
 

@@ -2,13 +2,15 @@
 #include<src/include/script_storge/player.h>
 #include<src/include/server/client_handler.h>
 #include<server/client_handler.h>
+#include<server/sprite_manager.h>
 
 class ClientInput{
     private:
         const bool *keyboard_states;
-        Player &player;
+        long playerID;
+        SpriteManager& sprite_manager = SpriteManager::getOnlyInstance();
     public:
-        ClientInput(Player &player_sprite);
+        ClientInput(long ID);
         // ClientInput();
 
         void processUserInput();

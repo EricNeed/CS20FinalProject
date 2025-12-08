@@ -1,18 +1,26 @@
 #include<src/include/client/player_input.h>
 
 
-ClientInput::ClientInput(Player &player_sprite): player(player_sprite){
+ClientInput::ClientInput(long ID){
     keyboard_states = SDL_GetKeyboardState(NULL);
+    playerID = ID;
 }
 
 void ClientInput::processUserInput(){
-    if(keyboard_states[SDL_SCANCODE_W]){          
+    SDL_Point sprite_offset[0,0];
+    int walk_speed = sprite_manager.sprite_list[playerID]->walk_speed;
+
+    if(keyboard_states[SDL_SCANCODE_W]){
+        sprite_offset->y += walk_speed;
     }
     if(keyboard_states[SDL_SCANCODE_A]){
+        sprite_offset->x += walk_speed;
     }
     if(keyboard_states[SDL_SCANCODE_S]){
+        sprite_offset->y += -walk_speed;
     }
     if(keyboard_states[SDL_SCANCODE_D]){
+        sprite_offset->y += -walk_speed;
     }
 }
 

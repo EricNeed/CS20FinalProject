@@ -15,11 +15,12 @@ class Sprite {
         SpriteType sprite_type;
 
         SpriteManager& spriter_manager = SpriteManager::getOnlyInstance();
+        virtual void logTypeToSpriteManager();
     public:
         Sprite(long ID);
         ~Sprite();
         void moveSprite(int spriteX, int spriteY);
         long getID(); 
         SpriteType getType();
-        virtual void logTypeToSpriteManager();
+        int walk_speed;
 };
