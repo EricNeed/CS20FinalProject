@@ -7,21 +7,24 @@ ClientInput::ClientInput(long ID){
 }
 
 void ClientInput::processUserInput(){
-    SDL_Point sprite_offset[0,0];
+    SDL_Point sprite_offset;
+    sprite_offset.x = 0;
+    sprite_offset.y = 0;
     int walk_speed = sprite_manager.sprite_list[playerID]->walk_speed;
 
     if(keyboard_states[SDL_SCANCODE_W]){
-        sprite_offset->y += walk_speed;
+        sprite_offset.y += walk_speed;
     }
     if(keyboard_states[SDL_SCANCODE_A]){
-        sprite_offset->x += walk_speed;
+        sprite_offset.x += walk_speed;
     }
     if(keyboard_states[SDL_SCANCODE_S]){
-        sprite_offset->y += -walk_speed;
+        sprite_offset.y += -walk_speed;
     }
     if(keyboard_states[SDL_SCANCODE_D]){
-        sprite_offset->y += -walk_speed;
+        sprite_offset.y += -walk_speed;
     }
+    
 }
 
 
