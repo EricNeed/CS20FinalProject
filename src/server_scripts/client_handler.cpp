@@ -9,13 +9,14 @@ void processClientRequest(){
     
 }
 
-void ClientHandler::newPlayerCoord(std::string player_name, SDL_Point new_coord){
-    player_coordinate[player_name] = new_coord;
+void ClientHandler::newPlayerCoord(long player_spriteID, SDL_Point new_coord){
+    sprite_manager.sprite_list[player_spriteID]->moveSprite(new_coord);
 }
 
 void ClientHandler::newConnectedClient(){
     auto [spriteID, pPlayer] = sprite_manager.createSprite<Player>();
-    pPlayer->moveSprite(0, 0);
+    pPlayer->moveSprite({0,0});
+    
 }
  
 

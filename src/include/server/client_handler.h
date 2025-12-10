@@ -11,11 +11,15 @@ class ClientHandler{
         ClientHandler(){}
         ClientHandler(const ClientHandler&) = delete;
         ClientHandler& operator=(const ClientHandler&) = delete;
-        std::unordered_map<std::string, SDL_Point> player_coordinate;
         SpriteManager& sprite_manager = SpriteManager::getOnlyInstance();
     public:
         static ClientHandler& getInstance();
         void processClientRequest();
-        void newPlayerCoord(std::string player_name, SDL_Point new_coord);
+        void newPlayerCoord(long player_spriteID, SDL_Point new_coord);
         void newConnectedClient();
+};
+
+class ClientSync{
+    public:
+        void syncCoord();
 };

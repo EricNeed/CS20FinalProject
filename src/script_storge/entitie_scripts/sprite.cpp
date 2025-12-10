@@ -7,15 +7,14 @@ Sprite::Sprite(long ID){
 Sprite::~Sprite(){
 }
 
-void Sprite::moveSprite(int spriteX, int spriteY){
-    sprite_coord.x = spriteX;
-    sprite_coord.y = spriteY;
+void Sprite::moveSprite(SDL_Point new_coord){
+    sprite_coord = new_coord;
 }
 
-long Sprite::getID(){return spriteID;}
-SpriteType Sprite::getType(){return sprite_type;}
-
-
+const long Sprite::getID() const{return spriteID;}
+const SpriteType Sprite::getType() const{return sprite_type;}
+const SDL_Point Sprite::getCoord() const{return sprite_coord;}
+const int Sprite::getSpeed() const{return walk_speed;}
 
 
 // class Sprite {

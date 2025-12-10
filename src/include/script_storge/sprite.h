@@ -11,16 +11,19 @@ enum class SpriteType{
 class Sprite {
     protected:
         long spriteID;
-        SDL_Point sprite_coord;
         SpriteType sprite_type;
+        SDL_Point sprite_coord;
+        int walk_speed;
 
         SpriteManager& spriter_manager = SpriteManager::getOnlyInstance();
         virtual void logTypeToSpriteManager();
     public:
+        const long getID() const; 
+        const SpriteType getType() const;
+        const SDL_Point getCoord() const;
+        const int getSpeed() const;
+
         Sprite(long ID);
         ~Sprite();
-        void moveSprite(int spriteX, int spriteY);
-        long getID(); 
-        SpriteType getType();
-        int walk_speed;
+        void moveSprite(SDL_Point new_coord);
 };
