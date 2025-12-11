@@ -1,4 +1,4 @@
-#include<src/include/script_storge/sprite.h>
+#include<script_storge/sprite.h>
 
 Sprite::Sprite(long ID){
     spriteID = ID;

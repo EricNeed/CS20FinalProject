@@ -16,7 +16,7 @@ class Sprite {
         int walk_speed;
 
         SpriteManager& spriter_manager = SpriteManager::getOnlyInstance();
-        virtual void logTypeToSpriteManager();
+        virtual void logTypeToSpriteManager() = 0;
     public:
         const long getID() const; 
         const SpriteType getType() const;

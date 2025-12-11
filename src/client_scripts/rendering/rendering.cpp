@@ -1,4 +1,4 @@
-#include<src/include/client/rendering.h>
+#include<client/rendering.h>
 
 ClientRendering::ClientRendering(){
     sdl_window = SDL_CreateWindow("title", 600, 400, 0);

@@ -1,6 +1,9 @@
+#pragma once
 #include<string>
 #include<vector>
-#include<script_storge/sprite.h>
+
+class Sprite;
+enum class SpriteType;
 
 class SpriteManager{
 private:
@@ -17,7 +20,12 @@ public:
     static SpriteManager& getOnlyInstance();
 
     template<typename DerivedSprite>
-    std::pair<long, Sprite*> createSprite();
+    std::pair<long, Sprite*> createSprite(){//pass in de-pointered object mem addr
+        long spriteID = sprite_list.size();// the size is the last index + 1, so i can directly use it
+        Sprite* sprite = new DerivedSprite(spriteID);
+        sprite_list[spriteID] = sprite;
+        return {spriteID, sprite};
+    }
 
     void removeSpriteFromList(long spriteID);
 };

@@ -7,14 +7,15 @@ endif()
 
 file(GLOB_RECURSE SERVER_SOURCES "src/*.cpp")
 
-add_executable(sdl3_test src/main.cpp ${SERVER_SOURCES})
+add_executable(sdl3_test ${SERVER_SOURCES} src/)
 
 find_package(SDL3 REQUIRED PATHS ${SDL3_DIR})
 find_package(SDL3_image REQUIRED PATHS ${SDL3_image_DIR})
 
-target_include_directories(sdl3_test PUBLIC
+target_include_directories(sdl3_test PRIVATE
  ${CMAKE_SOURCE_DIR}
  ${CMAKE_SOURCE_DIR}/src/include
+ ${CMAKE_SOURCE_DIR}/src/include/script_storge
 )
 
 target_link_libraries(sdl3_test PRIVATE SDL3::SDL3 SDL3_image::SDL3_image)

@@ -1,3 +1,4 @@
+#pragma once
 #include<SDL3/SDL.h>
 #include<src/include/script_storge/player.h>
 #include<src/include/server/client_handler.h>
