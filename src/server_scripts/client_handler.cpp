@@ -13,10 +13,10 @@ void ClientHandler::newPlayerCoord(long player_spriteID, SDL_Point new_coord){
     sprite_manager.sprite_list[player_spriteID]->moveSprite(new_coord);
 }
 
-void ClientHandler::newConnectedClient(){
+long ClientHandler::newConnectedClient(){
     auto [spriteID, pPlayer] = sprite_manager.createSprite<Player>();
     pPlayer->moveSprite({0,0});
-    
+    return spriteID;
 }
  
 

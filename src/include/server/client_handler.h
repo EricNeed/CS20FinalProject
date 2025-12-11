@@ -16,10 +16,11 @@ class ClientHandler{
         static ClientHandler& getInstance();
         void processClientRequest();
         void newPlayerCoord(long player_spriteID, SDL_Point new_coord);
-        void newConnectedClient();
+        long newConnectedClient();
 };
 
 class ClientSync{
     public:
         void syncCoord();
+        void newSprite();
 };

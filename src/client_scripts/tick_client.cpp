@@ -1,4 +1,10 @@
 #include<client/tick_client.h>
+#include<server/client_handler.h>
+#include<client/player_input.h>
+
+TickClient::TickClient(){
+    
+}
 
 void TickClient::tick_client(){
     //handle user input

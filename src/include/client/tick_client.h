@@ -1,12 +1,18 @@
 #pragma once
 #include<SDL3/SDL.h>
-#include<client/player_input.h>
 #include<client/rendering.h>
+
+class ClientHandler;
+class ClientInput;
 
 class TickClient {
     private:
-        ClientInput input_handler;
+        ClientHandler& client_handler = ClientHandler::getInstance();
+        ClientInput input_handler();
         ClientRendering client_rendering;
+        long player_spriteID;
     public:
+        TickClient();
+
         void tick_client();
 };
