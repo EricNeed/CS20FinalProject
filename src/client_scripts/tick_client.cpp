@@ -2,8 +2,7 @@
 #include<server/client_handler.h>
 #include<client/player_input.h>
 
-TickClient::TickClient(){
-    
+TickClient::TickClient() : client_handler(ClientHandler::getInstance()), spriteID(client_handler.newConnectedClient()), input_handler(spriteID){
 }
 
 void TickClient::tick_client(){

@@ -7,8 +7,9 @@ class ClientInput;
 
 class TickClient {
     private:
-        ClientHandler& client_handler = ClientHandler::getInstance();
-        ClientInput input_handler();
+        ClientHandler& client_handler;
+        long spriteID;
+        ClientInput *input_handler;
         ClientRendering client_rendering;
         long player_spriteID;
     public:
