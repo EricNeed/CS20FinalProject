@@ -1,4 +1,5 @@
 #include<client/rendering.h>
+#include<server/sprite_manager.h>
 
 ClientRendering::ClientRendering(){
     sdl_window = SDL_CreateWindow("title", 600, 400, 0);
@@ -6,17 +7,8 @@ ClientRendering::ClientRendering(){
 }
 
 void ClientRendering::tick_render(){
-    
+    //render sprite
+    for(const auto& sprite : sprite_manager.sprite_list){
+        //sprite
+    }
 }
-
-
-// class ClientRendering{
-//     private:
-//         SDL_Window *sdl_window = SDL_CreateWindow("title", 600, 400, 0);
-//         SDL_Renderer *sdl_renderer = SDL_CreateRenderer(sdl_window, NULL);
-
-//     public:
-//         ClientRendering(){}
-
-//         void tick_render(){}       
-// };

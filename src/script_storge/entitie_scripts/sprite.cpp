@@ -1,20 +1,17 @@
 #include<script_storge/sprite.h>
 
 Sprite::Sprite(long ID){
-    spriteID = ID;
+    sprite_properties.ID = ID;
 }
 
 Sprite::~Sprite(){
 }
 
 void Sprite::moveSprite(SDL_Point new_coord){
-    sprite_coord = new_coord;
+    sprite_properties.Coord = new_coord;
 }
 
-const long Sprite::getID() const{return spriteID;}
-const SpriteType Sprite::getType() const{return sprite_type;}
-const SDL_Point Sprite::getCoord() const{return sprite_coord;}
-const int Sprite::getSpeed() const{return walk_speed;}
+
 
 
 // class Sprite {

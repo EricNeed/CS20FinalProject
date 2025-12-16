@@ -8,8 +8,9 @@ ClientInput::ClientInput(long ID){
 
 void ClientInput::processUserInput(){
     Sprite* current_player = sprite_manager.sprite_list[playerID];
-    SDL_Point sprite_position = current_player->getCoord();
-    int walk_speed = current_player->getSpeed();
+    const Properties_Base* player_properties = current_player->getProperties();
+    SDL_Point sprite_position = player_properties->Coord;
+    int walk_speed = player_properties->WalkSpeed;
 
     if(keyboard_states[SDL_SCANCODE_W]){
         sprite_position.y += walk_speed;
