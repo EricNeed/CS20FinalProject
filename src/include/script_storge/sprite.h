@@ -28,7 +28,7 @@ class Sprite {
     public:
         
         //needed to be overided if have special struct
-        virtual const Properties_Base* getProperties();
+        virtual const Properties_Base* getProperties() = 0;
 
         Sprite(long ID);
         // ~Sprite();
