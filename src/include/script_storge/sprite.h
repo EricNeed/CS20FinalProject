@@ -4,24 +4,31 @@
 #include<SDL3/SDL.h>
 #include<server/sprite_manager.h>
 
+
 enum class SpriteType{
     Player,
 };
 
-class Sprite {
-    protected:
-        long spriteID;
-        SpriteType sprite_type;
-        SDL_Point sprite_coord;
-        int walk_speed;
+struct Properties_Base{
+    long ID;
+    SpriteType Type;
+    SDL_Point Coord;
+    int WalkSpeed;
+    std::vector<std::string> Textures;
+    unsigned char Current_Texture_Index = 0;
+};
 
-        SpriteManager& spriter_manager = SpriteManager::getOnlyInstance();
+class Sprite {
+    private:
+        //needed in each sprite
+        Properties_Base sprite_properties;
+    protected:
+        SpriteManager& sprite_manager = SpriteManager::getOnlyInstance();
         virtual void logTypeToSpriteManager() = 0;
     public:
-        const long getID() const; 
-        const SpriteType getType() const;
-        const SDL_Point getCoord() const;
-        const int getSpeed() const;
+        
+        //needed to be overided if have special struct
+        virtual const Properties_Base* getProperties();
 
         Sprite(long ID);
         ~Sprite();
