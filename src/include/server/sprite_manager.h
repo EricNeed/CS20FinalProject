@@ -12,7 +12,8 @@ private:
     SpriteManager(const SpriteManager&) = delete;
     SpriteManager& operator=(const SpriteManager&) = delete;
 
-public:
+public: 
+
     static std::vector<Sprite*> sprite_list;
     static std::vector<SpriteType> id_to_type_list;
 

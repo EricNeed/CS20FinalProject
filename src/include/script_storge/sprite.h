@@ -31,6 +31,6 @@ class Sprite {
         virtual const Properties_Base* getProperties();
 
         Sprite(long ID);
-        ~Sprite();
+        // ~Sprite();
         void moveSprite(SDL_Point new_coord);
 };

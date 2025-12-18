@@ -17,7 +17,7 @@ void TickClient::tick_client(){
     input_handler->processUserInput();
 
     //tick rendering
-    client_rendering.tick_render();
+    client_rendering.tickRender();
 }
 
 // class TickClient {

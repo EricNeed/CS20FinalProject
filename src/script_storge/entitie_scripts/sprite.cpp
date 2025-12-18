@@ -4,8 +4,8 @@ Sprite::Sprite(long ID){
     sprite_properties.ID = ID;
 }
 
-Sprite::~Sprite(){
-}
+// Sprite::~Sprite(){
+// }
 
 void Sprite::moveSprite(SDL_Point new_coord){
     sprite_properties.Coord = new_coord;

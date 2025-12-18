@@ -9,3 +9,7 @@ Player::Player(long ID) : Sprite(ID){
 void Player::logTypeToSpriteManager(){
     sprite_manager.id_to_type_list[sprite_properties.ID] = SpriteType::Player;
 }
+
+const Properties_Player* Player::getProperties(){
+    return &sprite_properties;
+}
