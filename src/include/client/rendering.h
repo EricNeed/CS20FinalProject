@@ -4,9 +4,6 @@
 
 class SpriteManager; // Forward declaration
 
-
-class SpriteManager; // Forward declaration
-
 class ClientRendering{
     private:
         struct TextureProperties{
@@ -22,5 +19,5 @@ class ClientRendering{
     public:
         ClientRendering();
         void tickRender();   
-        SDL_Texture* newTexture(std::string texture_str);
+        TextureProperties newTexture(std::string texture_dir);
 };

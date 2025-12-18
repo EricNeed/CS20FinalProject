@@ -31,7 +31,7 @@ void ClientRendering::tickRender(){
         if (texture_map.find(texture_dir) == texture_map.end()){
             texture_properties = newTexture(texture_dir);
         }else{
-            sprite_texture = texture_map[texture_dir];
+            texture_properties = texture_map[texture_dir];
         }
 
         SDL_RenderTexture(sdl_renderer, sprite_texture, nullptr, {});
