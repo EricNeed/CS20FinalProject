@@ -5,6 +5,8 @@
 class SpriteManager; // Forward declaration
 
 
+class SpriteManager; // Forward declaration
+
 class ClientRendering{
     private:
         struct TextureProperties{
