@@ -1,0 +1,8 @@
+Required Notice: 
+Copyright 2025 [Eric Ni]. All rights reserved. 
+
+Required Notice: 
+This software is licensed under the PolyForm Noncommercial License 1.0.0. Any use, modification, or distribution must be for noncommercial purposes or personal use as defined in the license. 
+
+Required Notice: 
+Any redistribution of this software or works based on it must include a copy of the license terms and these Required Notices.
