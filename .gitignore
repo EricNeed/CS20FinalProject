@@ -7,4 +7,4 @@ build/.cmake/
 build/CMakeFiles/
 build/CMakeCache.txt
 LocalPaths.cmake
-
+NOTICES.txt
