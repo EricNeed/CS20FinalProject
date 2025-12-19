@@ -24,7 +24,7 @@ class Sprite {
         Properties_Base sprite_properties;
     protected:
         SpriteManager& sprite_manager = SpriteManager::getOnlyInstance();
-        virtual void logTypeToSpriteManager() = 0;
+        virtual void logTypeToSpriteManager();
     public:
         
         //needed to be overided if have special struct

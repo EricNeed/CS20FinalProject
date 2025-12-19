@@ -1,4 +1,5 @@
 #include<script_storge/sprite.h>
+#include<iostream>
 
 Sprite::Sprite(long ID){
     sprite_properties.ID = ID;
@@ -6,6 +7,12 @@ Sprite::Sprite(long ID){
 
 // Sprite::~Sprite(){
 // }
+
+void Sprite::logTypeToSpriteManager(){
+    std::cout << sprite_properties.ID << std::endl;
+    sprite_manager.id_to_type_list.resize(sprite_properties.ID + 1);
+    sprite_manager.id_to_type_list[sprite_properties.ID] = sprite_properties.Type;
+}
 
 void Sprite::moveSprite(SDL_Point new_coord){
     sprite_properties.Coord = new_coord;
