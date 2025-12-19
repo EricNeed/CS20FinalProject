@@ -1,4 +1,5 @@
 #include<server/client_handler.h>
+#include<iostream>
 
 ClientHandler& ClientHandler::getInstance(){
     static ClientHandler instance;
@@ -14,7 +15,9 @@ void ClientHandler::newPlayerCoord(long player_spriteID, SDL_Point new_coord){
 }
 
 long ClientHandler::newConnectedClient(){
+    std::cout << "client handler running \n" << std::endl;
     auto [spriteID, pPlayer] = sprite_manager.createSprite<Player>();
+    std::cout << "created sprite \n" << std::endl;
     pPlayer->moveSprite({0,0});
     return spriteID;
 }

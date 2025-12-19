@@ -2,12 +2,17 @@
 #include"client/tick_client.h"
 #include"server/tick_server_main.h"
 
-TickClient tick_client;
-TickServer tick_server;
 
 int main(){
     std::cout << "The game is starting up..." << std::endl;
-        tick_client.tick_client();
-        tick_server.ticking();
+
+    TickClient tick_client;
+    std::cout << "after TickClient \n";
+    TickServer tick_server;
+    
+    tick_client.tick_client();
+    tick_server.ticking();
+
+    while(true){}
     return 0;
 }
