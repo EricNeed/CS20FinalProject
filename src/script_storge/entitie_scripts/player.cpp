@@ -5,6 +5,7 @@ Player::Player(long ID) : Sprite(ID){
     logTypeToSpriteManager();
     sprite_properties.Textures.resize(1);
     sprite_properties.Textures[0] = "resources/textures/sprite.png";
+    sprite_properties.WalkSpeed = 10;
 }
 
 void Player::logTypeToSpriteManager(){}

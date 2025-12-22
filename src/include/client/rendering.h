@@ -5,6 +5,8 @@
 
 class SpriteManager; // Forward declaration
 
+
+
 class ClientRendering{
     private:
         struct TextureProperties{
@@ -12,6 +14,10 @@ class ClientRendering{
             float width;
             float height;
         };
+
+        TextureProperties sprite_profiles[];
+
+
         SDL_Window *sdl_window;
         SDL_Renderer *sdl_renderer;
         SpriteManager &sprite_manager;

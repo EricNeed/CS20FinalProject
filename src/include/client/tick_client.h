@@ -9,16 +9,13 @@ class TickClient {
     private:
         ClientHandler& client_handler;
         long spriteID;
-        ClientInput *input_handler;
+        ClientInput* input_handler = nullptr;
         ClientRendering client_rendering;
         long player_spriteID;
         
-        SDL_Event sdl_event;
-
-        bool game_running = true;
         void processSDLEvents(SDL_Event& sdl_event);
     public:
         TickClient();
-
         void tick_client();
+        ~TickClient();
 };

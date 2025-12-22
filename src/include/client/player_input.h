@@ -8,7 +8,7 @@
 class ClientInput{
     private:
         const bool *keyboard_states;
-        long playerID;
+        long playerID = 0;
         SpriteManager& sprite_manager = SpriteManager::getOnlyInstance();
         ClientHandler& client_handler = ClientHandler::getInstance();
     public:

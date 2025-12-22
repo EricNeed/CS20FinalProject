@@ -1,5 +1,4 @@
 #include<script_storge/sprite.h>
-#include<iostream>
 
 Sprite::Sprite(long ID){
     sprite_properties.ID = ID;
