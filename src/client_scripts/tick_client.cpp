@@ -12,6 +12,8 @@ TickClient::TickClient() : client_handler(ClientHandler::getInstance()){
 }
 
 void TickClient::tick_client(){
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Tick client");
+
     //handle user input
     input_handler->processUserInput();
     //tick rendering
@@ -23,17 +25,3 @@ void TickClient::tick_client(){
 TickClient::~TickClient(){
     delete input_handler;
 }
-// class TickClient {
-//     private:
-//         ClientInput input_handler;
-//         ClientRendering client_rendering;
-
-//     public:
-//         void tick_client(){
-//             //handle user input
-//             input_handler.processUserInput();
-
-//             //tick rendering
-//             client_rendering.tick_render();
-//         }
-// };

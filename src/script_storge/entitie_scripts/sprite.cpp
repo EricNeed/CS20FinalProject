@@ -1,20 +1,26 @@
 #include<script_storge/sprite.h>
 
-Sprite::Sprite(long ID){
-    sprite_properties.ID = ID;
+Sprite::Sprite(long ID, Properties_Base* properties_ptr) {
+    //make so that it use the derived struct instead of current Properties_Base
+    derived_properties = properties_ptr;
+    derived_properties->ID = ID;
 }
 
 // Sprite::~Sprite(){
 // }
 
 void Sprite::logTypeToSpriteManager(){
-    std::cout << sprite_properties.ID << std::endl;
-    sprite_manager.id_to_type_list.resize(sprite_properties.ID + 1);
-    sprite_manager.id_to_type_list[sprite_properties.ID] = sprite_properties.Type;
+    sprite_manager.id_to_type_list.resize(derived_properties->ID + 1);
+    sprite_manager.id_to_type_list[derived_properties->ID] = derived_properties->Type;
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[Sprite::logTypeToSpriteManager]: sprite_properties.ID = %ld", derived_properties->ID);
+    SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[Sprite::logTypeToSpriteManager]: properties address: %p", derived_properties);
 }
 
 void Sprite::moveSprite(SDL_Point new_coord){
-    sprite_properties.Coord = new_coord;
+    derived_properties->Coord = new_coord;
+    SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[Sprite::moveSprite]: moving sprite is: %p", this);
+    SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[Sprite::moveSprite]: moved to new coord: (%d, %d)", derived_properties->Coord.x, derived_properties->Coord.y);
+    SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[Sprite::moveSprite]: address of sprite_properties: %p", derived_properties);
 }
 
 

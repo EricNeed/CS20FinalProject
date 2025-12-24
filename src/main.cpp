@@ -19,16 +19,19 @@ void processSDLEvents(SDL_Event& sdl_event){
     }
 }
 
-int main(){
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "The game is starting up...");
-
+int main(){  
+    //sdl init config
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS | SDL_INIT_AUDIO);
+    SDL_SetLogPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_DEBUG);
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[Main]: The game is starting up...");
     TickClient tick_client;
     TickServer tick_server;
     SDL_Event sdl_event;
 
     std::chrono::time_point<std::chrono::high_resolution_clock> begin_time;
 
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Game loop running");
+    //main game loop
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[Main]: Game loop running");
     while(game_running){
         begin_time = std::chrono::high_resolution_clock::now();
 
@@ -36,7 +39,11 @@ int main(){
         tick_server.ticking();
         processSDLEvents(sdl_event);
 
-        std::this_thread::sleep_for(frame_time - std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - begin_time));
+        
+        //sleep to maintain frame rate
+        std::chrono::duration sleep_time = frame_time - std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - begin_time);
+        if (sleep_time.count() < 0){continue;}//if processing time exceeds frame time, skip sleep
+        std::this_thread::sleep_for(sleep_time);
     }
 
     return 0;

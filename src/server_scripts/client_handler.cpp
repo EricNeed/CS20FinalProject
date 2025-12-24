@@ -15,11 +15,10 @@ void ClientHandler::newPlayerCoord(long player_spriteID, SDL_Point new_coord){
 }
 
 long ClientHandler::newConnectedClient(){
-    std::cout << "client handler running \n" << std::endl;
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[ClientHandler::newConnectedClient]: New client connected");
     auto [spriteID, pPlayer] = sprite_manager.createSprite<Player>();
-    std::cout << "ClientHandler: sprite_list addr: " << &sprite_manager.sprite_list << std::endl;
-    std::cout << "Client Handler: id: " << spriteID << std::endl;
-    pPlayer->moveSprite({0,0});
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[ClientHandler::newConnectedClient]: New client spriteID: %ld", spriteID);
+    pPlayer->moveSprite({10,10});
     return spriteID;
 }
  

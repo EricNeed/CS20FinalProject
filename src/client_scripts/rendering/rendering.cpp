@@ -2,14 +2,20 @@
 #include"server/sprite_manager.h"
 #include"script_storge/sprite.h"
 #include<SDL3_image/SDL_image.h>
+#include<script_storge/texture_pool.h>
 
 ClientRendering::ClientRendering() : sprite_manager(SpriteManager::getOnlyInstance()){
     sdl_window = SDL_CreateWindow("title", 600, 400, 0);
     sdl_renderer = SDL_CreateRenderer(sdl_window, NULL);
+    SDL_SetLogPriority(SDL_LOG_CATEGORY_RENDER, SDL_LOG_PRIORITY_DEBUG);
+    SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::ClientRendering]: sprite manager address %p", &sprite_manager);
 }
-auto ClientRendering::newTexture(std::string texture_dir) -> TextureProperties{
-    SDL_Texture *texture_temp = IMG_LoadTexture(sdl_renderer, texture_dir.c_str());
-    if (!texture_temp){SDL_Log("IMG_LoadTexture error:");}
+
+//load new texture from file
+auto ClientRendering::newTexture(const char* texture_dir) -> TextureProperties{
+    SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: Load texture");
+    SDL_Texture *texture_temp = IMG_LoadTexture(sdl_renderer, texture_dir);
+    if (!texture_temp){SDL_LogError(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: IMG_LoadTexture error:");}
     //cache it
     TextureProperties properties = {texture_temp, static_cast<float>(texture_temp->w), static_cast<float>(texture_temp->h)};
     texture_map[texture_dir] = properties;
@@ -17,13 +23,15 @@ auto ClientRendering::newTexture(std::string texture_dir) -> TextureProperties{
 }
 
 void ClientRendering::tickRender(){
+    SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "ClientRendering::tickRender: tickRender");
     SDL_SetRenderDrawColor(sdl_renderer, 255, 255, 255, 255); 
     SDL_RenderClear(sdl_renderer);
 
     //render sprite
     for(const auto& sprite : sprite_manager.sprite_list){
+        SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: sprite propertie address: %p", sprite->getProperties());
         const Properties_Base* player_properties = sprite->getProperties();
-        std::string texture_dir = player_properties->Textures[player_properties->Current_Texture_Index];
+        const char* texture_dir = sprite_texture_collections[player_properties->Texture_Collection_Index][player_properties->Current_Texture_Index];
         TextureProperties texture_properties;
 
         //if cannot find texture, load texture, if find, then use it directly
@@ -34,6 +42,7 @@ void ClientRendering::tickRender(){
         }
 
         //rendering result
+        SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: texture info: w: %f, h: %f, x: %ld, y: %ld", texture_properties.width, texture_properties.height, player_properties->Coord.x, player_properties->Coord.y);
         const SDL_FRect using_frect = {static_cast<float>(player_properties->Coord.x), static_cast<float>(player_properties->Coord.y), texture_properties.width, texture_properties.height};
         SDL_RenderTexture(sdl_renderer, texture_properties.texture, nullptr, &using_frect);
     }

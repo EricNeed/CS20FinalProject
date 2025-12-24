@@ -12,25 +12,29 @@ enum class SpriteType{
 struct Properties_Base{
     long ID;
     SpriteType Type;
-    SDL_Point Coord;
+    SDL_Point Coord = {0,0};
     int WalkSpeed;
-    std::vector<std::string> Textures;
+    int Texture_Collection_Index;
     unsigned char Current_Texture_Index = 0;
 };
 
 class Sprite {
     private:
-        //needed in each sprite
-        Properties_Base sprite_properties;
+        //use the getProperties() so can use derived struct in base class
+        Properties_Base* derived_properties;
     protected:
         SpriteManager& sprite_manager = SpriteManager::getOnlyInstance();
         virtual void logTypeToSpriteManager();
+
     public:
         
         //needed to be overided if have special struct
         virtual const Properties_Base* getProperties() = 0;
+        Sprite(long ID, Properties_Base* properties_ptr);
+        
+        virtual void moveSprite(SDL_Point new_coord);
 
-        Sprite(long ID);
+        virtual const Properties_Base* getSpecialProperties() = 0;
+
         // ~Sprite();
-        void moveSprite(SDL_Point new_coord);
 };

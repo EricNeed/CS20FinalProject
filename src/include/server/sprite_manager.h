@@ -1,7 +1,7 @@
 #pragma once
 #include<string>
 #include<vector>
-#include<iostream>
+#include<SDL3/SDL.h>
 
 class Sprite;
 enum class SpriteType;
@@ -23,12 +23,13 @@ public:
 
     template<typename DerivedSprite>
     std::pair<long, Sprite*> createSprite(){//pass in de-pointered object mem addr
-        std::cout << "SpriteManager: create sprite" << std::endl;
         long spriteID = sprite_list.size();// the size is the last index + 1, so i can directly use it
         Sprite* sprite = new DerivedSprite(spriteID);
-        
-        sprite_list.resize(spriteID + 1);
+        SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[SpriteManager]: Created sprite, address %p", sprite);
+        SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[SpriteManager]: SpriteManager, address %p", this);
+        sprite_list.resize(spriteID + 1, nullptr);
         sprite_list[spriteID] = sprite;
+        SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[SpriteManager]: sprite in list, address %p", sprite_list[spriteID]);
         return {spriteID, sprite};
     }
 
