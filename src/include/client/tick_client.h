@@ -18,4 +18,5 @@ class TickClient {
         TickClient();
         void tick_client();
         ~TickClient();
+        void toggleFullScreen(bool enable_fullscreen){client_rendering.fullScreenToggle(enable_fullscreen);}
 };

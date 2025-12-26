@@ -12,10 +12,6 @@ class Player : public Sprite{
     public:
         Player(long ID);
 
-        const Properties_Base* getProperties() override;
-        const Properties_Player* getSpecialProperties() override;
-        void moveSprite(SDL_Point new_coord) override {
-            Sprite::moveSprite(new_coord);
-        }
+        const Properties_Player* getProperties() override;
 
 };

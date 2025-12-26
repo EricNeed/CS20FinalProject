@@ -8,11 +8,17 @@
 bool game_running = true;
 auto frame_time = std::chrono::microseconds(16666);//how much microsecond is one game loop
 
+TickClient tick_client;
+TickServer tick_server;
+SDL_Event sdl_event;
+
 void processSDLEvents(SDL_Event& sdl_event){
     //process all current SDL events
     while(SDL_PollEvent(&sdl_event)) {
         switch (sdl_event.type){
             //check if player has closed the program
+            case SDL_EVENT_WINDOW_ENTER_FULLSCREEN: tick_client.toggleFullScreen(true);
+            case SDL_EVENT_WINDOW_LEAVE_FULLSCREEN: tick_client.toggleFullScreen(false);
             case SDL_EVENT_QUIT: game_running = false;
         default: break;
         }
@@ -24,9 +30,6 @@ int main(){
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS | SDL_INIT_AUDIO);
     SDL_SetLogPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_DEBUG);
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[Main]: The game is starting up...");
-    TickClient tick_client;
-    TickServer tick_server;
-    SDL_Event sdl_event;
 
     std::chrono::time_point<std::chrono::high_resolution_clock> begin_time;
 

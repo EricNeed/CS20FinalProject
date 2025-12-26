@@ -25,4 +25,5 @@ class ClientRendering{
         ClientRendering();
         void tickRender();
         auto newTexture(const char* texture_dir) -> TextureProperties;
+        void fullScreenToggle(bool enable_fullscreen);
 };
