@@ -7,6 +7,7 @@ const char* texture_pool[] = {
 
 
 //animation frame(std::pair<const char*, const unsigned char>)texture, number of loops prsent this texture
+//because how the tick animation system work, the 0th index will play last, and the 1st index will play first
 const std::pair<Animation_Frame, const unsigned char> PlayerWalk[1] = {
     {{texture_pool[0], false, 1}, 1},
 };
