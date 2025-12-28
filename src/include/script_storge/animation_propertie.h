@@ -14,18 +14,21 @@ Eric Ni (67,67)*/
 
 struct Animation_Frame{
     const char* Texture_Dir;
-    bool Mirror = false;
+    bool Mirror_Horizontally = false;
     //multiply the length and width not the area
     unsigned char size_multiplier = 1;
 };
 
 struct Animation_Properties{
+    short Animation_Collection_Index = 0;
     //which animation currently on
     unsigned char Animation_Index = 0;
     //which frame(texture) in the animation
     unsigned char Frame_Index = 0;
     //how many loops has presented this texture(one based)
     unsigned char Current_Texture_Loop_Count = 1;
+    //flip everything in current animation horizontally
+    bool Flip_Horizontally = false;
 };
 
 //inter the sprite's propertie and the sprite's animation sequence array to get the current texture to use

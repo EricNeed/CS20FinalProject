@@ -14,4 +14,5 @@ class Player : public Sprite{
 
         const Properties_Player* getProperties() override;
 
+        void whenMovedSprite(int x, int y);
 };

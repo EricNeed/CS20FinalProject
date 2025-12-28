@@ -10,27 +10,30 @@ void ClientInput::processUserInput(){
     // std::cout << "process user input" << std::endl;
     Sprite* current_player = sprite_manager.sprite_list[playerID];
     const Properties_Base* player_properties = current_player->getProperties();
-    SDL_Point sprite_position = player_properties->Coord;
+    int add_x = 0, add_y = 0;
     int walk_speed = player_properties->WalkSpeed;
     
     if(keyboard_states[SDL_SCANCODE_W]){
-        sprite_position.y += -walk_speed;
+        add_y += -walk_speed;
         std::cout << "w pressed" << std::endl;
     }
     if(keyboard_states[SDL_SCANCODE_A]){
-        sprite_position.x += -walk_speed;
+        add_x += -walk_speed;
         std::cout << "a pressed" << std::endl;
     }
     if(keyboard_states[SDL_SCANCODE_S]){
-        sprite_position.y += walk_speed;
+        add_y += walk_speed;
         std::cout << "s pressed" << std::endl;
     }
     if(keyboard_states[SDL_SCANCODE_D]){
-        sprite_position.x += walk_speed;
+        add_x += walk_speed;
         std::cout << "d pressed" << std::endl;
     }
 
-    client_handler.newPlayerCoord(playerID, sprite_position);
+    if (add_x != 0 || add_y != 0){
+        //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[ClientInput::processUserInput]: Moving player %ld by (%d, %d)", playerID, add_x, add_y);
+        client_handler.newPlayerCoord(playerID, add_x, add_y);
+    }
 }
 
 

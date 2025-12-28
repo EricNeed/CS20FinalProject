@@ -10,15 +10,17 @@ void processClientRequest(){
     
 }
 
-void ClientHandler::newPlayerCoord(long player_spriteID, SDL_Point new_coord){
-    sprite_manager.sprite_list[player_spriteID]->moveSprite(new_coord);
+void ClientHandler::newPlayerCoord(long player_spriteID, int add_x, int add_y){
+    Player* player = static_cast<Player*>(sprite_manager.sprite_list[player_spriteID]);
+    player->moveSprite(add_x, add_y);
+    player->whenMovedSprite(add_x, add_y);
 }
 
 long ClientHandler::newConnectedClient(){
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[ClientHandler::newConnectedClient]: New client connected");
     auto [spriteID, pPlayer] = sprite_manager.createSprite<Player>();
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[ClientHandler::newConnectedClient]: New client spriteID: %ld", spriteID);
-    pPlayer->moveSprite({10,10});
+    pPlayer->placeSprite({10,10});
     return spriteID;
 }
  

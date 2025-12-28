@@ -1,4 +1,4 @@
-#include<script_storge/player.h>
+#include<script_storge/character_sprite.h>
 #include<cmath>
 
 Player::Player(long ID) : Sprite(ID, &sprite_properties){

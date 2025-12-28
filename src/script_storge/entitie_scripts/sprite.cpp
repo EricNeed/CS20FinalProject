@@ -16,11 +16,15 @@ void Sprite::logTypeToSpriteManager(){
     
 }
 
-void Sprite::moveSprite(SDL_Point new_coord){
+void Sprite::placeSprite(SDL_Point new_coord){
     derived_properties->Coord = new_coord;
 }
 
-
+void Sprite::moveSprite(int x, int y){
+    //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[Sprite::moveSprite]: Moving sprite %ld from (%d, %d) to (%d, %d)", derived_properties->ID, derived_properties->Coord.x, derived_properties->Coord.y, derived_properties->Coord.x + x, derived_properties->Coord.y + y);
+    derived_properties->Coord.x += x;
+    derived_properties->Coord.y += y;
+}
 
 
 // class Sprite {
