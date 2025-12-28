@@ -1,19 +1,19 @@
 #include<script_storge/character_sprite.h>
 #include<cmath>
 
-Player::Player(long ID) : Sprite(ID, &sprite_properties){
-    sprite_properties.Type = SpriteType::Player;
-    logTypeToSpriteManager();
-    sprite_properties.WalkSpeed = 1;
-    sprite_properties.Animation.Animation_Collection_Index = 0;
-    //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[Player::Player]: properties address: %p", &sprite_properties);
+Character::Character(long ID, bool is_prime, Properties_Character* properties_ptr, SpriteType sprite_type) : Sprite(ID, false, is_prime ? new Properties_Character() : properties_ptr, sprite_type){
+    //SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[Character::Character]: Creating Character with ID %ld", ID);
+    is_prime_sprite = is_prime;
+    derived_properties = static_cast<Properties_Character*>(propertie_pointer);
+    derived_properties->WalkSpeed = 1;
+    derived_properties->Animation.Animation_Collection_Index = 0;
 }
 
-const Properties_Player* Player::getProperties(){
-    return &sprite_properties;
+const Properties_Character* Character::getProperties(){
+    return derived_properties;
 }
 
-void Player::whenMovedSprite(int dx, int dy){
+void Character::whenMovedSprite(int dx, int dy){
     // Better: 0=neg, 1=zero, 2=pos
     int x_dir = (dx > 0) + (dx < 0)*2;
     int y_dir = (dy > 0) + (dy < 0)*2;
@@ -29,10 +29,16 @@ void Player::whenMovedSprite(int dx, int dy){
         //case 8: break;//up
         //case 9: break;//up left
     }
-    if ((sprite_properties.Animation.Animation_Index != animation_index) || (sprite_properties.Animation.Flip_Horizontally != flip)){
-        sprite_properties.Animation.Animation_Index = animation_index;
-        sprite_properties.Animation.Frame_Index = 0;
-        sprite_properties.Animation.Current_Texture_Loop_Count = 1;
-        sprite_properties.Animation.Flip_Horizontally = flip;
+    if ((derived_properties->Animation.Animation_Index != animation_index) || (derived_properties->Animation.Flip_Horizontally != flip)){
+        derived_properties->Animation.Animation_Index = animation_index;
+        derived_properties->Animation.Frame_Index = 0;
+        derived_properties->Animation.Current_Texture_Loop_Count = 1;
+        derived_properties->Animation.Flip_Horizontally = flip;
     }
 };
+
+Character::~Character(){
+    if(is_prime_sprite){
+        delete derived_properties;
+    }
+}

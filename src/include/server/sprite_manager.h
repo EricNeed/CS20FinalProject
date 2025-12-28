@@ -23,9 +23,9 @@ public:
 
     template<typename DerivedSprite>
     std::pair<long, Sprite*> createSprite(){//pass in de-pointered object mem addr
+        //SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[SpriteManager]: Creating new sprite");
         long spriteID = sprite_list.size();// the size is the last index + 1, so i can directly use it
         Sprite* sprite = new DerivedSprite(spriteID);
-        //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[SpriteManager]: Created sprite, address %p", sprite);
         sprite_list.resize(spriteID + 1, nullptr);
         sprite_list[spriteID] = sprite;
         return {spriteID, sprite};

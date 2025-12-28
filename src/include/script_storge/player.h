@@ -1,18 +1,16 @@
 #pragma once
-#include"script_storge/sprite.h"
+#include"script_storge/character_sprite.h"
 
-struct Properties_Player : Properties_Base{
-    int Health;
+struct Properties_Player : Properties_Character{
 };
 
-class Player : public Sprite{
+class Player : public Character{
     private:
-        void logTypeToSpriteManager() override{Sprite::logTypeToSpriteManager();};
-        Properties_Player sprite_properties;
+        Properties_Player* derived_properties;
+        bool is_prime_sprite = false;
     public:
-        Player(long ID);
+        Player(long ID, bool is_prime = true, Properties_Player* properties_ptr = nullptr, SpriteType sprite_type = SpriteType::Player);
 
         const Properties_Player* getProperties() override;
-
-        void whenMovedSprite(int x, int y);
+        ~Player();
 };

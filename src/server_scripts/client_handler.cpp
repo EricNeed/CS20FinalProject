@@ -1,5 +1,4 @@
 #include<server/client_handler.h>
-#include<iostream>
 
 ClientHandler& ClientHandler::getInstance(){
     static ClientHandler instance;

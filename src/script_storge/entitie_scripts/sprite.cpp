@@ -1,31 +1,41 @@
 #include<script_storge/sprite.h>
 
-Sprite::Sprite(long ID, Properties_Base* properties_ptr) {
+Sprite::Sprite(long ID, bool is_prime, Properties_Base* properties_ptr, SpriteType sprite_type){
+    //SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[Sprite::Sprite]: Creating Sprite with ID %ld", ID);
     //make so that it use the derived struct instead of current Properties_Base
-    derived_properties = properties_ptr;
-    derived_properties->ID = ID;
-    //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[Sprite::Sprite]: properties address: %p", derived_properties);
+    if(is_prime){
+        propertie_pointer = new Properties_Base();
+        is_prime_sprite = false;
+    }else{
+        propertie_pointer = properties_ptr;
+    }
+    propertie_pointer->ID = ID;
+    propertie_pointer->Type = sprite_type;
+    logTypeToSpriteManager();
+    //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[Sprite::Sprite]: properties address: %p", propertie_pointer);
 }
 
-// Sprite::~Sprite(){
-// }
-
 void Sprite::logTypeToSpriteManager(){
-    sprite_manager.id_to_type_list.resize(derived_properties->ID + 1);
-    sprite_manager.id_to_type_list[derived_properties->ID] = derived_properties->Type;
+    sprite_manager.id_to_type_list.resize(propertie_pointer->ID + 1);
+    sprite_manager.id_to_type_list[propertie_pointer->ID] = propertie_pointer->Type;
     
 }
 
 void Sprite::placeSprite(SDL_Point new_coord){
-    derived_properties->Coord = new_coord;
+    propertie_pointer->Coord = new_coord;
 }
 
 void Sprite::moveSprite(int x, int y){
-    //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[Sprite::moveSprite]: Moving sprite %ld from (%d, %d) to (%d, %d)", derived_properties->ID, derived_properties->Coord.x, derived_properties->Coord.y, derived_properties->Coord.x + x, derived_properties->Coord.y + y);
-    derived_properties->Coord.x += x;
-    derived_properties->Coord.y += y;
+    //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[Sprite::moveSprite]: Moving sprite %ld from (%d, %d) to (%d, %d)", propertie_pointer->ID, propertie_pointer->Coord.x, propertie_pointer->Coord.y, propertie_pointer->Coord.x + x, propertie_pointer->Coord.y + y);
+    propertie_pointer->Coord.x += x;
+    propertie_pointer->Coord.y += y;
 }
 
+Sprite::~Sprite(){
+    if(is_prime_sprite){
+        delete propertie_pointer;
+    }
+}
 
 // class Sprite {
 //     protected:
