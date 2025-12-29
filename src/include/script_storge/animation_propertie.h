@@ -37,15 +37,11 @@ inline const Animation_Frame* handleAnimation(Animation_Properties& animation_pr
     const std::pair<Animation_Frame, const unsigned char>* animation = sprite_animations[animation_properties.Animation_Index].first;
     const std::pair<Animation_Frame, const unsigned char>* current_frame = &animation[animation_properties.Frame_Index];
     //if time to display the next frame in the animation
-    //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[handleAnimation]: 1");
     if (animation_properties.Current_Texture_Loop_Count > current_frame->second){
-        //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[handleAnimation]: 1.1");
         //go to next texture
         animation_properties.Current_Texture_Loop_Count = 1;
-        //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[handleAnimation]: 1.2");
         //if no next texture go back to 0; (perplexity suggest, cleverly use remainder operation so anything below last frame will return itself)
         animation_properties.Frame_Index = (animation_properties.Frame_Index + 1) % (sprite_animations[animation_properties.Animation_Index].second + 1);
-        //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[handleAnimation]: 1.3");
     }else{animation_properties.Current_Texture_Loop_Count ++;}
     //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[handleAnimation]: 2, new Frame index: %d, Current_Texture_Loop_Count: %d", animation_properties.Frame_Index, animation_properties.Current_Texture_Loop_Count);
     return &animation[animation_properties.Frame_Index].first;

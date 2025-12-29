@@ -20,6 +20,7 @@ class ClientRendering{
         SDL_Renderer *sdl_renderer;
         SpriteManager &sprite_manager;
         std::unordered_map<const char*, TextureProperties> texture_map;
+        
 
     public:
         ClientRendering();

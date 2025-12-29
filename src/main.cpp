@@ -45,6 +45,7 @@ int main(){
         
         //sleep to maintain frame rate
         std::chrono::duration sleep_time = frame_time - std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - begin_time);
+        //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[Main]: Frame time: %lld microseconds", std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - begin_time).count());
         if (sleep_time.count() < 0){continue;}//if processing time exceeds frame time, skip sleep
         std::this_thread::sleep_for(sleep_time);
     }

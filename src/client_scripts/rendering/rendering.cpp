@@ -22,6 +22,7 @@ auto ClientRendering::newTexture(const char* texture_dir) -> TextureProperties*{
     return &texture_map[texture_dir];
 }
 
+
 void ClientRendering::tickRender(){
     //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: Render tick start");
     SDL_SetRenderDrawColor(sdl_renderer, 255, 255, 255, 255); 
@@ -48,6 +49,7 @@ void ClientRendering::tickRender(){
     }
     SDL_RenderPresent(sdl_renderer);
 }
+
 
 void ClientRendering::fullScreenToggle(bool enable_fullscreen){
     SDL_SetWindowFullscreen(sdl_window, enable_fullscreen);
