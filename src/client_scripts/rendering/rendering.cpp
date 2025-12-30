@@ -3,6 +3,7 @@
 #include"script_storge/sprite.h"
 #include<SDL3_image/SDL_image.h>
 #include<script_storge/texture_pool.h>
+#include<span>
 
 ClientRendering::ClientRendering() : sprite_manager(SpriteManager::getOnlyInstance()){
     sdl_window = SDL_CreateWindow("title", 640, 360, SDL_WINDOW_RESIZABLE);
@@ -29,19 +30,18 @@ void ClientRendering::tickRender(){
     SDL_RenderClear(sdl_renderer);
 
     //render sprite
-    for(const auto& sprite : sprite_manager.sprite_list){
+    for(const auto& sprite : std::span(sprite_manager.sprite_list, sprite_manager.MAX_SPRITES - 1)){
+        if(!sprite){continue;}
         //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: sprite propertie address: %p", sprite->getProperties());
         const Properties_Base* player_properties = sprite->getProperties();
         const Animation_Frame* frame_propertie = handleAnimation(const_cast<Properties_Base*>(player_properties)->Animation, sprite_texture_collections[player_properties->Animation.Animation_Collection_Index]);
         TextureProperties* texture_properties;
-
         //if cannot find texture, load texture, if find, then use it directly
         if (texture_map.find(frame_propertie->Texture_Dir) == texture_map.end()){
             texture_properties = newTexture(frame_propertie->Texture_Dir);
         }else{
             texture_properties = &texture_map[frame_propertie->Texture_Dir];
         }
-
         //rendering result
         //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: texture info: w: %f, h: %f, x: %ld, y: %ld", texture_properties->width, texture_properties->height, player_properties->Coord.x, player_properties->Coord.y);
         const SDL_FRect using_frect = {static_cast<float>(player_properties->Coord.x), static_cast<float>(player_properties->Coord.y), texture_properties->width, texture_properties->height};

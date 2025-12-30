@@ -14,22 +14,25 @@ private:
     SpriteManager& operator=(const SpriteManager&) = delete;
 
 public: 
-
-    static std::vector<Sprite*> sprite_list;
-    static std::vector<SpriteType> id_to_type_list;
+    constexpr static int MAX_SPRITES = 8192;
+    Sprite* sprite_list[MAX_SPRITES]{};
+    SpriteType id_to_type_list[MAX_SPRITES] = {};
 
     //get only instance
     static SpriteManager& getOnlyInstance();
 
     template<typename DerivedSprite>
-    std::pair<long, Sprite*> createSprite(){//pass in de-pointered object mem addr
+    std::pair<uint16_t, Sprite*> createSprite(){//pass in de-pointered object mem addr
         //SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[SpriteManager]: Creating new sprite");
-        long spriteID = sprite_list.size();// the size is the last index + 1, so i can directly use it
+        uint16_t spriteID = 0;
+        while(sprite_list[spriteID] && spriteID < MAX_SPRITES){
+            spriteID++;
+        }
+        //SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[SpriteManager]: new sprite ID: %ld", spriteID);
         Sprite* sprite = new DerivedSprite(spriteID);
-        sprite_list.resize(spriteID + 1, nullptr);
         sprite_list[spriteID] = sprite;
         return {spriteID, sprite};
     }
 
-    void removeSpriteFromList(long spriteID);
+    void removeSpriteFromList(uint16_t spriteID);
 };

@@ -1,7 +1,7 @@
 #include<script_storge/character_sprite.h>
 #include<cmath>
 
-Character::Character(long ID, bool is_prime, Properties_Character* properties_ptr, SpriteType sprite_type) : Sprite(ID, false, is_prime ? new Properties_Character() : properties_ptr, sprite_type){
+Character::Character(uint16_t ID, bool is_prime, Properties_Character* properties_ptr, SpriteType sprite_type) : Sprite(ID, false, is_prime ? new Properties_Character() : properties_ptr, sprite_type){
     //SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[Character::Character]: Creating Character with ID %ld", ID);
     is_prime_sprite = is_prime;
     derived_properties = static_cast<Properties_Character*>(propertie_pointer);

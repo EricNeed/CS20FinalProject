@@ -15,7 +15,7 @@ class ClientHandler{
     public:
         static ClientHandler& getInstance();
         void processClientRequest();
-        void newPlayerCoord(long player_spriteID, int add_x, int add_y);
+        void newPlayerCoord(uint16_t player_spriteID, int add_x, int add_y);
         long newConnectedClient();
 };
 

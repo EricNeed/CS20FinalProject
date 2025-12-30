@@ -9,12 +9,14 @@ TickClient::TickClient() : client_handler(ClientHandler::getInstance()){
 }
 
 void TickClient::tick_client(){
-    //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "Tick client");
+    //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[TickClient::tick_client]: Tick client");
 
     //handle user input
     input_handler->processUserInput();
     //tick rendering
+    //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[TickClient::tick_client]: Tick render");
     client_rendering.tickRender();
+    //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[TickClient::tick_client]: end");
 }
 
 

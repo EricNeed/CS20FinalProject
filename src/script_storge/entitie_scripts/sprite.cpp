@@ -1,6 +1,6 @@
 #include<script_storge/sprite.h>
 
-Sprite::Sprite(long ID, bool is_prime, Properties_Base* properties_ptr, SpriteType sprite_type){
+Sprite::Sprite(uint16_t ID, bool is_prime, Properties_Base* properties_ptr, SpriteType sprite_type){
     //SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[Sprite::Sprite]: Creating Sprite with ID %ld", ID);
     //make so that it use the derived struct instead of current Properties_Base
     if(is_prime){
@@ -16,9 +16,7 @@ Sprite::Sprite(long ID, bool is_prime, Properties_Base* properties_ptr, SpriteTy
 }
 
 void Sprite::logTypeToSpriteManager(){
-    sprite_manager.id_to_type_list.resize(propertie_pointer->ID + 1);
-    sprite_manager.id_to_type_list[propertie_pointer->ID] = propertie_pointer->Type;
-    
+    sprite_manager.id_to_type_list[propertie_pointer->ID] = propertie_pointer->Type; 
 }
 
 void Sprite::placeSprite(SDL_Point new_coord){

@@ -19,7 +19,7 @@ struct Sprite_Arm{
 };
 
 struct Properties_Base{
-    long ID;
+    uint16_t ID;
     SpriteType Type;
     SDL_Point Coord = {0,0};
     int WalkSpeed;
@@ -42,7 +42,7 @@ class Sprite {
         //needed to be overided if have special struct
         virtual const Properties_Base* getProperties() = 0;
         //always put true for is_prime when creating class
-        Sprite(long ID, bool is_prime = true, Properties_Base* properties_ptr = nullptr, SpriteType sprite_type = SpriteType::Sprite);
+        Sprite(uint16_t ID, bool is_prime = true, Properties_Base* properties_ptr = nullptr, SpriteType sprite_type = SpriteType::Sprite);
         
         //move sprite by x,y offset
         void moveSprite(int x, int y);

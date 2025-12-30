@@ -8,10 +8,9 @@ class ClientInput;
 class TickClient {
     private:
         ClientHandler& client_handler;
-        long spriteID;
+        uint16_t spriteID;
         ClientInput* input_handler = nullptr;
         ClientRendering client_rendering;
-        long player_spriteID;
         
         void processSDLEvents(SDL_Event& sdl_event);
     public:

@@ -8,12 +8,11 @@
 class ClientInput{
     private:
         const bool *keyboard_states;
-        long playerID = 0;
+        uint16_t playerID = 0;
         SpriteManager& sprite_manager = SpriteManager::getOnlyInstance();
         ClientHandler& client_handler = ClientHandler::getInstance();
     public:
-        ClientInput(long ID);
-
+        ClientInput(uint16_t ID);
 
         void processUserInput();
 };

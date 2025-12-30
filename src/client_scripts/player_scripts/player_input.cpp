@@ -1,7 +1,7 @@
 #include<client/player_input.h>
 #include<iostream>
 
-ClientInput::ClientInput(long ID){
+ClientInput::ClientInput(uint16_t ID){
     keyboard_states = SDL_GetKeyboardState(NULL);
     playerID = ID;
 }

@@ -9,7 +9,7 @@ void processClientRequest(){
     
 }
 
-void ClientHandler::newPlayerCoord(long player_spriteID, int add_x, int add_y){
+void ClientHandler::newPlayerCoord(uint16_t player_spriteID, int add_x, int add_y){
     Player* player = static_cast<Player*>(sprite_manager.sprite_list[player_spriteID]);
     player->moveSprite(add_x, add_y);
     player->whenMovedSprite(add_x, add_y);
