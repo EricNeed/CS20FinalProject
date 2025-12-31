@@ -12,11 +12,22 @@ Eric Ni (67,67)*/
 #pragma once
 #include<utility>
 
+struct TextureProperties{
+    SDL_Texture* texture;
+    float width;
+    float height;
+};
+
 struct Animation_Frame{
     const char* Texture_Dir;
     bool Mirror_Horizontally = false;
     //multiply the length and width not the area
     unsigned char size_multiplier = 1;
+};
+
+struct Display_Propertie{
+    SDL_Texture* Current_Texture_Pointer = nullptr;
+    SDL_FRect Current_Texture_FRect;
 };
 
 struct Animation_Properties{
@@ -29,20 +40,24 @@ struct Animation_Properties{
     unsigned char Current_Texture_Loop_Count = 1;
     //flip everything in current animation horizontally
     bool Flip_Horizontally = false;
+    //cache the current texture pointer
+    Display_Propertie Current_Setting;
 };
 
 //inter the sprite's propertie and the sprite's animation sequence array to get the current texture to use
-inline const Animation_Frame* handleAnimation(Animation_Properties& animation_properties, const std::pair <const std::pair<Animation_Frame, const unsigned char>*, const unsigned char>* sprite_animations){
+inline std::pair<const Animation_Frame*, bool> handleAnimation(Animation_Properties& animation_properties, const std::pair <const std::pair<Animation_Frame, const unsigned char>*, const unsigned char>* sprite_animations){
     //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[handleAnimation]: Animation index: %d, Frame index: %d, Current_Texture_Loop_Count: %d", animation_properties.Animation_Index, animation_properties.Frame_Index, animation_properties.Current_Texture_Loop_Count);
     const std::pair<Animation_Frame, const unsigned char>* animation = sprite_animations[animation_properties.Animation_Index].first;
     const std::pair<Animation_Frame, const unsigned char>* current_frame = &animation[animation_properties.Frame_Index];
     //if time to display the next frame in the animation
+    bool is_frame_changed = false;
     if (animation_properties.Current_Texture_Loop_Count > current_frame->second){
+        is_frame_changed = true;
         //go to next texture
         animation_properties.Current_Texture_Loop_Count = 1;
         //if no next texture go back to 0; (perplexity suggest, cleverly use remainder operation so anything below last frame will return itself)
         animation_properties.Frame_Index = (animation_properties.Frame_Index + 1) % (sprite_animations[animation_properties.Animation_Index].second + 1);
     }else{animation_properties.Current_Texture_Loop_Count ++;}
     //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[handleAnimation]: 2, new Frame index: %d, Current_Texture_Loop_Count: %d", animation_properties.Frame_Index, animation_properties.Current_Texture_Loop_Count);
-    return &animation[animation_properties.Frame_Index].first;
+    return {&animation[animation_properties.Frame_Index].first, is_frame_changed};
 }

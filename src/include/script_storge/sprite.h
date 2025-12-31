@@ -24,8 +24,6 @@ struct Properties_Base{
     SDL_Point Coord = {0,0};
     int WalkSpeed;
     Animation_Properties Animation;
-    Sprite_Arm Left_Arm;
-    Sprite_Arm Right_Arm;
 };
 
 class Sprite {
