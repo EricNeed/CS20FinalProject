@@ -10,12 +10,12 @@ class TickClient {
         ClientHandler& client_handler;
         uint16_t spriteID;
         ClientInput* input_handler = nullptr;
-        ClientRendering client_rendering;
+        ClientRendering* client_rendering;
         
         void processSDLEvents(SDL_Event& sdl_event);
     public:
         TickClient();
         void tick_client();
         ~TickClient();
-        void toggleFullScreen(bool enable_fullscreen){client_rendering.fullScreenToggle(enable_fullscreen);}
+        void toggleFullScreen(bool enable_fullscreen){client_rendering->fullScreenToggle(enable_fullscreen);}
 };
