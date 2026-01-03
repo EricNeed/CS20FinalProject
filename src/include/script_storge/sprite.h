@@ -11,16 +11,15 @@ enum class SpriteType{
     Player,
 };
 
-struct Sprite_Arm{
-    //which texture in the texture pool, set to negative to disable arm rendering
-    int texture_pool_index = 0;
-    //offset from the sprite coordinate
-    SDL_Point offset = {0,0};
+enum class AncestryTree : uint64_t{
+    Character = 1ULL << 0
 };
 
 struct Properties_Base{
     uint16_t ID;
     SpriteType Type;
+    //every bit is one class, 1 means current class inherited that class, 0 means no inheritance.
+    uint64_t Ancestry_Tree = 0;
     SDL_Point Coord = {0,0};
     int WalkSpeed;
     Animation_Properties Animation;

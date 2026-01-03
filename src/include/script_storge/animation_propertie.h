@@ -12,12 +12,14 @@ Eric Ni (67,67)*/
 #pragma once
 #include<utility>
 
+//for the texture storing hash map
 struct TextureProperties{
     SDL_Texture* texture;
     float width;
     float height;
 };
 
+//for the texture pool, each frame of animation
 struct Animation_Frame{
     const char* Texture_Dir;
     bool Mirror_Horizontally = false;
@@ -25,9 +27,11 @@ struct Animation_Frame{
     unsigned char size_multiplier = 1;
 };
 
+//display cache inside each sprite
 struct Display_Propertie{
     SDL_Texture* Current_Texture_Pointer = nullptr;
     SDL_FRect Current_Texture_FRect;
+    unsigned char Cached_Animation_Index = 225;
 };
 
 struct Animation_Properties{
@@ -51,6 +55,7 @@ inline std::pair<const Animation_Frame*, bool> handleAnimation(Animation_Propert
     const std::pair<Animation_Frame, const unsigned char>* current_frame = &animation[animation_properties.Frame_Index];
     //if time to display the next frame in the animation
     bool is_frame_changed = false;
+    is_frame_changed = animation_properties.Animation_Index != animation_properties.Current_Setting.Cached_Animation_Index;
     if (animation_properties.Current_Texture_Loop_Count > current_frame->second){
         is_frame_changed = true;
         //go to next texture

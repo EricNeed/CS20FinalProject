@@ -1,6 +1,8 @@
 #include<src/include/server/tick_server_main.h>
-
-TickServer::TickServer(){}
+#include<server/sprite_manager.h>
+TickServer::TickServer(){
+    auto [spriteID, pPlayer] = sprite_manager.createSprite<Character>();
+}
 
 void TickServer::ticking(){
     

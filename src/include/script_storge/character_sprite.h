@@ -1,6 +1,13 @@
 #pragma once
 #include"script_storge/sprite.h"
 
+struct Sprite_Arm{
+    //which texture in the texture pool, set to negative to disable arm rendering
+    int texture_pool_index = 0;
+    //offset from the sprite coordinate
+    SDL_Point offset = {0,0};
+};
+
 struct Properties_Character : Properties_Base{
     int Health;
 };

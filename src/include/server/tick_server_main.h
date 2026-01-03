@@ -3,7 +3,7 @@
 class TickServer{
     private:
         ClientHandler& client_handler = ClientHandler::getInstance();
-
+        SpriteManager& sprite_manager = SpriteManager::getOnlyInstance();
     public:
         TickServer();
         void ticking();

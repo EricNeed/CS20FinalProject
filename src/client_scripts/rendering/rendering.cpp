@@ -77,6 +77,7 @@ void ClientRendering::tickRender(){
             player_properties->Animation.Current_Setting.Current_Texture_FRect.h = texture_properties->height * frame_propertie->size_multiplier;
             player_properties->Animation.Current_Setting.Current_Texture_FRect.w = texture_properties->width * frame_propertie->size_multiplier;
             player_properties->Animation.Current_Setting.Current_Texture_Pointer = texture_properties->texture;
+            player_properties->Animation.Current_Setting.Cached_Animation_Index = player_properties->Animation.Animation_Index;
         }
 
         //place the texture

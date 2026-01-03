@@ -5,6 +5,7 @@
 
 class Sprite;
 enum class SpriteType;
+enum class AncestryTree : uint64_t;
 
 class SpriteManager{
 private:
@@ -35,4 +36,5 @@ public:
     }
 
     void removeSpriteFromList(uint16_t spriteID);
+    bool spriteHaveAncestor(uint64_t spriteID, AncestryTree ancestor);
 };

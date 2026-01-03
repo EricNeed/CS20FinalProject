@@ -7,6 +7,7 @@ Character::Character(uint16_t ID, bool is_prime, Properties_Character* propertie
     derived_properties = static_cast<Properties_Character*>(propertie_pointer);
     derived_properties->WalkSpeed = 1;
     derived_properties->Animation.Animation_Collection_Index = 0;
+    derived_properties->Ancestry_Tree |= static_cast<uint64_t>(AncestryTree::Character);
 }
 
 const Properties_Character* Character::getProperties(){
@@ -23,7 +24,7 @@ void Character::whenMovedSprite(int dx, int dy){
     switch(x_dir | (y_dir << 2)){  // 0-8 unique values!
         case 1: animation_index = 0; flip = true; break;//right
         case 2: animation_index = 0; break;//left
-        //case 4: break;//down
+        case 4: animation_index = 1; break;//down
         //case 5: break;//down right
         //case 6: break;//down left
         //case 8: break;//up
