@@ -27,11 +27,23 @@ struct Animation_Frame{
     unsigned char size_multiplier = 1;
 };
 
+struct Sprite_Extra_Part{
+    //which texture in the texture pool, set to negative to disable arm rendering
+    int texture_pool_index = 0;
+    //offset from the sprite coordinate
+    SDL_Point offset = {0,0};
+    //if display infront of sprite or behind
+    bool Infront_Sprite = false;
+};
+
 //display cache inside each sprite
 struct Display_Propertie{
     SDL_Texture* Current_Texture_Pointer = nullptr;
     SDL_FRect Current_Texture_FRect;
     unsigned char Cached_Animation_Index = 225;
+    //this need to point to a array, dont forget to change Extra_Part_Amount
+    Sprite_Extra_Part* Extra_Parts = nullptr;
+    char Extra_Part_Amount = -1;
 };
 
 struct Animation_Properties{

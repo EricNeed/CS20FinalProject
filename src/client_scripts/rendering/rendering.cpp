@@ -85,12 +85,14 @@ void ClientRendering::tickRender(){
         //rendering result
         //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: texture info: w: %f, h: %f, x: %ld, y: %ld", texture_properties->width, texture_properties->height, player_properties->Coord.x, player_properties->Coord.y);
     }
+
     for(uint16_t current_index = 0; current_index < order_sorter_max; current_index++){
         Animation_Properties* current_propertie = display_order_sorter[current_index];
         if(!current_propertie){continue;}
         const Animation_Frame* frame_propertie = &sprite_texture_collections[current_propertie->Animation_Collection_Index]->first->first;
         SDL_RenderTextureRotated(sdl_renderer, current_propertie->Current_Setting.Current_Texture_Pointer, nullptr, &current_propertie->Current_Setting.Current_Texture_FRect, 0.0, nullptr, (frame_propertie->Mirror_Horizontally ^ current_propertie->Flip_Horizontally) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE);
     }
+    
     SDL_RenderPresent(sdl_renderer);
 }
 

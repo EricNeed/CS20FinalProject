@@ -8,6 +8,9 @@ Character::Character(uint16_t ID, bool is_prime, Properties_Character* propertie
     derived_properties->WalkSpeed = 1;
     derived_properties->Animation.Animation_Collection_Index = 0;
     derived_properties->Ancestry_Tree |= static_cast<uint64_t>(AncestryTree::Character);
+
+    derived_properties->Animation.Current_Setting.Extra_Parts = derived_properties->Arms;
+    derived_properties->Animation.Current_Setting.Extra_Part_Amount = 2;
 }
 
 const Properties_Character* Character::getProperties(){
