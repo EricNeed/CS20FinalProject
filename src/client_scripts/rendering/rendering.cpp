@@ -6,12 +6,16 @@
 #include<cstring>
 
 ClientRendering& ClientRendering::getOnlyInstance(uint16_t ID, bool is_first_call){
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "get rendering instance");
     static ClientRendering instance;
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "get rendering instance");
     if(is_first_call){instance.playerID = ID;}
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "get rendering instance");
     return instance;
 }
 
 ClientRendering::ClientRendering() : sprite_manager(SpriteManager::getOnlyInstance()){
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "render constructor runs");
     sdl_window = SDL_CreateWindow("title", 640, 360, SDL_WINDOW_RESIZABLE);
     sdl_renderer = SDL_CreateRenderer(sdl_window, NULL);
     SDL_SetLogPriority(SDL_LOG_CATEGORY_RENDER, SDL_LOG_PRIORITY_DEBUG);
@@ -20,20 +24,20 @@ ClientRendering::ClientRendering() : sprite_manager(SpriteManager::getOnlyInstan
 }
 
 //load new texture from file
-void ClientRendering::newTexture(const char* texture_dir){
+void ClientRendering::newTexture(uint16_t texture_dir_index){
     //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: Load texture");
-    SDL_Texture *texture_temp = IMG_LoadTexture(sdl_renderer, texture_dir);
+    SDL_Texture *texture_temp = IMG_LoadTexture(sdl_renderer, texture_pool[texture_dir_index]);
     if (!texture_temp){SDL_LogError(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: IMG_LoadTexture error:");}
     SDL_SetTextureScaleMode(texture_temp, SDL_SCALEMODE_NEAREST);
     //cache it
-    texture_map[texture_dir] = {texture_temp, static_cast<float>(texture_temp->w), static_cast<float>(texture_temp->h)};
+    texture_map[texture_dir_index] = {texture_temp, static_cast<float>(texture_temp->w), static_cast<float>(texture_temp->h)};
 }
 
-TextureProperties* ClientRendering::getTexture(const char* texture_dir){
-    if (texture_map.find(texture_dir) == texture_map.end()){
-        newTexture(texture_dir);
+TextureProperties* ClientRendering::getTexture(uint16_t texture_dir_index){
+    if (texture_map.find(texture_dir_index) == texture_map.end()){
+        newTexture(texture_dir_index);
     }
-    return &texture_map[texture_dir];
+    return &texture_map[texture_dir_index];
 }
 
 void ClientRendering::placeInDisplayOrderArray(int y_max, Animation_Properties* propertie){
@@ -78,7 +82,7 @@ void ClientRendering::tickRender(){
         auto [frame_propertie, is_frame_changed] = handleAnimation(player_properties->Animation, sprite_texture_collections[player_properties->Animation.Animation_Collection_Index]);
         //if cannot find texture, load texture, if find, then use it directly
         if(is_frame_changed){
-            TextureProperties* texture_properties = getTexture(frame_propertie->Texture_Dir);
+            TextureProperties* texture_properties = getTexture(frame_propertie->texture_Dir_Index);
             player_properties->Animation.Current_Setting.Current_Texture_FRect.h = texture_properties->height * frame_propertie->size_multiplier;
             player_properties->Animation.Current_Setting.Current_Texture_FRect.w = texture_properties->width * frame_propertie->size_multiplier;
             player_properties->Animation.Current_Setting.Current_Texture_Pointer = texture_properties->texture;
@@ -90,12 +94,17 @@ void ClientRendering::tickRender(){
         //rendering result
         //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: texture info: w: %f, h: %f, x: %ld, y: %ld", texture_properties->width, texture_properties->height, player_properties->Coord.x, player_properties->Coord.y);
     }
-
+    //rendering
     for(uint16_t current_index = 0; current_index < order_sorter_max; current_index++){
         Animation_Properties* current_propertie = display_order_sorter[current_index];
         if(!current_propertie){continue;}
+        //load extra parts
+        for(Sprite_Extra_Part* part : std::span(&current_propertie->Current_Setting.Extra_Parts, current_propertie->Current_Setting.Extra_Part_Amount)){
+            if(!part->Infront_Sprite){SDL_RenderTexture(sdl_renderer, part->texture, nullptr, const_cast<const SDL_FRect>(part->frect));}
+        }
         const Animation_Frame* frame_propertie = &sprite_texture_collections[current_propertie->Animation_Collection_Index]->first->first;
         SDL_RenderTextureRotated(sdl_renderer, current_propertie->Current_Setting.Current_Texture_Pointer, nullptr, &current_propertie->Current_Setting.Current_Texture_FRect, 0.0, nullptr, (frame_propertie->Mirror_Horizontally ^ current_propertie->Flip_Horizontally) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE);
+        for(uint8_t i = 0; current_propertie->Current_Setting.Extra_Part_Amount + 1; i++){}
     }
     
     SDL_RenderPresent(sdl_renderer);

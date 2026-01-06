@@ -18,7 +18,7 @@ class ClientRendering{
         SDL_Window *sdl_window;
         SDL_Renderer *sdl_renderer;
         SpriteManager &sprite_manager;
-        std::unordered_map<const char*, TextureProperties> texture_map;
+        std::unordered_map<uint16_t, TextureProperties> texture_map;
         uint16_t playerID;
 
         static constexpr uint16_t order_sorter_max = 720;
@@ -32,7 +32,7 @@ class ClientRendering{
     public:
         static ClientRendering& getOnlyInstance(uint16_t ID, bool is_first_call = false);
         void tickRender();
-        void newTexture(const char* texture_dir);
-        auto getTexture(const char* texture_dir) -> TextureProperties*;
+        void newTexture(uint16_t texture_dir_index);
+        auto getTexture(uint16_t texture_dir_index) -> TextureProperties*;
         void fullScreenToggle(bool enable_fullscreen);
 };

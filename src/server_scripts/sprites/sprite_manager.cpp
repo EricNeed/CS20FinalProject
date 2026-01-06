@@ -2,10 +2,11 @@
 #include"script_storge/sprite.h"
 #include"client/rendering.h"
 
-SpriteManager::SpriteManager() : client_rendering(ClientRendering::getOnlyInstance(67)){
+SpriteManager::SpriteManager(){
 }
 
 SpriteManager& SpriteManager::getOnlyInstance(){
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "get sprite manager");
     static SpriteManager instance;
     return instance;
 }
@@ -21,7 +22,12 @@ bool SpriteManager::spriteHaveAncestor(uint64_t spriteID, AncestryTree ancestor)
 }
 
 void SpriteManager::spritePartInitialize(Sprite_Extra_Part* part, int texture_index, bool infront_sprite){
-    
+    if(!client_rendering){client_rendering = &ClientRendering::getOnlyInstance(67);}
+    TextureProperties* texture_propertie = client_rendering->getTexture(texture_index);
+    part->texture = texture_propertie->texture;
+    part->frect.h = texture_propertie->height;
+    part->frect.w = texture_propertie->width;
+    part->Infront_Sprite = infront_sprite;
 }
 
 SpriteManager::~SpriteManager(){
@@ -30,4 +36,3 @@ SpriteManager::~SpriteManager(){
 // uint16_t spriteID = sprite_list.size();// the size is the last index + 1, so i can directly use it
 // sprite_list[spriteID] = new_sprite;
 // return spriteID;
-

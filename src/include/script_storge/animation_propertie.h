@@ -21,16 +21,16 @@ struct TextureProperties{
 
 //for the texture pool, each frame of animation
 struct Animation_Frame{
-    const char* Texture_Dir;
-    bool Mirror_Horizontally = false;
+    const uint16_t texture_Dir_Index;
+    bool Mirror_Horizontally;
     //multiply the length and width not the area
-    unsigned char size_multiplier = 1;
+    const unsigned char size_multiplier = 1;
 };
 
 struct Sprite_Extra_Part{
-    SDL_Texture* texture_ptr = nullptr;
+    SDL_Texture* texture = nullptr;
     //offset from the sprite coordinate
-    SDL_Point offset = {0,0};
+    SDL_FRect frect = {0,0};
     //if display infront of sprite or behind
     bool Infront_Sprite = false;
 };

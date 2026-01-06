@@ -17,7 +17,7 @@ private:
     SpriteManager(const SpriteManager&) = delete;
     SpriteManager& operator=(const SpriteManager&) = delete;
 
-    ClientRendering& client_rendering;
+    ClientRendering* client_rendering = nullptr;
 public: 
     constexpr static int MAX_SPRITES = 8192;
     Sprite* sprite_list[MAX_SPRITES]{};

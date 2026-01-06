@@ -1,6 +1,7 @@
 #include<server/client_handler.h>
 
 ClientHandler& ClientHandler::getInstance(){
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "get client handler intance");
     static ClientHandler instance;
     return instance;
 }
