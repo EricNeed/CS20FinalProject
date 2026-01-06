@@ -2,18 +2,22 @@
 #include<string>
 #include<vector>
 #include<SDL3/SDL.h>
+#include<script_storge/animation_propertie.h>
 
 class Sprite;
 enum class SpriteType;
 enum class AncestryTree : uint64_t;
 
+class ClientRendering;
+
 class SpriteManager{
 private:
     //preperation
-    SpriteManager(){}
+    SpriteManager();
     SpriteManager(const SpriteManager&) = delete;
     SpriteManager& operator=(const SpriteManager&) = delete;
 
+    ClientRendering& client_rendering;
 public: 
     constexpr static int MAX_SPRITES = 8192;
     Sprite* sprite_list[MAX_SPRITES]{};
@@ -37,4 +41,6 @@ public:
 
     void removeSpriteFromList(uint16_t spriteID);
     bool spriteHaveAncestor(uint64_t spriteID, AncestryTree ancestor);
+    void spritePartInitialize(Sprite_Extra_Part* part, int texture_index, bool infront_sprite);
+    ~SpriteManager();
 };

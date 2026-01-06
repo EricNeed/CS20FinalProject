@@ -5,13 +5,18 @@
 #include<span>
 #include<cstring>
 
-ClientRendering::ClientRendering(uint16_t ID) : sprite_manager(SpriteManager::getOnlyInstance()){
+ClientRendering& ClientRendering::getOnlyInstance(uint16_t ID, bool is_first_call){
+    static ClientRendering instance;
+    if(is_first_call){instance.playerID = ID;}
+    return instance;
+}
+
+ClientRendering::ClientRendering() : sprite_manager(SpriteManager::getOnlyInstance()){
     sdl_window = SDL_CreateWindow("title", 640, 360, SDL_WINDOW_RESIZABLE);
     sdl_renderer = SDL_CreateRenderer(sdl_window, NULL);
     SDL_SetLogPriority(SDL_LOG_CATEGORY_RENDER, SDL_LOG_PRIORITY_DEBUG);
     SDL_SetRenderLogicalPresentation(sdl_renderer, 640, 360, SDL_LOGICAL_PRESENTATION_OVERSCAN);
     SDL_GetWindowSize(sdl_window, &window_width, &window_height);
-    playerID = ID;
 }
 
 //load new texture from file

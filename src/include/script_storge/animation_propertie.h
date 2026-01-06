@@ -28,8 +28,7 @@ struct Animation_Frame{
 };
 
 struct Sprite_Extra_Part{
-    //which texture in the texture pool, set to negative to disable arm rendering
-    int texture_pool_index = 0;
+    SDL_Texture* texture_ptr = nullptr;
     //offset from the sprite coordinate
     SDL_Point offset = {0,0};
     //if display infront of sprite or behind

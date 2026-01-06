@@ -10,6 +10,11 @@ class SpriteManager; // Forward declaration
 
 class ClientRendering{
     private:
+        ClientRendering();
+        ClientRendering(const ClientRendering&) = delete;
+        ClientRendering& operator=(const ClientRendering&) = delete;
+        //is_first_call should always leave false unless the first time call this function
+
         SDL_Window *sdl_window;
         SDL_Renderer *sdl_renderer;
         SpriteManager &sprite_manager;
@@ -25,7 +30,7 @@ class ClientRendering{
 
         void placeInDisplayOrderArray(int y_max, Animation_Properties*);
     public:
-        ClientRendering(uint16_t ID);
+        static ClientRendering& getOnlyInstance(uint16_t ID, bool is_first_call = false);
         void tickRender();
         void newTexture(const char* texture_dir);
         auto getTexture(const char* texture_dir) -> TextureProperties*;

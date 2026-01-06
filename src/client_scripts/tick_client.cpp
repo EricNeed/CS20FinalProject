@@ -3,10 +3,9 @@
 #include<client/player_input.h>
 
 
-TickClient::TickClient() : client_handler(ClientHandler::getInstance()){
+TickClient::TickClient() : client_handler(ClientHandler::getInstance()), client_rendering(ClientRendering::getOnlyInstance(spriteID)){
     spriteID = client_handler.newConnectedClient();
     input_handler = new ClientInput(spriteID);
-    client_rendering = new ClientRendering(spriteID);
 }
 
 void TickClient::tick_client(){
@@ -16,7 +15,7 @@ void TickClient::tick_client(){
     input_handler->processUserInput();
     //tick rendering
     //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[TickClient::tick_client]: Tick render");
-    client_rendering->tickRender();
+    client_rendering.tickRender();
     //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[TickClient::tick_client]: end");
 }
 
@@ -24,5 +23,4 @@ void TickClient::tick_client(){
 
 TickClient::~TickClient(){
     delete input_handler;
-    delete client_rendering;
 }

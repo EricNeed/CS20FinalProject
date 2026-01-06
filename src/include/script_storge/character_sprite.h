@@ -3,7 +3,7 @@
 
 struct Properties_Character : Properties_Base{
     int Health;
-    Sprite_Extra_Part Arms[2] = {{1,{0,0}, true}, {1,{12,0}, true}};
+    Sprite_Extra_Part Arms[2];
 };
 
 class Character : public Sprite{
