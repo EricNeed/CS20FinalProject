@@ -30,7 +30,8 @@ struct Animation_Frame{
 struct Sprite_Extra_Part{
     SDL_Texture* texture = nullptr;
     //offset from the sprite coordinate
-    SDL_FRect frect = {0,0};
+    SDL_FRect frect;
+    SDL_Point offset = {0,0};
     //if display infront of sprite or behind
     bool Infront_Sprite = false;
 };

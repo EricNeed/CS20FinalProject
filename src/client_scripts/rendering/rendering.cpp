@@ -77,7 +77,8 @@ void ClientRendering::tickRender(){
         player_properties->Animation.Current_Setting.Current_Texture_FRect.y = static_cast<float>(player_properties->Coord.y - map_screen_cornerY);
         //check if the texture's top left corner is on the screen
         if(pointNotOnScreen(player_properties->Animation.Current_Setting.Current_Texture_FRect.x, player_properties->Animation.Current_Setting.Current_Texture_FRect.y, 32)){continue;}
-
+        player_properties->Animation.Current_Setting.Extra_Parts->frect.x = player_properties->Animation.Current_Setting.Current_Texture_FRect.x + player_properties->Animation.Current_Setting.Extra_Parts->offset.x;
+        player_properties->Animation.Current_Setting.Extra_Parts->frect.y = player_properties->Animation.Current_Setting.Current_Texture_FRect.y + player_properties->Animation.Current_Setting.Extra_Parts->offset.y;
         //handle animation
         auto [frame_propertie, is_frame_changed] = handleAnimation(player_properties->Animation, sprite_texture_collections[player_properties->Animation.Animation_Collection_Index]);
         //if cannot find texture, load texture, if find, then use it directly
@@ -98,13 +99,20 @@ void ClientRendering::tickRender(){
     for(uint16_t current_index = 0; current_index < order_sorter_max; current_index++){
         Animation_Properties* current_propertie = display_order_sorter[current_index];
         if(!current_propertie){continue;}
-        //load extra parts
-        for(Sprite_Extra_Part* part : std::span(&current_propertie->Current_Setting.Extra_Parts, current_propertie->Current_Setting.Extra_Part_Amount)){
-            if(!part->Infront_Sprite){SDL_RenderTexture(sdl_renderer, part->texture, nullptr, const_cast<const SDL_FRect>(part->frect));}
+        //load extra parts behind sprite
+        for(uint8_t i = 0; i < current_propertie->Current_Setting.Extra_Part_Amount; i++){
+            //update the parts position
+            current_propertie->Current_Setting.Extra_Parts->frect.x = current_propertie->Current_Setting.Current_Texture_FRect.x + current_propertie->Current_Setting.Extra_Parts->offset.x;
+            current_propertie->Current_Setting.Extra_Parts->frect.y = current_propertie->Current_Setting.Current_Texture_FRect.y + current_propertie->Current_Setting.Extra_Parts->offset.y;
+            SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: extra part position: (%ld, %ld)", current_propertie->Current_Setting.Extra_Parts->frect.x, current_propertie->Current_Setting.Extra_Parts->frect.y);
+            if(!current_propertie->Current_Setting.Extra_Parts->Infront_Sprite){SDL_RenderTexture(sdl_renderer, current_propertie->Current_Setting.Extra_Parts->texture, nullptr, &current_propertie->Current_Setting.Extra_Parts->frect);}
         }
         const Animation_Frame* frame_propertie = &sprite_texture_collections[current_propertie->Animation_Collection_Index]->first->first;
         SDL_RenderTextureRotated(sdl_renderer, current_propertie->Current_Setting.Current_Texture_Pointer, nullptr, &current_propertie->Current_Setting.Current_Texture_FRect, 0.0, nullptr, (frame_propertie->Mirror_Horizontally ^ current_propertie->Flip_Horizontally) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE);
-        for(uint8_t i = 0; current_propertie->Current_Setting.Extra_Part_Amount + 1; i++){}
+        //load extra part infront of sprite
+        for(uint8_t i = 0; i < current_propertie->Current_Setting.Extra_Part_Amount; i++){
+            if(current_propertie->Current_Setting.Extra_Parts->Infront_Sprite){SDL_RenderTexture(sdl_renderer, current_propertie->Current_Setting.Extra_Parts->texture, nullptr, &current_propertie->Current_Setting.Extra_Parts->frect);}
+        }
     }
     
     SDL_RenderPresent(sdl_renderer);

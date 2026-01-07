@@ -9,6 +9,7 @@ Character::Character(uint16_t ID, bool is_prime, Properties_Character* propertie
     derived_properties->Animation.Animation_Collection_Index = 0;
     derived_properties->Ancestry_Tree |= static_cast<uint64_t>(AncestryTree::Character);
 
+    //sprite extra part, arm is the case here
     sprite_manager.spritePartInitialize(&derived_properties->Arms[0], 2, true);
     sprite_manager.spritePartInitialize(&derived_properties->Arms[1], 2, true);
     derived_properties->Animation.Current_Setting.Extra_Parts = derived_properties->Arms;
