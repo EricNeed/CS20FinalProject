@@ -6,7 +6,7 @@ SpriteManager::SpriteManager(){
 }
 
 SpriteManager& SpriteManager::getOnlyInstance(){
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "get sprite manager");
+    //SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[SpriteManager::getOnlyInstance]: get sprite manager");
     static SpriteManager instance;
     return instance;
 }

@@ -6,16 +6,13 @@
 #include<cstring>
 
 ClientRendering& ClientRendering::getOnlyInstance(uint16_t ID, bool is_first_call){
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "get rendering instance");
     static ClientRendering instance;
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "get rendering instance");
     if(is_first_call){instance.playerID = ID;}
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "get rendering instance");
     return instance;
 }
 
 ClientRendering::ClientRendering() : sprite_manager(SpriteManager::getOnlyInstance()){
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "render constructor runs");
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[ClientRendering::ClientRendering]: constructor runs");
     sdl_window = SDL_CreateWindow("title", 640, 360, SDL_WINDOW_RESIZABLE);
     sdl_renderer = SDL_CreateRenderer(sdl_window, NULL);
     SDL_SetLogPriority(SDL_LOG_CATEGORY_RENDER, SDL_LOG_PRIORITY_DEBUG);
@@ -25,7 +22,7 @@ ClientRendering::ClientRendering() : sprite_manager(SpriteManager::getOnlyInstan
 
 //load new texture from file
 void ClientRendering::newTexture(uint16_t texture_dir_index){
-    //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: Load texture");
+    SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: Load texture, dir: %s", texture_pool[texture_dir_index]);
     SDL_Texture *texture_temp = IMG_LoadTexture(sdl_renderer, texture_pool[texture_dir_index]);
     if (!texture_temp){SDL_LogError(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: IMG_LoadTexture error:");}
     SDL_SetTextureScaleMode(texture_temp, SDL_SCALEMODE_NEAREST);
@@ -100,18 +97,20 @@ void ClientRendering::tickRender(){
         Animation_Properties* current_propertie = display_order_sorter[current_index];
         if(!current_propertie){continue;}
         //load extra parts behind sprite
+        Sprite_Extra_Part* extra_part_array = current_propertie->Current_Setting.Extra_Parts;
         for(uint8_t i = 0; i < current_propertie->Current_Setting.Extra_Part_Amount; i++){
             //update the parts position
-            current_propertie->Current_Setting.Extra_Parts->frect.x = current_propertie->Current_Setting.Current_Texture_FRect.x + current_propertie->Current_Setting.Extra_Parts->offset.x;
-            current_propertie->Current_Setting.Extra_Parts->frect.y = current_propertie->Current_Setting.Current_Texture_FRect.y + current_propertie->Current_Setting.Extra_Parts->offset.y;
-            SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: extra part position: (%ld, %ld)", current_propertie->Current_Setting.Extra_Parts->frect.x, current_propertie->Current_Setting.Extra_Parts->frect.y);
-            if(!current_propertie->Current_Setting.Extra_Parts->Infront_Sprite){SDL_RenderTexture(sdl_renderer, current_propertie->Current_Setting.Extra_Parts->texture, nullptr, &current_propertie->Current_Setting.Extra_Parts->frect);}
+            extra_part_array[i].frect.x = current_propertie->Current_Setting.Current_Texture_FRect.x + extra_part_array[i].offset.x;
+            extra_part_array[i].frect.y = current_propertie->Current_Setting.Current_Texture_FRect.y + extra_part_array[i].offset.y;
+            if(!extra_part_array[i].Infront_Sprite){
+                SDL_RenderTexture(sdl_renderer, extra_part_array[i].texture, nullptr, &extra_part_array[i].frect);
+            }
         }
         const Animation_Frame* frame_propertie = &sprite_texture_collections[current_propertie->Animation_Collection_Index]->first->first;
         SDL_RenderTextureRotated(sdl_renderer, current_propertie->Current_Setting.Current_Texture_Pointer, nullptr, &current_propertie->Current_Setting.Current_Texture_FRect, 0.0, nullptr, (frame_propertie->Mirror_Horizontally ^ current_propertie->Flip_Horizontally) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE);
         //load extra part infront of sprite
         for(uint8_t i = 0; i < current_propertie->Current_Setting.Extra_Part_Amount; i++){
-            if(current_propertie->Current_Setting.Extra_Parts->Infront_Sprite){SDL_RenderTexture(sdl_renderer, current_propertie->Current_Setting.Extra_Parts->texture, nullptr, &current_propertie->Current_Setting.Extra_Parts->frect);}
+            if(extra_part_array[i].Infront_Sprite){SDL_RenderTexture(sdl_renderer, extra_part_array[i].texture, nullptr, &extra_part_array[i].frect);}
         }
     }
     

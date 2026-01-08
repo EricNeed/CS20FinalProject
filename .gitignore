@@ -6,6 +6,6 @@ build/*.cmake
 build/.cmake/
 build/CMakeFiles/
 build/CMakeCache.txt
-build/sdl3_test.exe
+build/*.exe
 LocalPaths.cmake
 NOTICES.txt

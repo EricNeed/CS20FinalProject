@@ -4,7 +4,7 @@
 
 
 TickClient::TickClient() : client_handler(ClientHandler::getInstance()), client_rendering(ClientRendering::getOnlyInstance(spriteID, true)){
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "tick client constructor");
+    //SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[TickClient::TickClient]: tick client constructor");
     spriteID = client_handler.newConnectedClient();
     input_handler = new ClientInput(spriteID);
 }
