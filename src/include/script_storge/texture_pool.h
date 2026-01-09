@@ -1,37 +1,28 @@
 #pragma once
 #include<script_storge/animation_propertie.h>
 
-inline const char* texture_pool[] = {
-    "resources/textures/sprites/default/SpriteS.png",
-    "resources/textures/sprites/default/hand_default.png",
-    "resources/textures/sprites/default/SpriteSW.png",
+inline const Texture_Atlas_Dir_Propertie texture_pool[] = {
+    {"E:/code/c++/CS20Final/CS20FinalProject/build/resources/textures/sprites/SpriteAtlas.png", 12, 20},
+    {"resources/textures/sprites/default/hand_default.png", 5, 5},
 };
 
 //animation frame(std::pair<const char*, const unsigned char>)texture, number of loops prsent this texture
 //because how the tick animation system work, the 0th index will play last, and the 1st index will play first
+
+//the length table of each frame in each animation
 namespace{
-    const std::pair<Animation_Frame, const unsigned char> PlayerWalkS[] = {
-        {{0, false, 1}, 60},
-    };
-    const std::pair<Animation_Frame, const unsigned char> PlayerWalkSW[] = {
-        {{2, false, 1}, 60},
-    };
-
-}
-
-//storge all texture for each sprite types(second is max index):
-namespace{
-    const std::pair <const std::pair<Animation_Frame, const unsigned char>*, const unsigned char> PlayerAnimations[] = {
-        {PlayerWalkS, 0},//remember to update max index when adding new animation
-        {PlayerWalkSW, 0},
-    };
-}
-
-
-//storge which sprite need which texture collection, please keep in sync with SpriteType enum
-inline const std::pair <const std::pair<Animation_Frame, const unsigned char>*, const unsigned char>* sprite_texture_collections[] = {
-    PlayerAnimations,
+    uint8_t player_walkS[]{30};
+    uint8_t player_walkSW[]{30,30,30,30};
+    uint8_t hand_default[]{255};
 };
 
+
+
+inline const std::pair<const Atlas_Animation, const uint8_t*> Animations[]{
+    {{0, 0, 1, 4}, player_walkSW},//down left
+    {{0, 0, 1, 4}, player_walkSW},
+    {{0, 1, 1, 1}, player_walkS},//down
+    {{0, 0, 1, 1}, hand_default},//hand
+};
 
 /***************************************************************************************************************************************************************static textures */

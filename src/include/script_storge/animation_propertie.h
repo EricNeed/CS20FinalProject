@@ -19,12 +19,21 @@ struct TextureProperties{
     float height;
 };
 
+struct Texture_Atlas_Dir_Propertie{
+    const char* Texture_Atlas_Dir;
+    const uint8_t Each_Texture_DimX;
+    const uint8_t Each_Texture_DimY;
+};
+
 //for the texture pool, each frame of animation
-struct Animation_Frame{
-    const uint16_t texture_Dir_Index;
-    bool Mirror_Horizontally;
+struct Atlas_Animation{
+    const uint16_t Texture_Atlas_Index;
+    //which animation in the Texture Atlas
+    const uint8_t Animation_Index_In_Atlas;
     //multiply the length and width not the area
-    const unsigned char size_multiplier = 1;
+    const uint8_t size_multiplier;
+    //the max frame of the animation
+    const uint16_t Frame_Max;
 };
 
 struct Sprite_Extra_Part{
@@ -38,30 +47,33 @@ struct Sprite_Extra_Part{
 
 //display cache inside each sprite
 struct Display_Propertie{
-    SDL_Texture* Current_Texture_Pointer = nullptr;
-    SDL_FRect Current_Texture_FRect;
-    unsigned char Cached_Animation_Index = 225;
     //this need to point to a array, dont forget to change Extra_Part_Amount
     Sprite_Extra_Part* Extra_Parts = nullptr;
     char Extra_Part_Amount = -1;
 };
 
 struct Animation_Properties{
-    short Animation_Collection_Index = 0;
     //which animation currently on
-    unsigned char Animation_Index = 0;
+    uint16_t Animation_Index = 0;
+    //last render's animation, use to check if animation has changed
+    uint16_t Cached_Animation_Index = -1;
     //which frame(texture) in the animation
-    unsigned char Frame_Index = 0;
+    uint8_t Frame_Index = 0;
     //how many loops has presented this texture(one based)
-    unsigned char Current_Texture_Loop_Count = 1;
+    uint8_t Current_Texture_Loop_Count = 1;
     //flip everything in current animation horizontally
     bool Flip_Horizontally = false;
-    //cache the current texture pointer
-    Display_Propertie Current_Setting;
+    //Frect for display
+    SDL_FRect Current_Texture_FRect;
+    
 };
 
+inline bool handleAnimation(Animation_Properties& animation_properties){
+    const std::pair<const Atlas_Animation, const uint8_t*>* animation = &Animations[animation_properties.Animation_Index];
+}
+
 //inter the sprite's propertie and the sprite's animation sequence array to get the current texture to use
-inline std::pair<const Animation_Frame*, bool> handleAnimation(Animation_Properties& animation_properties, const std::pair <const std::pair<Animation_Frame, const unsigned char>*, const unsigned char>* sprite_animations){
+inline std::pair<const Animation_Frame*, bool> handleAnimation2(Animation_Properties& animation_properties, const std::pair <const std::pair<Animation_Frame, const unsigned char>*, const unsigned char>* sprite_animations){
     //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[handleAnimation]: Animation index: %d, Frame index: %d, Current_Texture_Loop_Count: %d", animation_properties.Animation_Index, animation_properties.Frame_Index, animation_properties.Current_Texture_Loop_Count);
     const std::pair<Animation_Frame, const unsigned char>* animation = sprite_animations[animation_properties.Animation_Index].first;
     const std::pair<Animation_Frame, const unsigned char>* current_frame = &animation[animation_properties.Frame_Index];
