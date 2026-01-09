@@ -10,7 +10,7 @@
 Eric Ni (67,67)*/
 
 #pragma once
-#include<utility>
+#include<SDL3/SDL.h>
 
 //for the texture storing hash map
 struct TextureProperties{
@@ -33,7 +33,7 @@ struct Atlas_Animation{
     //multiply the length and width not the area
     const uint8_t size_multiplier;
     //the max frame of the animation
-    const uint16_t Frame_Max;
+    const uint16_t Frame_Max_Index;
 };
 
 struct Sprite_Extra_Part{
@@ -68,25 +68,5 @@ struct Animation_Properties{
     
 };
 
-inline bool handleAnimation(Animation_Properties& animation_properties){
-    const std::pair<const Atlas_Animation, const uint8_t*>* animation = &Animations[animation_properties.Animation_Index];
-}
-
 //inter the sprite's propertie and the sprite's animation sequence array to get the current texture to use
-inline std::pair<const Animation_Frame*, bool> handleAnimation2(Animation_Properties& animation_properties, const std::pair <const std::pair<Animation_Frame, const unsigned char>*, const unsigned char>* sprite_animations){
-    //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[handleAnimation]: Animation index: %d, Frame index: %d, Current_Texture_Loop_Count: %d", animation_properties.Animation_Index, animation_properties.Frame_Index, animation_properties.Current_Texture_Loop_Count);
-    const std::pair<Animation_Frame, const unsigned char>* animation = sprite_animations[animation_properties.Animation_Index].first;
-    const std::pair<Animation_Frame, const unsigned char>* current_frame = &animation[animation_properties.Frame_Index];
-    //if time to display the next frame in the animation
-    bool is_frame_changed = false;
-    is_frame_changed = animation_properties.Animation_Index != animation_properties.Current_Setting.Cached_Animation_Index;
-    if (animation_properties.Current_Texture_Loop_Count > current_frame->second){
-        is_frame_changed = true;
-        //go to next texture
-        animation_properties.Current_Texture_Loop_Count = 1;
-        //if no next texture go back to 0; (perplexity suggest, cleverly use remainder operation so anything below last frame will return itself)
-        animation_properties.Frame_Index = (animation_properties.Frame_Index + 1) % (sprite_animations[animation_properties.Animation_Index].second + 1);
-    }else{animation_properties.Current_Texture_Loop_Count ++;}
-    //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[handleAnimation]: 2, new Frame index: %d, Current_Texture_Loop_Count: %d", animation_properties.Frame_Index, animation_properties.Current_Texture_Loop_Count);
-    return {&animation[animation_properties.Frame_Index].first, is_frame_changed};
-}
+bool handleAnimation(Animation_Properties& animation_properties);

@@ -19,10 +19,9 @@ namespace{
 
 
 inline const std::pair<const Atlas_Animation, const uint8_t*> Animations[]{
-    {{0, 0, 1, 4}, player_walkSW},//down left
-    {{0, 0, 1, 4}, player_walkSW},
-    {{0, 1, 1, 1}, player_walkS},//down
-    {{0, 0, 1, 1}, hand_default},//hand
+    {{0, 0, 1, 3}, player_walkSW},//down left
+    {{0, 1, 1, 3}, player_walkS},//down
+    {{0, 0, 1, 0}, hand_default},//hand
 };
 
 /***************************************************************************************************************************************************************static textures */

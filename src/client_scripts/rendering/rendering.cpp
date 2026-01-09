@@ -13,6 +13,7 @@ ClientRendering& ClientRendering::getOnlyInstance(uint16_t ID, bool is_first_cal
 
 ClientRendering::ClientRendering() : sprite_manager(SpriteManager::getOnlyInstance()){
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[ClientRendering::ClientRendering]: constructor runs");
+    texture_map = new SDL_Texture*[TEXTURE_MAP_MAX]{};
     sdl_window = SDL_CreateWindow("title", 640, 360, SDL_WINDOW_RESIZABLE);
     sdl_renderer = SDL_CreateRenderer(sdl_window, NULL);
     SDL_SetLogPriority(SDL_LOG_CATEGORY_RENDER, SDL_LOG_PRIORITY_DEBUG);
@@ -23,18 +24,18 @@ ClientRendering::ClientRendering() : sprite_manager(SpriteManager::getOnlyInstan
 //load new texture from file
 void ClientRendering::newTexture(uint16_t texture_dir_index){
     SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: Load texture, dir: %s", texture_pool[texture_dir_index]);
-    SDL_Texture *texture_temp = IMG_LoadTexture(sdl_renderer, texture_pool[texture_dir_index]);
+    SDL_Texture *texture_temp = IMG_LoadTexture(sdl_renderer, texture_pool[texture_dir_index].Texture_Atlas_Dir);
     if (!texture_temp){SDL_LogError(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: IMG_LoadTexture error:");}
     SDL_SetTextureScaleMode(texture_temp, SDL_SCALEMODE_NEAREST);
     //cache it
-    texture_map[texture_dir_index] = {texture_temp, static_cast<float>(texture_temp->w), static_cast<float>(texture_temp->h)};
+    texture_map[texture_dir_index] = texture_temp;
 }
 
-TextureProperties* ClientRendering::getTexture(uint16_t texture_dir_index){
-    if (texture_map.find(texture_dir_index) == texture_map.end()){
+SDL_Texture* ClientRendering::getTexture(uint16_t texture_dir_index){
+    if (!texture_map[texture_dir_index]){
         newTexture(texture_dir_index);
     }
-    return &texture_map[texture_dir_index];
+    return texture_map[texture_dir_index];
 }
 
 void ClientRendering::placeInDisplayOrderArray(int y_max, Animation_Properties* propertie){
@@ -67,21 +68,21 @@ void ClientRendering::tickRender(){
         //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: sprite propertie address: %p", sprite->getProperties());
 
         Properties_Base* player_properties = const_cast<Properties_Base*>(sprite->getProperties());
-
+        Animation_Properties& player_animation = player_properties->Animation;
 
         //update position on screen
-        player_properties->Animation.Current_Setting.Current_Texture_FRect.x = static_cast<float>(player_properties->Coord.x - map_screen_cornerX);
-        player_properties->Animation.Current_Setting.Current_Texture_FRect.y = static_cast<float>(player_properties->Coord.y - map_screen_cornerY);
+        player_properties->Animation.Current_Texture_FRect.x = static_cast<float>(player_properties->Coord.x - map_screen_cornerX);
+        player_properties->Animation.Current_Texture_FRect.y = static_cast<float>(player_properties->Coord.y - map_screen_cornerY);
         //check if the texture's top left corner is on the screen
-        if(pointNotOnScreen(player_properties->Animation.Current_Setting.Current_Texture_FRect.x, player_properties->Animation.Current_Setting.Current_Texture_FRect.y, 32)){continue;}
-        player_properties->Animation.Current_Setting.Extra_Parts->frect.x = player_properties->Animation.Current_Setting.Current_Texture_FRect.x + player_properties->Animation.Current_Setting.Extra_Parts->offset.x;
-        player_properties->Animation.Current_Setting.Extra_Parts->frect.y = player_properties->Animation.Current_Setting.Current_Texture_FRect.y + player_properties->Animation.Current_Setting.Extra_Parts->offset.y;
+        if(pointNotOnScreen(player_properties->Animation.Current_Texture_FRect.x, player_properties->Animation.Current_Texture_FRect.y, 32)){continue;}
+        //player_properties->Animation.Extra_Parts->frect.x = player_properties->Animation.Current_Setting.Current_Texture_FRect.x + player_properties->Animation.Current_Setting.Extra_Parts->offset.x;
+        //player_properties->Animation.Extra_Parts->frect.y = player_properties->Animation.Current_Setting.Current_Texture_FRect.y + player_properties->Animation.Current_Setting.Extra_Parts->offset.y;
         //handle animation
         auto [frame_propertie, is_frame_changed] = handleAnimation(player_properties->Animation, sprite_texture_collections[player_properties->Animation.Animation_Collection_Index]);
         //if cannot find texture, load texture, if find, then use it directly
         if(is_frame_changed){
-            TextureProperties* texture_properties = getTexture(frame_propertie->texture_Dir_Index);
-            player_properties->Animation.Current_Setting.Current_Texture_FRect.h = texture_properties->height * frame_propertie->size_multiplier;
+            SDL_Texture* texture_properties = getTexture(frame_propertie->texture_Dir_Index);
+            player_properties->Animation.Current_Texture_FRect.h = texture_properties->height * frame_propertie->size_multiplier;
             player_properties->Animation.Current_Setting.Current_Texture_FRect.w = texture_properties->width * frame_propertie->size_multiplier;
             player_properties->Animation.Current_Setting.Current_Texture_Pointer = texture_properties->texture;
             player_properties->Animation.Current_Setting.Cached_Animation_Index = player_properties->Animation.Animation_Index;
