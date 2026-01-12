@@ -46,13 +46,6 @@ struct Sprite_Extra_Part{
     bool Infront_Sprite = false;
 };
 
-//display cache inside each sprite
-struct Display_Propertie{
-    //this need to point to a array, dont forget to change Extra_Part_Amount
-    Sprite_Extra_Part* Extra_Parts = nullptr;
-    char Extra_Part_Amount = -1;
-};
-
 //32 byte, for storing aniation info of each sprite
 struct Animation_Properties{
     //which animation currently on

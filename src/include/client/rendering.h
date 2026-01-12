@@ -5,7 +5,7 @@
 #include"script_storge/texture_pool.h"
 
 class SpriteManager; // Forward declaration
-
+struct Properties_Base;
 
 
 class ClientRendering{
@@ -30,6 +30,7 @@ class ClientRendering{
         bool pointNotOnScreen(const int pointX, const int pointY, const uint8_t margin){return (pointX < -margin || pointY < -margin || pointX > window_width || pointY > window_height);};
 
         void placeInDisplayOrderArray(int y_max, Properties_Base*);
+        void renderSpriteParts(Properties_Base* player_properties, bool infront);
     public:
         static ClientRendering& getOnlyInstance(uint16_t ID, bool is_first_call = false);
         void tickRender();

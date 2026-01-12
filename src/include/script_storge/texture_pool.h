@@ -3,7 +3,7 @@
 #include<utility>
 
 inline const Texture_Atlas_Dir_Propertie texture_pool[] = {
-    {"E:/code/c++/CS20Final/CS20FinalProject/build/resources/textures/sprites/SpriteAtlas.png", 12, 20},
+    {"resources/textures/sprites/SpriteAtlas.png", 12, 20},
     {"resources/textures/sprites/default/hand_default.png", 5, 5},
 };
 
