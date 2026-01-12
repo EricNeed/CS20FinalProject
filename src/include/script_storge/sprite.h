@@ -21,7 +21,10 @@ struct Properties_Base{
     //every bit is one class, 1 means current class inherited that class, 0 means no inheritance.
     uint64_t Ancestry_Tree = 0;
     SDL_Point Coord = {0,0};
-    int WalkSpeed;
+    uint16_t WalkSpeed;
+    //the amount of extra part, 0 is first extra part
+    Sprite_Extra_Part* Extra_Part_Array;
+    uint8_t Extra_Part_Amount;
     Animation_Properties Animation;
 };
 
@@ -39,7 +42,7 @@ class Sprite {
         //needed to be overided if have special struct
         virtual const Properties_Base* getProperties() = 0;
         //always put true for is_prime when creating class
-        Sprite(uint16_t ID, bool is_prime = true, Properties_Base* properties_ptr = nullptr, SpriteType sprite_type = SpriteType::Sprite);
+        Sprite(uint16_t ID, bool is_prime = true, Properties_Base* properties_ptr = nullptr, SpriteType sprite_type = SpriteType::Sprite, uint8_t extra_part_amount = 0);
         
         //move sprite by x,y offset
         void moveSprite(int x, int y);

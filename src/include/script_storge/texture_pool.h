@@ -1,5 +1,6 @@
 #pragma once
 #include<script_storge/animation_propertie.h>
+#include<utility>
 
 inline const Texture_Atlas_Dir_Propertie texture_pool[] = {
     {"E:/code/c++/CS20Final/CS20FinalProject/build/resources/textures/sprites/SpriteAtlas.png", 12, 20},
@@ -11,17 +12,16 @@ inline const Texture_Atlas_Dir_Propertie texture_pool[] = {
 
 //the length table of each frame in each animation
 namespace{
-    uint8_t player_walkS[]{30};
-    uint8_t player_walkSW[]{30,30,30,30};
-    uint8_t hand_default[]{255};
+    constexpr uint8_t player_walkS[]{30};
+    constexpr uint8_t player_walkSW[]{5,5,5,5};
 };
 
 
 
-inline const std::pair<const Atlas_Animation, const uint8_t*> Animations[]{
-    {{0, 0, 1, 3}, player_walkSW},//down left
-    {{0, 1, 1, 3}, player_walkS},//down
-    {{0, 0, 1, 0}, hand_default},//hand
+inline const std::pair<const Atlas_Animation, const uint8_t*> AnimationsInAtlas[]{
+    {{0, 0, 1, 3}, (::player_walkSW)},//down left
+    {{0, 1, 1, 3}, (::player_walkS)},//down
+    {{0, 0, 1, 0}, nullptr},//hand
 };
 
 /***************************************************************************************************************************************************************static textures */

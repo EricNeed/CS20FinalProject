@@ -9,7 +9,7 @@ class Player : public Character{
         Properties_Player* derived_properties;
         bool is_prime_sprite = false;
     public:
-        Player(uint16_t ID, bool is_prime = true, Properties_Player* properties_ptr = nullptr, SpriteType sprite_type = SpriteType::Player);
+        Player(uint16_t ID, bool is_prime = true, Properties_Player* properties_ptr = nullptr, SpriteType sprite_type = SpriteType::Player, uint8_t extra_part_amount = 0);
 
         const Properties_Player* getProperties() override;
         ~Player();

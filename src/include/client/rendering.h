@@ -23,13 +23,13 @@ class ClientRendering{
         uint16_t playerID;
 
         static constexpr uint16_t order_sorter_max = 720;
-        Animation_Properties* display_order_sorter[order_sorter_max];
+        Properties_Base* display_order_sorter[order_sorter_max];
         int window_width, window_height, map_screen_cornerX, map_screen_cornerY, player_map_coordX, player_map_coordY;
 
         //please use the left top corner, margin only for left and top
         bool pointNotOnScreen(const int pointX, const int pointY, const uint8_t margin){return (pointX < -margin || pointY < -margin || pointX > window_width || pointY > window_height);};
 
-        void placeInDisplayOrderArray(int y_max, Animation_Properties*);
+        void placeInDisplayOrderArray(int y_max, Properties_Base*);
     public:
         static ClientRendering& getOnlyInstance(uint16_t ID, bool is_first_call = false);
         void tickRender();

@@ -17,7 +17,6 @@ private:
     SpriteManager(const SpriteManager&) = delete;
     SpriteManager& operator=(const SpriteManager&) = delete;
 
-    ClientRendering* client_rendering = nullptr;
 public: 
     constexpr static int MAX_SPRITES = 8192;
     Sprite* sprite_list[MAX_SPRITES]{};
@@ -41,6 +40,5 @@ public:
 
     void removeSpriteFromList(uint16_t spriteID);
     bool spriteHaveAncestor(uint64_t spriteID, AncestryTree ancestor);
-    void spritePartInitialize(Sprite_Extra_Part* part, int texture_index, bool infront_sprite);
     ~SpriteManager();
 };

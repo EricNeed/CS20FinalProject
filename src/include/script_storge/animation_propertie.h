@@ -12,6 +12,7 @@ Eric Ni (67,67)*/
 #pragma once
 #include<SDL3/SDL.h>
 
+
 //for the texture storing hash map
 struct TextureProperties{
     SDL_Texture* texture;
@@ -29,7 +30,7 @@ struct Texture_Atlas_Dir_Propertie{
 struct Atlas_Animation{
     const uint16_t Texture_Atlas_Index;
     //which animation in the Texture Atlas
-    const uint8_t Animation_Index_In_Atlas;
+    const uint16_t Animation_Index_In_Atlas;
     //multiply the length and width not the area
     const uint8_t size_multiplier;
     //the max frame of the animation
@@ -37,10 +38,10 @@ struct Atlas_Animation{
 };
 
 struct Sprite_Extra_Part{
-    SDL_Texture* texture = nullptr;
+    uint16_t Animaton_Index;
     //offset from the sprite coordinate
-    SDL_FRect frect;
-    SDL_Point offset = {0,0};
+    uint16_t OffsetX = 0;
+    uint16_t OffsetY = 0;
     //if display infront of sprite or behind
     bool Infront_Sprite = false;
 };
@@ -52,11 +53,14 @@ struct Display_Propertie{
     char Extra_Part_Amount = -1;
 };
 
+//32 byte, for storing aniation info of each sprite
 struct Animation_Properties{
     //which animation currently on
     uint16_t Animation_Index = 0;
     //last render's animation, use to check if animation has changed
     uint16_t Cached_Animation_Index = -1;
+    //cache animation so its quicker
+    Atlas_Animation* Cached_Animation;
     //which frame(texture) in the animation
     uint8_t Frame_Index = 0;
     //how many loops has presented this texture(one based)
