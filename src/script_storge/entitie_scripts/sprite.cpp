@@ -16,6 +16,7 @@ Sprite::Sprite(uint16_t ID, bool is_prime, Properties_Base* properties_ptr, Spri
 
     //initialize extra part
     propertie_pointer->Extra_Part_Array = new Sprite_Extra_Part[extra_part_amount];
+    propertie_pointer->Extra_Part_Amount = extra_part_amount;
     //SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "[Sprite::Sprite]: properties address: %p", propertie_pointer);
 }
 

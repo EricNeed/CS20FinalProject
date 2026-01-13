@@ -14,6 +14,7 @@ ClientRendering& ClientRendering::getOnlyInstance(uint16_t ID, bool is_first_cal
 ClientRendering::ClientRendering() : sprite_manager(SpriteManager::getOnlyInstance()){
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[ClientRendering::ClientRendering]: constructor runs");
     texture_map = new SDL_Texture*[TEXTURE_MAP_MAX]{};
+    display_order_sorter = new Properties_Base*[order_sorter_max];
     sdl_window = SDL_CreateWindow("title", 640, 360, SDL_WINDOW_RESIZABLE);
     sdl_renderer = SDL_CreateRenderer(sdl_window, NULL);
     SDL_SetLogPriority(SDL_LOG_CATEGORY_RENDER, SDL_LOG_PRIORITY_DEBUG);
@@ -52,7 +53,7 @@ void ClientRendering::tickRender(){
     SDL_SetRenderDrawColor(sdl_renderer, 255, 255, 255, 255); 
     SDL_RenderClear(sdl_renderer);
 
-    std::memset(display_order_sorter, 0, sizeof(display_order_sorter));
+    std::memset(display_order_sorter, 0, order_sorter_max * sizeof(Properties_Base*));
 
     //uppdate view port position on the map base on player position
     const SDL_Point* player_coord = &sprite_manager.sprite_list[playerID]->getProperties()->Coord;
@@ -75,8 +76,7 @@ void ClientRendering::tickRender(){
         player_animation.Current_Texture_FRect.y = static_cast<float>(player_properties->Coord.y - map_screen_cornerY);
         //check if the texture's top left corner is on the screen
         if(pointNotOnScreen(player_animation.Current_Texture_FRect.x, player_animation.Current_Texture_FRect.y, 32)){continue;}
-        //player_animation.Extra_Parts->frect.x = player_animation.Current_Setting.Current_Texture_FRect.x + player_animation.Current_Setting.Extra_Parts->offset.x;
-        //player_animation.Extra_Parts->frect.y = player_animation.Current_Setting.Current_Texture_FRect.y + player_animation.Current_Setting.Extra_Parts->offset.y;
+
         //handle animation
         bool is_frame_changed  = handleAnimation(player_animation);
         const Atlas_Animation& current_animation = AnimationsInAtlas[player_animation.Animation_Index].first;
@@ -85,7 +85,7 @@ void ClientRendering::tickRender(){
 
         //if cannot find texture, load texture, if find, then use it directly
         if(is_frame_changed){
-            SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: changed, frame(%ld)", player_animation.Frame_Index);
+            //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: changed, frame(%ld)", player_animation.Frame_Index);
             player_animation.Current_Texture_FRect.w = texture_pool[current_animation.Texture_Atlas_Index].Each_Texture_DimX * current_animation.size_multiplier;
             player_animation.Current_Texture_FRect.h = texture_pool[current_animation.Texture_Atlas_Index].Each_Texture_DimY * current_animation.size_multiplier;
             player_animation.Cached_Animation_Index = player_animation.Animation_Index;
@@ -101,19 +101,19 @@ void ClientRendering::tickRender(){
         Properties_Base* player_properties = display_order_sorter[current_index];
         if(!player_properties){continue;}
         Animation_Properties& current_propertie = player_properties->Animation;
-        
+ 
         renderSpriteParts(player_properties, false);
-        
+
         //render the main sprite body
         const Texture_Atlas_Dir_Propertie& frame_dimention = texture_pool[current_propertie.Cached_Animation->Texture_Atlas_Index];
         frame_srcrect = {(float)frame_dimention.Each_Texture_DimX * current_propertie.Frame_Index, (float)(frame_dimention.Each_Texture_DimY * current_propertie.Cached_Animation->Animation_Index_In_Atlas), (float)frame_dimention.Each_Texture_DimX, (float)frame_dimention.Each_Texture_DimY};
+
         //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", frame_srcrect.x, frame_srcrect.y, frame_srcrect.w, frame_srcrect.h, current_propertie->Current_Texture_FRect.x, current_propertie->Current_Texture_FRect.y, current_propertie->Current_Texture_FRect.w, current_propertie->Current_Texture_FRect.h, current_propertie->Cached_Animation->Animation_Index_In_Atlas);
-        
-        renderSpriteParts(player_properties, true);
         SDL_RenderTextureRotated(sdl_renderer, texture_map[current_propertie.Cached_Animation->Texture_Atlas_Index], &frame_srcrect, &current_propertie.Current_Texture_FRect, 0.0, nullptr, (current_propertie.Flip_Horizontally) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE);
-        
+
+        renderSpriteParts(player_properties, true);
     }
-    
+
     SDL_RenderPresent(sdl_renderer);
 }
 //[ClientRendering::tickRender]: srcrect:[0.0,20.0,12.0,20.0], distrect:[310.0,170.0,12.0,20.0], texture index:-115419136
@@ -127,9 +127,9 @@ void ClientRendering::renderSpriteParts(Properties_Base* sprite_properties, bool
             const Atlas_Animation& animation = AnimationsInAtlas[extra_part.Animaton_Index].first;
             const Texture_Atlas_Dir_Propertie& texture_proeprties = texture_pool[animation.Texture_Atlas_Index];
 
-            part_srcrect = {(float)texture_proeprties.Each_Texture_DimX, (float)(texture_proeprties.Each_Texture_DimY * animation.Animation_Index_In_Atlas), (float)texture_proeprties.Each_Texture_DimX, (float)texture_proeprties.Each_Texture_DimY};
+            part_srcrect = {0, (float)(texture_proeprties.Each_Texture_DimY * animation.Animation_Index_In_Atlas), (float)texture_proeprties.Each_Texture_DimX, (float)texture_proeprties.Each_Texture_DimY};
             part_dstrect = {sprite_properties->Animation.Current_Texture_FRect.x + extra_part.OffsetX, sprite_properties->Animation.Current_Texture_FRect.y + extra_part.OffsetY, (float)texture_proeprties.Each_Texture_DimX, (float)texture_proeprties.Each_Texture_DimY};
-            SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::renderSpriteParts]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", part_srcrect.x, part_srcrect.y, part_srcrect.w, part_srcrect.h, part_dstrect.x, part_dstrect.y,);
+            //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::renderSpriteParts]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", part_srcrect.x, part_srcrect.y, part_srcrect.w, part_srcrect.h, part_dstrect.x, part_dstrect.y, part_dstrect.w, part_dstrect.h, animation.Texture_Atlas_Index);
 
             SDL_RenderTexture(sdl_renderer, getTexture(animation.Texture_Atlas_Index), &part_srcrect, &part_dstrect);
         }

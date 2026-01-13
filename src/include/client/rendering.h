@@ -23,7 +23,7 @@ class ClientRendering{
         uint16_t playerID;
 
         static constexpr uint16_t order_sorter_max = 720;
-        Properties_Base* display_order_sorter[order_sorter_max];
+        Properties_Base** display_order_sorter;
         int window_width, window_height, map_screen_cornerX, map_screen_cornerY, player_map_coordX, player_map_coordY;
 
         //please use the left top corner, margin only for left and top

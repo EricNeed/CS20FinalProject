@@ -12,6 +12,8 @@ Character::Character(uint16_t ID, bool is_prime, Properties_Character* propertie
     extra_part_start_index = extra_part_amount;
     derived_properties->Extra_Part_Array[extra_part_amount].Animaton_Index = 2;
     derived_properties->Extra_Part_Array[extra_part_amount+1].Animaton_Index = 2;
+    derived_properties->Extra_Part_Array[extra_part_amount].Infront_Sprite = true;
+    derived_properties->Extra_Part_Array[extra_part_amount+1].Infront_Sprite = true;
 }
 
 const Properties_Character* Character::getProperties(){

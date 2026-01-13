@@ -1,5 +1,4 @@
 #include<client/player_input.h>
-#include<iostream>
 
 ClientInput::ClientInput(uint16_t ID){
     keyboard_states = SDL_GetKeyboardState(NULL);
@@ -15,19 +14,19 @@ void ClientInput::processUserInput(){
     
     if(keyboard_states[SDL_SCANCODE_W]){
         add_y += -walk_speed;
-        std::cout << "w pressed" << std::endl;
+        SDL_LogDebug(SDL_LOG_CATEGORY_INPUT, "w pressed");
     }
     if(keyboard_states[SDL_SCANCODE_A]){
         add_x += -walk_speed;
-        std::cout << "a pressed" << std::endl;
+        SDL_LogDebug(SDL_LOG_CATEGORY_INPUT, "w pressed");
     }
     if(keyboard_states[SDL_SCANCODE_S]){
         add_y += walk_speed;
-        std::cout << "s pressed" << std::endl;
+        SDL_LogDebug(SDL_LOG_CATEGORY_INPUT, "w pressed");
     }
     if(keyboard_states[SDL_SCANCODE_D]){
         add_x += walk_speed;
-        std::cout << "d pressed" << std::endl;
+        SDL_LogDebug(SDL_LOG_CATEGORY_INPUT, "w pressed");
     }
 
     if (add_x != 0 || add_y != 0){
