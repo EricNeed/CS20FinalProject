@@ -4,6 +4,7 @@
 #include<SDL3_image/SDL_image.h>
 #include<span>
 #include<cstring>
+#include<script_storge/user_data.h>
 
 ClientRendering& ClientRendering::getOnlyInstance(uint16_t ID, bool is_first_call){
     static ClientRendering instance;
@@ -48,6 +49,21 @@ void ClientRendering::placeInDisplayOrderArray(int y_max, Properties_Base* prope
     if (!display_order_sorter[y_max+2])[[likely]]{ display_order_sorter[y_max+2] = propertie; return; }
 }
 
+void ClientRendering::renderDrawSimple(Atlas_Animation animation, SDL_FRect& dstrect, uint8_t frame_index){
+    const Texture_Atlas_Dir_Propertie& texture_proeprties = texture_pool[animation.Texture_Atlas_Index];
+    static SDL_FRect srcrect = {(float)(texture_proeprties.Each_Texture_DimX * frame_index), (float)(texture_proeprties.Each_Texture_DimY * animation.Animation_Index_In_Atlas), (float)texture_proeprties.Each_Texture_DimX, (float)texture_proeprties.Each_Texture_DimY};
+    dstrect.h = (float)(texture_proeprties.Each_Texture_DimY * animation.size_multiplier);
+    dstrect.w = (float)(texture_proeprties.Each_Texture_DimX * animation.size_multiplier);
+    //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::renderSpriteParts]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", part_srcrect.x, part_srcrect.y, part_srcrect.w, part_srcrect.h, part_dstrect.x, part_dstrect.y, part_dstrect.w, part_dstrect.h, animation.Texture_Atlas_Index);
+    
+    SDL_RenderTexture(sdl_renderer, getTexture(animation.Texture_Atlas_Index), &srcrect, &dstrect);
+};
+
+void ClientRendering::fullScreenToggle(bool enable_fullscreen){
+    SDL_SetWindowFullscreen(sdl_window, enable_fullscreen);
+}
+
+/******************************************************************************************************************************************************************main tick render */
 void ClientRendering::tickRender(){
     //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: Render tick start");
     SDL_SetRenderDrawColor(sdl_renderer, 255, 255, 255, 255); 
@@ -57,13 +73,18 @@ void ClientRendering::tickRender(){
 
     //uppdate view port position on the map base on player position
     const SDL_Point* player_coord = &sprite_manager.sprite_list[playerID]->getProperties()->Coord;
-    player_map_coordX = player_coord->x;
-    player_map_coordY = player_coord->y;
-    map_screen_cornerX = player_map_coordX - window_width / 2;
-    map_screen_cornerY = player_map_coordY - window_height / 2;
+    map_screen_cornerX = player_coord->x - window_width / 2;
+    map_screen_cornerY = player_coord->y - window_height / 2;
     //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: current sprite public position (%ld, %ld)", player_map_coordX, player_map_coordY);
 
-    //render sprite
+    renderFloorTiles();
+    renderSprite();
+    renderCursor();
+    
+    SDL_RenderPresent(sdl_renderer);
+}
+/******************************************************************************************************************************************************************render sprite */
+void ClientRendering::renderSprite(){
     for(const auto& sprite : std::span(sprite_manager.sprite_list, sprite_manager.MAX_SPRITES - 1)){
         if(!sprite){continue;}
         //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: sprite propertie address: %p", sprite->getProperties());
@@ -113,32 +134,28 @@ void ClientRendering::tickRender(){
 
         renderSpriteParts(player_properties, true);
     }
-
-    SDL_RenderPresent(sdl_renderer);
 }
-//[ClientRendering::tickRender]: srcrect:[0.0,20.0,12.0,20.0], distrect:[310.0,170.0,12.0,20.0], texture index:-115419136
+
 
 void ClientRendering::renderSpriteParts(Properties_Base* sprite_properties, bool infront){
-    static SDL_FRect part_srcrect;
-    static SDL_FRect part_dstrect;
     for(uint8_t i = 0; i < sprite_properties->Extra_Part_Amount; i++){
         Sprite_Extra_Part& extra_part = sprite_properties->Extra_Part_Array[i];
         if(infront == extra_part.Infront_Sprite){
-            const Atlas_Animation& animation = AnimationsInAtlas[extra_part.Animaton_Index].first;
-            const Texture_Atlas_Dir_Propertie& texture_proeprties = texture_pool[animation.Texture_Atlas_Index];
-
-            part_srcrect = {0, (float)(texture_proeprties.Each_Texture_DimY * animation.Animation_Index_In_Atlas), (float)texture_proeprties.Each_Texture_DimX, (float)texture_proeprties.Each_Texture_DimY};
-            part_dstrect = {sprite_properties->Animation.Current_Texture_FRect.x + extra_part.OffsetX, sprite_properties->Animation.Current_Texture_FRect.y + extra_part.OffsetY, (float)texture_proeprties.Each_Texture_DimX, (float)texture_proeprties.Each_Texture_DimY};
-            //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::renderSpriteParts]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", part_srcrect.x, part_srcrect.y, part_srcrect.w, part_srcrect.h, part_dstrect.x, part_dstrect.y, part_dstrect.w, part_dstrect.h, animation.Texture_Atlas_Index);
-
-            SDL_RenderTexture(sdl_renderer, getTexture(animation.Texture_Atlas_Index), &part_srcrect, &part_dstrect);
+            renderTextureSimple(AnimationsInAtlas[extra_part.Animaton_Index].first, part_dstrect, 0);
         }
     }
 }
+/******************************************************************************************************************************************************************render ui */
+void ClientRendering::renderCursor(){
+    SDL_MouseButtonFlags buttons = SDL_GetMouseState(&cursorX, &cursorY);
+
+    SDL_RenderTexture();
+}
 
 
-void ClientRendering::fullScreenToggle(bool enable_fullscreen){
-    SDL_SetWindowFullscreen(sdl_window, enable_fullscreen);
+/******************************************************************************************************************************************************************render ui */
+void ClientRendering::renderFloorTiles(){
+
 }
 
 /*ill keep this version because i like it
@@ -158,23 +175,3 @@ void ClientRendering::placeInDisplayOrderArray(int y_max, Display_Propertie* pro
     display_order_sorter[perfered_index] = propertie;
 }
 */
-
-/*for(uint16_t current_index = 0; current_index < order_sorter_max; current_index++){
-        Animation_Properties* current_propertie = display_order_sorter[current_index];
-        if(!current_propertie){continue;}
-        //load extra parts behind sprite
-        for(uint8_t i = 0; i < current_propertie->Current_Setting.Extra_Part_Amount; i++){
-            //update the parts position
-            extra_part_array[i].frect.x = current_propertie->Current_Setting.Current_Texture_FRect.x + extra_part_array[i].offset.x;
-            extra_part_array[i].frect.y = current_propertie->Current_Setting.Current_Texture_FRect.y + extra_part_array[i].offset.y;
-            if(!extra_part_array[i].Infront_Sprite){
-                SDL_RenderTexture(sdl_renderer, extra_part_array[i].texture, nullptr, &extra_part_array[i].frect);
-            }
-        }
-        const Animation_Frame* frame_propertie = &sprite_texture_collections[current_propertie->Animation_Collection_Index]->first->first;
-        SDL_RenderTextureRotated(sdl_renderer, current_propertie->Current_Setting.Current_Texture_Pointer, nullptr, &current_propertie->Current_Setting.Current_Texture_FRect, 0.0, nullptr, (frame_propertie->Mirror_Horizontally ^ current_propertie->Flip_Horizontally) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE);
-        //load extra part infront of sprite
-        for(uint8_t i = 0; i < current_propertie->Current_Setting.Extra_Part_Amount; i++){
-            if(extra_part_array[i].Infront_Sprite){SDL_RenderTexture(sdl_renderer, extra_part_array[i].texture, nullptr, &extra_part_array[i].frect);}
-        }
-    }*/

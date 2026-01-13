@@ -2,6 +2,7 @@
 #include"script_storge/character_sprite.h"
 
 struct Properties_Player : Properties_Character{
+    
 };
 
 class Player : public Character{
