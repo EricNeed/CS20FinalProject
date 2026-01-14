@@ -5,7 +5,7 @@
 inline const Texture_Atlas_Dir_Propertie texture_pool[] = {
     {"resources/textures/sprites/SpriteAtlas.png", 12, 20},
     {"resources/textures/sprites/default/hand_default.png", 5, 5},
-    {"resources/textures/cursor/cursor_default.png", 3, 3},
+    {"resources/textures/cursor/cursor_default.png", 9,9},
 };
 
 //animation frame(std::pair<const char*, const unsigned char>)texture, number of loops prsent this texture
@@ -27,3 +27,6 @@ inline static const std::pair<const Atlas_Animation, const uint8_t*> AnimationsI
 };
 
 /***************************************************************************************************************************************************************static textures */
+
+inline static const uint8_t cursor_texture_index[]{2};
+const uint8_t cursor_amount = sizeof(cursor_texture_index);

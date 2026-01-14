@@ -3,6 +3,7 @@
 #include<unordered_map>
 #include<string>
 #include"script_storge/texture_pool.h"
+#include"client/tick_gui.h"
 
 class SpriteManager; // Forward declaration
 struct Properties_Base;
@@ -21,6 +22,8 @@ class ClientRendering{
         static constexpr uint16_t TEXTURE_MAP_MAX = 2000;
         SDL_Texture** texture_map;
         uint16_t playerID;
+
+        ClientGUI* client_gui;
 
         static constexpr uint16_t order_sorter_max = 720;
         Properties_Base** display_order_sorter;

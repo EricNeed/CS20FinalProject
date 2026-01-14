@@ -23,8 +23,10 @@ ClientRendering::ClientRendering() : sprite_manager(SpriteManager::getOnlyInstan
     SDL_SetLogPriority(SDL_LOG_CATEGORY_RENDER, SDL_LOG_PRIORITY_DEBUG);
     SDL_SetRenderLogicalPresentation(sdl_renderer, 640, 360, SDL_LOGICAL_PRESENTATION_OVERSCAN);
     SDL_GetWindowSize(sdl_window, &window_width, &window_height);
-}
 
+    client_gui = new ClientGUI();
+
+}
 //load new texture from file
 void ClientRendering::newTexture(uint16_t texture_dir_index){
     SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: Load texture, dir: %s", texture_pool[texture_dir_index].Texture_Atlas_Dir);
@@ -94,7 +96,8 @@ void ClientRendering::tickRender(){
 
     renderFloorTiles();
     renderSprite();
-    
+    client_gui->tickGUI();
+
     SDL_RenderPresent(sdl_renderer);
 }
 /******************************************************************************************************************************************************************render sprite */
