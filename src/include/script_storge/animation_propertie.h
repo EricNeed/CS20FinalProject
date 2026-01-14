@@ -44,6 +44,7 @@ struct Sprite_Extra_Part{
     uint16_t OffsetY = 0;
     //if display infront of sprite or behind
     bool Infront_Sprite = false;
+    uint8_t rotation = 0;
 };
 
 //32 byte, for storing aniation info of each sprite

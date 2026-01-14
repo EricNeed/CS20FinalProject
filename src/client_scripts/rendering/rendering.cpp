@@ -6,6 +6,8 @@
 #include<cstring>
 #include<script_storge/user_data.h>
 
+SDL_FRect ClientRendering::part_dstrect;
+
 ClientRendering& ClientRendering::getOnlyInstance(uint16_t ID, bool is_first_call){
     static ClientRendering instance;
     if(is_first_call){instance.playerID = ID;}
@@ -49,15 +51,28 @@ void ClientRendering::placeInDisplayOrderArray(int y_max, Properties_Base* prope
     if (!display_order_sorter[y_max+2])[[likely]]{ display_order_sorter[y_max+2] = propertie; return; }
 }
 
-void ClientRendering::renderDrawSimple(Atlas_Animation animation, SDL_FRect& dstrect, uint8_t frame_index){
+std::pair<SDL_Texture*, SDL_FRect*> ClientRendering::renderArgumentFetch(Atlas_Animation animation, SDL_FRect& dstrect, uint8_t frame_index){
+    static SDL_FRect srcrect;
     const Texture_Atlas_Dir_Propertie& texture_proeprties = texture_pool[animation.Texture_Atlas_Index];
-    static SDL_FRect srcrect = {(float)(texture_proeprties.Each_Texture_DimX * frame_index), (float)(texture_proeprties.Each_Texture_DimY * animation.Animation_Index_In_Atlas), (float)texture_proeprties.Each_Texture_DimX, (float)texture_proeprties.Each_Texture_DimY};
+
+    srcrect.x = (float)(texture_proeprties.Each_Texture_DimX * frame_index);
+    srcrect.y = (float)(texture_proeprties.Each_Texture_DimY * animation.Animation_Index_In_Atlas);
+    srcrect.w = (float)texture_proeprties.Each_Texture_DimX;
+    srcrect.h = (float)texture_proeprties.Each_Texture_DimY;
     dstrect.h = (float)(texture_proeprties.Each_Texture_DimY * animation.size_multiplier);
     dstrect.w = (float)(texture_proeprties.Each_Texture_DimX * animation.size_multiplier);
-    //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::renderSpriteParts]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", part_srcrect.x, part_srcrect.y, part_srcrect.w, part_srcrect.h, part_dstrect.x, part_dstrect.y, part_dstrect.w, part_dstrect.h, animation.Texture_Atlas_Index);
-    
-    SDL_RenderTexture(sdl_renderer, getTexture(animation.Texture_Atlas_Index), &srcrect, &dstrect);
-};
+
+    return {getTexture(animation.Texture_Atlas_Index), &srcrect};
+}void ClientRendering::renderDrawSimple(Atlas_Animation animation, SDL_FRect& dstrect, uint8_t frame_index){
+    auto fetched_argument = renderArgumentFetch(animation, dstrect, frame_index);
+    SDL_RenderTexture(sdl_renderer, fetched_argument.first, fetched_argument.second, &dstrect);
+    //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::renderDrawSimple]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", part_srcrect.x, part_srcrect.y, part_srcrect.w, part_srcrect.h, part_dstrect.x, part_dstrect.y, part_dstrect.w, part_dstrect.h, animation.Texture_Atlas_Index);
+}void ClientRendering::renderDrawRotated(Atlas_Animation animation, SDL_FRect& dstrect, uint8_t frame_index, bool flip, float rotation){
+    auto fetched_argument = renderArgumentFetch(animation, dstrect, frame_index);
+    //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::renderDrawSimple]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", fetched_argument.second->x, fetched_argument.second->y, fetched_argument.second->w, fetched_argument.second->h, dstrect.x, dstrect.y, dstrect.w, dstrect.h, animation.Texture_Atlas_Index);
+    SDL_RenderTextureRotated(sdl_renderer, fetched_argument.first, fetched_argument.second, &dstrect, 0.0, nullptr, (flip) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE);
+}
+
 
 void ClientRendering::fullScreenToggle(bool enable_fullscreen){
     SDL_SetWindowFullscreen(sdl_window, enable_fullscreen);
@@ -79,7 +94,6 @@ void ClientRendering::tickRender(){
 
     renderFloorTiles();
     renderSprite();
-    renderCursor();
     
     SDL_RenderPresent(sdl_renderer);
 }
@@ -126,32 +140,21 @@ void ClientRendering::renderSprite(){
         renderSpriteParts(player_properties, false);
 
         //render the main sprite body
-        const Texture_Atlas_Dir_Propertie& frame_dimention = texture_pool[current_propertie.Cached_Animation->Texture_Atlas_Index];
-        frame_srcrect = {(float)frame_dimention.Each_Texture_DimX * current_propertie.Frame_Index, (float)(frame_dimention.Each_Texture_DimY * current_propertie.Cached_Animation->Animation_Index_In_Atlas), (float)frame_dimention.Each_Texture_DimX, (float)frame_dimention.Each_Texture_DimY};
+        renderDrawRotated(AnimationsInAtlas[current_propertie.Animation_Index].first, current_propertie.Current_Texture_FRect, current_propertie.Frame_Index, current_propertie.Flip_Horizontally, 0);
 
         //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", frame_srcrect.x, frame_srcrect.y, frame_srcrect.w, frame_srcrect.h, current_propertie->Current_Texture_FRect.x, current_propertie->Current_Texture_FRect.y, current_propertie->Current_Texture_FRect.w, current_propertie->Current_Texture_FRect.h, current_propertie->Cached_Animation->Animation_Index_In_Atlas);
-        SDL_RenderTextureRotated(sdl_renderer, texture_map[current_propertie.Cached_Animation->Texture_Atlas_Index], &frame_srcrect, &current_propertie.Current_Texture_FRect, 0.0, nullptr, (current_propertie.Flip_Horizontally) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE);
-
+        
         renderSpriteParts(player_properties, true);
     }
-}
-
-
-void ClientRendering::renderSpriteParts(Properties_Base* sprite_properties, bool infront){
+}void ClientRendering::renderSpriteParts(Properties_Base* sprite_properties, bool infront){
     for(uint8_t i = 0; i < sprite_properties->Extra_Part_Amount; i++){
         Sprite_Extra_Part& extra_part = sprite_properties->Extra_Part_Array[i];
         if(infront == extra_part.Infront_Sprite){
-            renderTextureSimple(AnimationsInAtlas[extra_part.Animaton_Index].first, part_dstrect, 0);
+            part_dstrect = {sprite_properties->Animation.Current_Texture_FRect.x + extra_part.OffsetX, sprite_properties->Animation.Current_Texture_FRect.y + extra_part.OffsetY};
+            renderDrawSimple(AnimationsInAtlas[extra_part.Animaton_Index].first, part_dstrect, 0);
         }
     }
 }
-/******************************************************************************************************************************************************************render ui */
-void ClientRendering::renderCursor(){
-    SDL_MouseButtonFlags buttons = SDL_GetMouseState(&cursorX, &cursorY);
-
-    SDL_RenderTexture();
-}
-
 
 /******************************************************************************************************************************************************************render ui */
 void ClientRendering::renderFloorTiles(){
@@ -174,4 +177,10 @@ void ClientRendering::placeInDisplayOrderArray(int y_max, Display_Propertie* pro
     if(perfered_index == 100){return;}
     display_order_sorter[perfered_index] = propertie;
 }
+
+start
+1, 1
+2, 1
+3, 1
+[ClientRendering::renderDrawSimple]: srcrect:[0.0,0.0,12.0,20.0], distrect:[320.0,180.0,12.0,20.0], texture index:0
 */

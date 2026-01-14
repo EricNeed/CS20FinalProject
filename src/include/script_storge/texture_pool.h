@@ -19,7 +19,7 @@ namespace{
 
 
 
-inline const std::pair<const Atlas_Animation, const uint8_t*> AnimationsInAtlas[]{
+inline static const std::pair<const Atlas_Animation, const uint8_t*> AnimationsInAtlas[]{
     {{0, 0, 1, 3}, (::player_walkSW)},//down left
     {{0, 1, 1, 3}, (::player_walkS)},//down
     {{1, 0, 1, 0}, nullptr},//hand

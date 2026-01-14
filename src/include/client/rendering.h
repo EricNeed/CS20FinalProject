@@ -35,13 +35,12 @@ class ClientRendering{
         void placeInDisplayOrderArray(int y_max, Properties_Base*);
         void renderSpriteParts(Properties_Base* player_properties, bool infront);
         void renderSprite();
-        void renderCursor();
         void renderFloorTiles();
 
         //no rotation, dstrect can have w and h left empty/unchanged
-        
+        std::pair<SDL_Texture*, SDL_FRect*> renderArgumentFetch(Atlas_Animation animation, SDL_FRect& dstrect, uint8_t frame_index);
         void renderDrawSimple(Atlas_Animation animation, SDL_FRect& dstrect, uint8_t frame_index);
-        void renderDrawRotated();
+        void renderDrawRotated(Atlas_Animation animation, SDL_FRect& dstrect, uint8_t frame_index, bool flip, float rotation);
     public:
         static ClientRendering& getOnlyInstance(uint16_t ID, bool is_first_call = false);
         void tickRender();
