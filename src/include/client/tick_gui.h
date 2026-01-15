@@ -6,7 +6,7 @@
 class ClientGUI{
     private: 
         //cursor
-        SDL_Cursor* client_cursors[cursor_amount];
+        SDL_Cursor* client_cursors[Render_Storge::cursor_amount];
     public:
         ClientGUI();
         void tickGUI();

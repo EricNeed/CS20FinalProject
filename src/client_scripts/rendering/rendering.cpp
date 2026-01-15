@@ -29,8 +29,8 @@ ClientRendering::ClientRendering() : sprite_manager(SpriteManager::getOnlyInstan
 }
 //load new texture from file
 void ClientRendering::newTexture(uint16_t texture_dir_index){
-    SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: Load texture, dir: %s", texture_pool[texture_dir_index].Texture_Atlas_Dir);
-    SDL_Texture *texture_temp = IMG_LoadTexture(sdl_renderer, texture_pool[texture_dir_index].Texture_Atlas_Dir);
+    SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: Load texture, dir: %s", Render_Storge::texture_pool[texture_dir_index].Texture_Atlas_Dir);
+    SDL_Texture *texture_temp = IMG_LoadTexture(sdl_renderer, Render_Storge::texture_pool[texture_dir_index].Texture_Atlas_Dir);
     if (!texture_temp){SDL_LogError(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: IMG_LoadTexture error:");}
     SDL_SetTextureScaleMode(texture_temp, SDL_SCALEMODE_NEAREST);
     //cache it
@@ -55,7 +55,7 @@ void ClientRendering::placeInDisplayOrderArray(int y_max, Properties_Base* prope
 
 std::pair<SDL_Texture*, SDL_FRect*> ClientRendering::renderArgumentFetch(Atlas_Animation animation, SDL_FRect& dstrect, uint8_t frame_index){
     static SDL_FRect srcrect;
-    const Texture_Atlas_Dir_Propertie& texture_proeprties = texture_pool[animation.Texture_Atlas_Index];
+    const Texture_Atlas_Dir_Propertie& texture_proeprties = Render_Storge::texture_pool[animation.Texture_Atlas_Index];
 
     srcrect.x = (float)(texture_proeprties.Each_Texture_DimX * frame_index);
     srcrect.y = (float)(texture_proeprties.Each_Texture_DimY * animation.Animation_Index_In_Atlas);
@@ -117,15 +117,15 @@ void ClientRendering::renderSprite(){
 
         //handle animation
         bool is_frame_changed  = handleAnimation(player_animation);
-        const Atlas_Animation& current_animation = AnimationsInAtlas[player_animation.Animation_Index].first;
+        const Atlas_Animation& current_animation = Render_Storge::AnimationsInAtlas[player_animation.Animation_Index].first;
 
         SDL_Texture* texture_current = getTexture(current_animation.Animation_Index_In_Atlas);
 
         //if cannot find texture, load texture, if find, then use it directly
         if(is_frame_changed){
             //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: changed, frame(%ld)", player_animation.Frame_Index);
-            player_animation.Current_Texture_FRect.w = texture_pool[current_animation.Texture_Atlas_Index].Each_Texture_DimX * current_animation.size_multiplier;
-            player_animation.Current_Texture_FRect.h = texture_pool[current_animation.Texture_Atlas_Index].Each_Texture_DimY * current_animation.size_multiplier;
+            player_animation.Current_Texture_FRect.w = Render_Storge::texture_pool[current_animation.Texture_Atlas_Index].Each_Texture_DimX * current_animation.size_multiplier;
+            player_animation.Current_Texture_FRect.h = Render_Storge::texture_pool[current_animation.Texture_Atlas_Index].Each_Texture_DimY * current_animation.size_multiplier;
             player_animation.Cached_Animation_Index = player_animation.Animation_Index;
             player_animation.Cached_Animation = &const_cast<Atlas_Animation&>(current_animation);
         }
@@ -143,7 +143,7 @@ void ClientRendering::renderSprite(){
         renderSpriteParts(player_properties, false);
 
         //render the main sprite body
-        renderDrawRotated(AnimationsInAtlas[current_propertie.Animation_Index].first, current_propertie.Current_Texture_FRect, current_propertie.Frame_Index, current_propertie.Flip_Horizontally, 0);
+        renderDrawRotated(Render_Storge::AnimationsInAtlas[current_propertie.Animation_Index].first, current_propertie.Current_Texture_FRect, current_propertie.Frame_Index, current_propertie.Flip_Horizontally, 0);
 
         //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", frame_srcrect.x, frame_srcrect.y, frame_srcrect.w, frame_srcrect.h, current_propertie->Current_Texture_FRect.x, current_propertie->Current_Texture_FRect.y, current_propertie->Current_Texture_FRect.w, current_propertie->Current_Texture_FRect.h, current_propertie->Cached_Animation->Animation_Index_In_Atlas);
         
@@ -154,7 +154,7 @@ void ClientRendering::renderSprite(){
         Sprite_Extra_Part& extra_part = sprite_properties->Extra_Part_Array[i];
         if(infront == extra_part.Infront_Sprite){
             part_dstrect = {sprite_properties->Animation.Current_Texture_FRect.x + extra_part.OffsetX, sprite_properties->Animation.Current_Texture_FRect.y + extra_part.OffsetY};
-            renderDrawSimple(AnimationsInAtlas[extra_part.Animaton_Index].first, part_dstrect, 0);
+            renderDrawSimple(Render_Storge::AnimationsInAtlas[extra_part.Animaton_Index].first, part_dstrect, 0);
         }
     }
 }
