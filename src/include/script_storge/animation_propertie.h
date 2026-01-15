@@ -43,7 +43,7 @@ struct Sprite_Extra_Part{
     uint16_t OffsetX = 0;
     uint16_t OffsetY = 0;
     //if display infront of sprite or behind
-    bool Infront_Sprite = false;
+    bool Infront_Sprite = true;
     uint8_t rotation = 0;
 };
 

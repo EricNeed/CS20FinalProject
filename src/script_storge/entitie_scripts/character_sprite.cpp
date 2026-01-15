@@ -1,7 +1,7 @@
 #include<script_storge/character_sprite.h>
 #include<cmath>
 
-Character::Character(uint16_t ID, bool is_prime, Properties_Character* properties_ptr, SpriteType sprite_type, uint8_t extra_part_amount) : Sprite(ID, false, is_prime ? new Properties_Character() : properties_ptr, sprite_type, extra_part_amount+2){
+Character::Character(uint16_t ID, bool is_prime, Properties_Character* properties_ptr, SpriteType sprite_type, uint8_t extra_part_amount) : Sprite(ID, false, is_prime ? new Properties_Character() : properties_ptr, sprite_type, extra_part_amount+3){
     //SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "[Character::Character]: Creating Character with ID %ld", ID);
     is_prime_sprite = is_prime;
     derived_properties = static_cast<Properties_Character*>(propertie_pointer);
@@ -12,8 +12,10 @@ Character::Character(uint16_t ID, bool is_prime, Properties_Character* propertie
     extra_part_start_index = extra_part_amount;
     derived_properties->Extra_Part_Array[extra_part_amount].Animaton_Index = 2;
     derived_properties->Extra_Part_Array[extra_part_amount+1].Animaton_Index = 2;
-    derived_properties->Extra_Part_Array[extra_part_amount].Infront_Sprite = true;
-    derived_properties->Extra_Part_Array[extra_part_amount+1].Infront_Sprite = true;
+
+    //extra gears
+    derived_properties->Extra_Part_Array[extra_part_amount+2].Animaton_Index = 4;
+
 }
 
 const Properties_Character* Character::getProperties(){

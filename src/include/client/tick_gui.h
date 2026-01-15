@@ -9,5 +9,6 @@ class ClientGUI{
         SDL_Cursor* client_cursors[Render_Storge::cursor_amount];
     public:
         ClientGUI();
+        void showCursor(uint8_t cursor_index);
         void tickGUI();
 };

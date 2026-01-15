@@ -25,7 +25,7 @@ ClientRendering::ClientRendering() : sprite_manager(SpriteManager::getOnlyInstan
     SDL_GetWindowSize(sdl_window, &window_width, &window_height);
 
     client_gui = new ClientGUI();
-
+    client_gui->showCursor(0);
 }
 //load new texture from file
 void ClientRendering::newTexture(uint16_t texture_dir_index){
@@ -68,7 +68,7 @@ std::pair<SDL_Texture*, SDL_FRect*> ClientRendering::renderArgumentFetch(Atlas_A
 }void ClientRendering::renderDrawSimple(Atlas_Animation animation, SDL_FRect& dstrect, uint8_t frame_index){
     auto fetched_argument = renderArgumentFetch(animation, dstrect, frame_index);
     SDL_RenderTexture(sdl_renderer, fetched_argument.first, fetched_argument.second, &dstrect);
-    //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::renderDrawSimple]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", part_srcrect.x, part_srcrect.y, part_srcrect.w, part_srcrect.h, part_dstrect.x, part_dstrect.y, part_dstrect.w, part_dstrect.h, animation.Texture_Atlas_Index);
+    SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::renderDrawSimple]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", fetched_argument.second->x, fetched_argument.second->y, fetched_argument.second->w, fetched_argument.second->h, dstrect.x, dstrect.y, dstrect.w, dstrect.h, animation.Texture_Atlas_Index);
 }void ClientRendering::renderDrawRotated(Atlas_Animation animation, SDL_FRect& dstrect, uint8_t frame_index, bool flip, float rotation){
     auto fetched_argument = renderArgumentFetch(animation, dstrect, frame_index);
     //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::renderDrawSimple]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", fetched_argument.second->x, fetched_argument.second->y, fetched_argument.second->w, fetched_argument.second->h, dstrect.x, dstrect.y, dstrect.w, dstrect.h, animation.Texture_Atlas_Index);
@@ -153,6 +153,7 @@ void ClientRendering::renderSprite(){
     for(uint8_t i = 0; i < sprite_properties->Extra_Part_Amount; i++){
         Sprite_Extra_Part& extra_part = sprite_properties->Extra_Part_Array[i];
         if(infront == extra_part.Infront_Sprite){
+            //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "render part %ld", i);
             part_dstrect = {sprite_properties->Animation.Current_Texture_FRect.x + extra_part.OffsetX, sprite_properties->Animation.Current_Texture_FRect.y + extra_part.OffsetY};
             renderDrawSimple(Render_Storge::AnimationsInAtlas[extra_part.Animaton_Index].first, part_dstrect, 0);
         }

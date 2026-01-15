@@ -3,7 +3,7 @@
 #include<utility>
 
 bool handleAnimation(Animation_Properties& animation_properties){
-    const std::pair<const Atlas_Animation, const uint8_t*>* animation = &AnimationsInAtlas[animation_properties.Animation_Index];
+    const std::pair<const Atlas_Animation, const uint8_t*>* animation = &Render_Storge::AnimationsInAtlas[animation_properties.Animation_Index];
     bool is_frame_changed = animation_properties.Animation_Index != animation_properties.Cached_Animation_Index;
     //if time to display the next frame in the animation
     if(animation->second[animation_properties.Frame_Index] < animation_properties.Current_Texture_Loop_Count + 1){

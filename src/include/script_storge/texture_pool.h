@@ -13,6 +13,7 @@ namespace Render_Storge{
         {"resources/textures/sprites/SpriteAtlas.png", 12, 20},
         {"resources/textures/sprites/default/hand_default.png", 5, 5},
         {"resources/textures/cursor/cursor_default.png", 9,9},
+        {"resources/textures/tool/holding_musket.png", 20, 6},
     };
 
     //animation frame(std::pair<const char*, const unsigned char>)texture, number of loops prsent this texture
@@ -22,10 +23,11 @@ namespace Render_Storge{
         {{0, 1, 1, 3}, (::player_walkS)},//down
         {{1, 0, 1, 0}, nullptr},//hand
         {{2, 0, 1, 0}, nullptr},//cursor
+        {{3, 0, 1, 0}, nullptr}, //musket in hand
     };
 
 
 /***************************************************************************************************************************************************************static textures */
-    inline static const uint8_t cursor_texture_index[]{2};
+    inline static const uint8_t cursor_texture_index[]{3};
     const uint8_t cursor_amount = sizeof(cursor_texture_index);
 };
