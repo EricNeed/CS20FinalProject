@@ -16,6 +16,11 @@ Character::Character(uint16_t ID, bool is_prime, Properties_Character* propertie
     //extra gears
     derived_properties->Extra_Part_Array[extra_part_amount+2].Animaton_Index = 4;
 
+    derived_properties->Extra_Part_Array[extra_part_amount+1].OffsetX = 9;
+    derived_properties->Extra_Part_Array[extra_part_amount+2].OffsetY = 255;
+
+    derived_properties->Extra_Part_Array[extra_part_amount].OffsetY = 12;
+    derived_properties->Extra_Part_Array[extra_part_amount+1].OffsetY = 12;
 }
 
 const Properties_Character* Character::getProperties(){
@@ -30,14 +35,15 @@ void Character::whenMovedSprite(int dx, int dy){
     unsigned char animation_index;
     bool flip = false;
     // Pack: x in low bits, y shifted
-    switch(x_dir | (y_dir << 2)){  // 0-8 unique values!
-        case 1: updateAnimation(0, true, true, true); break;//right
-        case 2: updateAnimation(0, false, true, true); break;//left
+    switch(x_dir | (y_dir << 2)){  // 0-8 unique values! 0 is idel
+        case 1: updateAnimation(5, true, false, true); break;//right
+        case 2: updateAnimation(5, false, true, false); break;//left
         case 4: updateAnimation(1, false, true, true); break;//down
-        //case 5: break;//down right
-        //case 6: break;//down left
-        //case 8: break;//up
-        //case 9: break;//up left
+        case 5: updateAnimation(0, true, true, true); break;//down right
+        case 6: updateAnimation(0, false, true, true); break;//down left
+        case 8: updateAnimation(7, false, false, false); break;//up 
+        case 9: updateAnimation(6, true, false, false); break;//up right
+        case 10: updateAnimation(6, false, false, false); break;//up left
     }
 };
 

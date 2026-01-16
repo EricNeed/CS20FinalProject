@@ -31,7 +31,7 @@ ClientRendering::ClientRendering() : sprite_manager(SpriteManager::getOnlyInstan
 void ClientRendering::newTexture(uint16_t texture_dir_index){
     SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: Load texture, dir: %s", Render_Storge::texture_pool[texture_dir_index].Texture_Atlas_Dir);
     SDL_Texture *texture_temp = IMG_LoadTexture(sdl_renderer, Render_Storge::texture_pool[texture_dir_index].Texture_Atlas_Dir);
-    if (!texture_temp){SDL_LogError(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: IMG_LoadTexture error:");}
+    if (!texture_temp){SDL_LogError(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::newTexture]: IMG_LoadTexture error, index: %d", texture_dir_index);}
     SDL_SetTextureScaleMode(texture_temp, SDL_SCALEMODE_NEAREST);
     //cache it
     texture_map[texture_dir_index] = texture_temp;
@@ -67,8 +67,9 @@ std::pair<SDL_Texture*, SDL_FRect*> ClientRendering::renderArgumentFetch(Atlas_A
     return {getTexture(animation.Texture_Atlas_Index), &srcrect};
 }void ClientRendering::renderDrawSimple(Atlas_Animation animation, SDL_FRect& dstrect, uint8_t frame_index){
     auto fetched_argument = renderArgumentFetch(animation, dstrect, frame_index);
+    
     SDL_RenderTexture(sdl_renderer, fetched_argument.first, fetched_argument.second, &dstrect);
-    SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::renderDrawSimple]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", fetched_argument.second->x, fetched_argument.second->y, fetched_argument.second->w, fetched_argument.second->h, dstrect.x, dstrect.y, dstrect.w, dstrect.h, animation.Texture_Atlas_Index);
+    //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::renderDrawSimple]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", fetched_argument.second->x, fetched_argument.second->y, fetched_argument.second->w, fetched_argument.second->h, dstrect.x, dstrect.y, dstrect.w, dstrect.h, animation.Texture_Atlas_Index);
 }void ClientRendering::renderDrawRotated(Atlas_Animation animation, SDL_FRect& dstrect, uint8_t frame_index, bool flip, float rotation){
     auto fetched_argument = renderArgumentFetch(animation, dstrect, frame_index);
     //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::renderDrawSimple]: srcrect:[%.1f,%.1f,%.1f,%.1f], distrect:[%.1f,%.1f,%.1f,%.1f], texture index:%ld", fetched_argument.second->x, fetched_argument.second->y, fetched_argument.second->w, fetched_argument.second->h, dstrect.x, dstrect.y, dstrect.w, dstrect.h, animation.Texture_Atlas_Index);
@@ -119,7 +120,7 @@ void ClientRendering::renderSprite(){
         bool is_frame_changed  = handleAnimation(player_animation);
         const Atlas_Animation& current_animation = Render_Storge::AnimationsInAtlas[player_animation.Animation_Index].first;
 
-        SDL_Texture* texture_current = getTexture(current_animation.Animation_Index_In_Atlas);
+        SDL_Texture* texture_current = getTexture(current_animation.Texture_Atlas_Index);
 
         //if cannot find texture, load texture, if find, then use it directly
         if(is_frame_changed){
