@@ -95,6 +95,13 @@ void ClientRendering::tickRender(){
     map_screen_cornerY = player_coord->y - window_height / 2;
     //SDL_LogDebug(SDL_LOG_CATEGORY_RENDER, "[ClientRendering::tickRender]: current sprite public position (%ld, %ld)", player_map_coordX, player_map_coordY);
 
+    
+    //display a tempory plot:
+    const SDL_Point plot_coord = {-768, -384};
+    SDL_FRect hi = {(float)(plot_coord.x - map_screen_cornerX), (float)(plot_coord.y - map_screen_cornerY)};
+    renderDrawSimple(Render_Storge::AnimationsInAtlas[8].first, hi, 0);
+
+
     renderFloorTiles();
     renderSprite();
     client_gui->tickGUI();

@@ -13,6 +13,7 @@ namespace Render_Storge{
         {"resources/textures/sprites/hand_default.png", 3, 3},
         {"resources/textures/cursor/cursor_default.png", 9,9},
         {"resources/textures/tool/holding_musket.png", 20, 5},
+        {"resources/textures/landscape/temp_landscape.png", 256, 128},
     };
 
     //animation frame(std::pair<const char*, const unsigned char>)texture, number of loops prsent this texture
@@ -26,6 +27,7 @@ namespace Render_Storge{
         {{0, 2, 1, 2}, (::player_walk)},//left
         {{0, 4, 1, 2}, (::player_walk)},//up left
         {{0, 3, 1, 2}, (::player_walk)},//up
+        {{4, 0, 6, 0}, nullptr}, //temporary landscape
     };
 
 

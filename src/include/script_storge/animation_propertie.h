@@ -22,8 +22,8 @@ struct TextureProperties{
 
 struct Texture_Atlas_Dir_Propertie{
     const char* Texture_Atlas_Dir;
-    const uint8_t Each_Texture_DimX;
-    const uint8_t Each_Texture_DimY;
+    const uint16_t Each_Texture_DimX;
+    const uint16_t Each_Texture_DimY;
 };
 
 //for the texture pool, each frame of animation
