@@ -14,3 +14,13 @@ top down, zombie survival, shooting, story mode, objective
 
 ## Tool used: 
 SDl3, CMake, and a little bit of imagination.
+
+#fork and branches
+if you hope to build this project, you need to download SDL3(v3.2.24) and SDL3_Image, and place their directory inside a file named “LocalPaths.cmake” and place it down in the root folder. 
+
+EXample Inside of “LocalPaths.cmake”:
+
+“set(SDL3_DIR "M:/code/libraries/SDL3-3.2.26/x86_64-w64-mingw32/lib/cmake/SDL3")
+
+set(SDL3_image_DIR "M:/code/libraries/SDL3_image-3.2.4/x86_64-w64-mingw32/lib/cmake/SDL3_image")”
+
