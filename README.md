@@ -16,7 +16,7 @@ top down, zombie survival, shooting, story mode, objective
 SDl3, CMake, and a little bit of imagination.
 
 # fork and branches
-if you hope to build this project, you need to download SDL3(v3.2.24) and SDL3_Image, and place their directory inside a file named “LocalPaths.cmake” and place it down in the root folder. 
+if you hope to build this project, you need to download SDL3(v3.2.26) and SDL3_Image(v3.2.4), and place their directory inside a file named “LocalPaths.cmake” and place it down in the root folder. 
 
 EXample Inside of “LocalPaths.cmake”:
 
